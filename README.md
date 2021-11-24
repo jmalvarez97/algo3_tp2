@@ -9,7 +9,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Integrante 1** - [Juan Manuel Alvarez](https://github.com/jmalvarez97)
 * **Integrante 2** - [Facundo Milhas](https://github.com/facundomilhas)
 * **Integrante 3** - [Agustin Mariano de Vedia](https://github.com/deve023)
-* **Integrante 4** - [integrante4](https://github.com/integrante4)
+* **Integrante 4** - [Ignacio José de Matías Pose](https://github.com/ignaciodematias)
 
 Corrector: **{Corrector}**
 
