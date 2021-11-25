@@ -10,6 +10,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Integrante 2** - [Facundo Milhas](https://github.com/facundomilhas)
 * **Integrante 3** - [Agustin Mariano de Vedia](https://github.com/deve023)
 * **Integrante 4** - [Ignacio José de Matías Pose](https://github.com/ignaciodematias)
+* **Integrante 5** - [Kamal Hosain](https://github.com/kamalhosain)
 
 Corrector: **{Corrector}**
 
