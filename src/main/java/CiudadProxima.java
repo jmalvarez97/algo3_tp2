@@ -5,7 +5,7 @@ public class CiudadProxima {
     private String coloresDeBandera;
     private String datoRandom;
 
-    public CiudadProxima(String colores, String moneda, string datoRandom) {
+    public CiudadProxima(String colores, String moneda, String datoRandom) {
         this.moneda = moneda;
         this.coloresDeBandera = colores;
         this.datoRandom = datoRandom;
