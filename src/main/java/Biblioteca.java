@@ -1,14 +1,14 @@
 public class Biblioteca implements Edificio{
 
-    private String pista;
-
+    private Pista pista;
 
     public Biblioteca(){
-        this.pista = "estaba leyendo sobre ";
+        // Para que no sea siempre la misma, se agarra con un random de algun archivo?
+        this.pista = new PistaFacil("Biblioteca");
     }
 
     @Override
     public String darPista(CiudadProxima ciudad){
-        return this.pista + ciudad.getDatoRandom();
+        return this.pista.darPista(ciudad.getDatoRandom());
     }
 }

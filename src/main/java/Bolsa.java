@@ -1,15 +1,15 @@
 public class Bolsa implements Edificio{
 
 
-    private String pista;
-
+    private Pista pista;
 
     public Bolsa(){
-        this.pista = "lo vi cambiando su moneda a ";
+        // Para que no sea siempre la misma, se agarra con un random de algun archivo?
+        this.pista = new PistaFacil("Bolsa");
     }
 
     @Override
     public String darPista(CiudadProxima ciudad){
-        return this.pista + ciudad.getMoneda();
+        return this.pista.darPista(ciudad.getDatoRandom());
     }
 }

@@ -10,7 +10,7 @@ public class EdificioTest {
         CiudadProxima ciudadProxima = new CiudadProxima("roja blanca y azul","euros", "torre eiffel");
 
         String pista = banco.darPista(ciudadProxima);
-        assertEquals(pista, "lo vi cambiando su moneda a euros");
+        assertEquals(pista, "Lo vi cambiando su moneda a euros");
     }
 
     @Test
@@ -19,7 +19,7 @@ public class EdificioTest {
         CiudadProxima ciudadProxima = new CiudadProxima("roja blanca y azul","francos", "torre eiffel");
 
         String pista = aeropuerto.darPista(ciudadProxima);
-        assertEquals(pista, "cuando llego venia con una bandera de colores roja blanca y azul");
+        assertEquals(pista, "Cuando llego venia con una bandera de colores roja blanca y azul");
     }
 
     @Test
@@ -28,6 +28,6 @@ public class EdificioTest {
         CiudadProxima ciudadProxima = new CiudadProxima("roja blanca y azul","francos", "la torre eiffel");
 
         String pista = biblioteca.darPista(ciudadProxima);
-        assertEquals(pista, "estaba leyendo sobre la torre eiffel");
+        assertEquals(pista, "Estaba leyendo sobre la torre eiffel");
     }
 }
