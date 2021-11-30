@@ -4,7 +4,7 @@ public class Bolsa implements Edificio{
     private String pista;
 
 
-    public void Bolsa(){
+    public Bolsa(){
         this.pista = "lo vi cambiando su moneda a ";
     }
 

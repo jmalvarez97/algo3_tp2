@@ -3,8 +3,8 @@ public class Biblioteca implements Edificio{
     private String pista;
 
 
-    public void Biblioteca(){
-        this.pista = "estaba leyendo unos libros de";
+    public Biblioteca(){
+        this.pista = "estaba leyendo sobre ";
     }
 
     @Override

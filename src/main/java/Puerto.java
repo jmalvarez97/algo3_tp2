@@ -4,7 +4,7 @@ public class Puerto implements Edificio{
     private String pista;
 
 
-    public void Puerto(){
+    public Puerto(){
         this.pista = "lo vi cambiando su moneda a ";
     }
 
