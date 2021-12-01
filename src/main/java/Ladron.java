@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Objects;
 import java.util.Random;
 
 public class Ladron {
@@ -30,42 +29,42 @@ public class Ladron {
             int numRandom;
 
             // Sexo
-            line = br.readline();
+            line = br.readLine();
             String[] values = line.split(",");
             numRandom = random.nextInt(2);
             this.sexo = values[numRandom];
 
             // Hobby
-            line = br.readline();
-            String[] values = line.split(",");
+            line = br.readLine();
+            values = line.split(",");
             numRandom = random.nextInt(6);
             this.hobby = values[numRandom];
 
             // Cabello
-            line = br.readline();
-            String[] values = line.split(",");
+            line = br.readLine();
+            values = line.split(",");
             numRandom = random.nextInt(4);
             this.cabello = values[numRandom];
 
             // Senia
-            line = br.readline();
-            String[] values = line.split(",");
+            line = br.readLine();
+            values = line.split(",");
             numRandom = random.nextInt(4);
             this.senia = values[numRandom];
 
             // Vehiculo
-            line = br.readline();
-            String[] values = line.split(",");
+            line = br.readLine();
+            values = line.split(",");
             numRandom = random.nextInt(4);
             this.vehiculo = values[numRandom];
 
         } catch (FileNotFoundException ex) {
-            return "codesmell";
+            return;
         } catch (IOException io) {
-            return "esto obviamente se puede mejorar";
+            return;
         }
 
-        return"Seguro debe haber una mejor forma";
-    }
+        return;
     }
 }
+
