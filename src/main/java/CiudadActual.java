@@ -5,5 +5,5 @@ public class CiudadActual {
     Edificio puerto = new Puerto();
     Edificio aeropuerto = new Aeropuerto();
     Edificio biblioteca = new Biblioteca();
-    Ladron ladron = new Ladron();
+    //Ladron ladron = new Ladron();
 }
