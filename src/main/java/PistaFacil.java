@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Objects;
+import java.util.Random;
 
 public class PistaFacil implements Pista {
     String cuerpo;
@@ -20,12 +21,15 @@ public class PistaFacil implements Pista {
     private String buscarPorArchivo(String nombreEdificio) {
         try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/pistasFaciles.csv"))) {
             String line;
+            Random random = new Random();
+            int numRandom;
 
             // OLOR A ALGO I
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
-                if (Objects.equals(values[1], nombreEdificio)) {
-                    return values[0];
+                numRandom = random.nextInt(3);
+                if (Objects.equals(values[3], nombreEdificio)) {
+                    return values[numRandom];
                 }
             }
         } catch (FileNotFoundException ex) {
