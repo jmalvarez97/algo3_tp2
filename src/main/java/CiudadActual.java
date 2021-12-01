@@ -5,5 +5,10 @@ public class CiudadActual {
     Edificio puerto = new Puerto();
     Edificio aeropuerto = new Aeropuerto();
     Edificio biblioteca = new Biblioteca();
+
+    public String visitarBanco(CiudadProxima proxima) {
+        return banco.darPista(proxima);
+
+    }
     //Ladron ladron = new Ladron();
 }
