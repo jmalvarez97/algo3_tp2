@@ -42,4 +42,21 @@ public class Caso {
     public String generarObjetoRobado() {
         return "Tesoro Nacional";
     }
+
+    public void viajar(CiudadActual unaCiudad){
+
+        // TODO: generar ciudad de manera random. Investigar JSON.
+        CiudadProxima baires = new CiudadProxima("celeste y blanca", "pesos argentinos", "el tango");
+        caso.asignarCiudadActual(mexicoNuevo);
+        caso.asignarCiudadProxima(baires);
+
+        /*
+        Montreal-Mexico ≃ 3581 km
+        VelocidadNovato = 900 km/h
+
+        => tiempoDeViaje ≃ 4 hs
+         */
+        this.policia.descontarHoras(4);
+        // TODO: clase Google Maps, calcular distancias.
+    }
 }
