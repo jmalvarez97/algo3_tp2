@@ -1,16 +1,17 @@
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CasosDeUsoTest {
 
     private Policia policia = new Novato();
     private Ladron ladron = new Ladron();
-    private Caso caso = new Caso(policia, ladron);
 
     // Van aca para que en el caso2 se mantenga la cantidad de visitas en Banco
     CiudadActual montreal = new CiudadActual();
     CiudadProxima mexico = new CiudadProxima("roja blanca y verde","pesos","civilizacion azteca");
+    Mapa unMapa = new Mapa(montreal,mexico);
+
+    private Caso caso = new Caso(policia, ladron, unMapa );
 
     @Test
     public void testCasoUno(){
@@ -20,10 +21,7 @@ public class CasosDeUsoTest {
         - Detective novato comienza en Montreal.
         - Vista un Banco:
             - se despliega una pista. */
-
         caso.generarObjetoRobado();
-        caso.asignarCiudadActual(montreal);
-        caso.asignarCiudadProxima(mexico);
         String pista = caso.visitar("banco");
 
         assert(pista.contains("pesos"));
@@ -40,10 +38,10 @@ public class CasosDeUsoTest {
             - Se despliega una pista. */
 
         caso.generarObjetoRobado();
-        caso.asignarCiudadActual(montreal);
-        caso.asignarCiudadProxima(mexico);
+
+        caso.visitar("banco");
         String pista = caso.visitar("banco");
-        Sring pista2 = caso.visitar("biblioteca");
+        String pista2 = caso.visitar("biblioteca");
 
         assert(pista.contains("pesos"));
         assert(pista2.contains("civilizacion azteca"));
@@ -54,6 +52,12 @@ public class CasosDeUsoTest {
     public void testCasoTres(){
         /* Caso de uso 3
         - Detective viaja de Montreal a México */
+
+        caso.generarObjetoRobado();
+
+        caso.visitar("banco");
+        String pista = caso.visitar("banco");
+        String pista2 = caso.visitar("biblioteca");
 
         CiudadActual mexicoActual = new CiudadActual();
         caso.viajar(mexicoActual);

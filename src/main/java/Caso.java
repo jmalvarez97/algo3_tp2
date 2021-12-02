@@ -6,19 +6,15 @@ public class Caso {
 
     private Mapa mapa;
 
-    public Caso(Policia policia, Ladron ladron){
+
+    // Constructor con Mapa, lo generamos aleatorio?
+    public Caso(Policia policia, Ladron ladron, Mapa unMapa){
         this.ladron = ladron;
         this.policia = policia;
+        this.mapa = unMapa;
     }
 
-    //Ruido, estos setters para nuestro tp se asignan aletoriamente
-    public void asignarCiudadProxima(CiudadProxima ciudad) {
-        this.proxima = ciudad;
-    }
 
-    public void asignarCiudadActual(CiudadActual ciudad) {
-        this.actual = ciudad;
-    }
 
     public String visitar(String unEdificio) {
         String pista = mapa.visitar(unEdificio);
@@ -47,8 +43,7 @@ public class Caso {
 
         // TODO: generar ciudad de manera random. Investigar JSON.
         CiudadProxima baires = new CiudadProxima("celeste y blanca", "pesos argentinos", "el tango");
-        caso.asignarCiudadActual(mexicoNuevo);
-        caso.asignarCiudadProxima(baires);
+        mapa = new Mapa(unaCiudad, baires);
 
         /*
         Montreal-Mexico ≃ 3581 km
