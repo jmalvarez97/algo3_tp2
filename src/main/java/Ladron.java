@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 
+
 public class Ladron {
 
     private String sexo;

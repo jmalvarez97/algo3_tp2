@@ -1,11 +1,10 @@
 
 public class Caso {
 
-    private int tiempoRestante;
     private Policia policia;
     private Ladron ladron;
-    private CiudadActual actual;
-    private CiudadProxima proxima;
+
+    private Mapa mapa;
 
     public Caso(Policia policia, Ladron ladron){
         this.ladron = ladron;
@@ -25,10 +24,13 @@ public class Caso {
 
     }
 
-    public String visitarBanco() {
-        String pista =  actual.visitarBanco(proxima);
-        policia.descontarHoras(1);
-        return pista;
+    public String visitar(String unEdificio) {
+        mapa.visitar(unEdificio);
+
+
+        //String pista =  actual.visitar(proxima);
+        //policia.descontarHoras(1);
+        //return pista;
     }
 
     public String generarObjetoRobado() {
