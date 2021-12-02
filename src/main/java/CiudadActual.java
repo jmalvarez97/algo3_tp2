@@ -17,25 +17,51 @@ public class CiudadActual {
 
     public String visitar(CiudadProxima proxima, String unEdificio) {
 
-        detectarEdificio(proxima, unEdificio);
+        Edificio edificio = detectarEdificio(unEdificio);
+
+        return edificio.darPista(proxima);
     }
 
     private String visitar(CiudadProxima proxima, Edificio unEdificio){
         return unEdificio.darPista(proxima);
     }
 
-    public void detectarEdificio(CiudadProxima proxima, String unEdificio){
+    /*
+
+    ESTO YA NO SERIA NECESARIO
+
+    public String detectarEdificio(CiudadProxima proxima, String unEdificio){
         if(unEdificio.equals("banco")){
-            visitar(proxima, this.banco);
+            return visitar(proxima, this.banco);
         }
         if(unEdificio.equals("puerto")){
-            visitar(proxima, this.puerto);
+            return visitar(proxima, this.puerto);
         }
         if(unEdificio.equals("biblioteca")){
-            visitar(proxima, this.biblioteca);
+            return visitar(proxima, this.biblioteca);
         }
     }
+    */
 
+    // Devuelve el objeto edificio. Modificacion para poder reutilizar la funcion.
+    public Edificio detectarEdificio(String unEdificio){
+
+        if(unEdificio.equals("banco")){
+            return this.banco;
+        }
+
+        if(unEdificio.equals("puerto")){
+            return this.puerto;
+        }
+
+        return this.biblioteca;
+    }
+
+    public int getVisitas(String unEdificio){
+        Edificio edificio = detectarEdificio(unEdificio);
+
+        return edificio.cantidadVisitas();
+    }
 
 
 

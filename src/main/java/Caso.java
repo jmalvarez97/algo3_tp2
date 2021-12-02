@@ -20,17 +20,23 @@ public class Caso {
         this.actual = ciudad;
     }
 
-    public void descontarTiempo(int cantidadDeHoras){
-
-    }
-
     public String visitar(String unEdificio) {
-        mapa.visitar(unEdificio);
+        String pista = mapa.visitar(unEdificio);
 
+        descontarHoras(unEdificio);
 
+        return pista;
         //String pista =  actual.visitar(proxima);
         //policia.descontarHoras(1);
         //return pista;
+    }
+
+    public void descontarHoras(String unEdificio){
+        int cantidadVisitas = mapa.getVisitas(unEdificio);
+
+        if(cantidadVisitas > 3){cantidadVisitas = 3;}
+
+        this.policia.descontarHoras(cantidadVisitas);
     }
 
     public String generarObjetoRobado() {

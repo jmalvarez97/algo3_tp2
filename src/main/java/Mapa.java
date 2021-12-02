@@ -4,13 +4,11 @@ public class Mapa {
     private CiudadProxima proxima;
 
     public String visitar(String unEdificio){
-        String a = "caca";
+        return actual.visitar(proxima, unEdificio);
+    }
 
-
-        actual.visitar(proxima, unEdificio);
-
-
-        return a;
+    public int getVisitas(String unEdificio){
+        return ciudadActual.getVisitas(unEdificio);
     }
 
 

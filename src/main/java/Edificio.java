@@ -5,4 +5,5 @@ public interface Edificio {
 
 
     String darPista(CiudadProxima ciudadProxima);
+    int cantidadVisitas();
 }
