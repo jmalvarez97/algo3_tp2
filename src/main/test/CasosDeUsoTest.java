@@ -13,6 +13,7 @@ public class CasosDeUsoTest {
 
     private Caso caso = new Caso(policia, ladron, unMapa );
 
+
     @Test
     public void testCasoUno(){
         /* Caso de uso 1:
@@ -37,8 +38,8 @@ public class CasosDeUsoTest {
         - Vista una Biblioteca:
             - Se despliega una pista. */
 
-        caso.generarObjetoRobado();
 
+        caso.generarObjetoRobado();
         caso.visitar("banco");
         String pista = caso.visitar("banco");
         String pista2 = caso.visitar("biblioteca");
@@ -53,7 +54,7 @@ public class CasosDeUsoTest {
         /* Caso de uso 3
         - Detective viaja de Montreal a México */
 
-        caso.generarObjetoRobado();
+
 
         caso.visitar("banco");
         String pista = caso.visitar("banco");
@@ -63,5 +64,31 @@ public class CasosDeUsoTest {
         caso.viajar(mexicoActual);
 
         assertEquals(policia.horasDisponibles(), 150 - 4);
+    }
+
+    @Test
+    public void testCasoCuatro(){
+        /*
+        Caso de uso 4
+        Vista un Aeropuerto (3 veces):
+        Se despliega una pista.
+        Vista un Puerto (55 veces):
+        Se despliega una pista.
+        */
+
+        for(int i=0;i<3;i++){
+            caso.visitar("aeropuerto");
+        }
+
+        for(int i=0;i<5;i++){
+            caso.visitar("banco");
+        }
+
+        int tiempoRestanteEsperado = 154 - (1 + 2 + 3) - (1 + 2 + 3 + 3 + 3);
+        assertEquals(policia.horasDisponibles(),tiempoRestanteEsperado);
+
+
+
+
     }
 }
