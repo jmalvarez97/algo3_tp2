@@ -39,6 +39,10 @@ public class Caso {
         return "Tesoro Nacional";
     }
 
+    public void herirPoliciaConCuchillo(){
+        this.policia.herirConCuchillo();
+    }
+
     public void viajar(CiudadActual unaCiudad){
 
         // TODO: generar ciudad de manera random. Investigar JSON.

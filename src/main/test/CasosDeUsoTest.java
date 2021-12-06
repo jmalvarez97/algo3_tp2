@@ -46,7 +46,7 @@ public class CasosDeUsoTest {
 
         assert(pista.contains("pesos"));
         assert(pista2.contains("civilizacion azteca"));
-        assertEquals(policia.horasDisponibles(), 153 - 3);
+        assertEquals(policia.horasDisponibles(), 154 - 3);
     }
 
     @Test
@@ -86,9 +86,20 @@ public class CasosDeUsoTest {
 
         int tiempoRestanteEsperado = 154 - (1 + 2 + 3) - (1 + 2 + 3 + 3 + 3);
         assertEquals(policia.horasDisponibles(),tiempoRestanteEsperado);
+    }
 
+    @Test
+    public void testHerirConCuchilloUnaVez(){
+        assertEquals(policia.horasDisponibles(), 154);
+        caso.herirPoliciaConCuchillo();
+        assertEquals(policia.horasDisponibles(), 152);
+    }
 
-
-
+    @Test
+    public void testHerirConCuchilloVariasVeces(){
+        assertEquals(policia.horasDisponibles(),154);
+        caso.herirPoliciaConCuchillo();
+        caso.herirPoliciaConCuchillo();
+        assertEquals(policia.horasDisponibles(),151);
     }
 }
