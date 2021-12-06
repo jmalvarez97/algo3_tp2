@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CasosDeUsoTest {
+public class CasosDeUsoEntrega1Test {
 
     private Policia policia = new Novato();
     private Ladron ladron = new Ladron();
@@ -81,28 +81,5 @@ public class CasosDeUsoTest {
 
         int tiempoRestanteEsperado = 154 - (1 + 2 + 3) - (1 + 2 + 3 + 3 + 3);
         assertEquals(policia.horasRestantes(),tiempoRestanteEsperado);
-    }
-
-    @Test
-    public void testHerirConCuchilloUnaVez(){
-        assertEquals(policia.horasRestantes(), 154);
-        caso.herirPoliciaConCuchillo();
-        assertEquals(policia.horasRestantes(), 152);
-    }
-
-    @Test
-    public void testHerirConCuchilloVariasVeces(){
-        assertEquals(policia.horasRestantes(),154);
-        caso.herirPoliciaConCuchillo();
-        caso.herirPoliciaConCuchillo();
-        assertEquals(policia.horasRestantes(),151);
-    }
-
-    @Test
-    public void testSeHaceDeNochePoliciaDuerme(){
-        assertEquals(policia.horasRestantes(),154);
-        policia.descontarHoras(16); // Se hacen las 23 hs
-        assertEquals(policia.horasRestantes(), 130);
-        assertEquals(policia.hora(), 7);
     }
 }

@@ -4,18 +4,46 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PoliciaTest {
 
+    private Policia policia = new Novato();
+    private Ladron ladron = new Ladron();
 
+    // Van aca para que en el caso2 se mantenga la cantidad de visitas en Banco
+    CiudadActual montreal = new CiudadActual();
+    CiudadProxima mexico = new CiudadProxima("roja blanca y verde","pesos","civilizacion azteca");
+    Mapa unMapa = new Mapa(montreal,mexico);
+
+    private Caso caso = new Caso(policia, ladron, unMapa );
 
 
     @Test
-    public void testLeDescuentoHorasAUnPoliciaNovato(){
+    public void testLeDescuentoHorasAUnPolicia(){
 
         // Todo policia tiene 154 hs
-        Policia novato = new Novato();
-        novato.descontarHoras(8);
+        policia.descontarHoras(8);
 
-        assertEquals(novato.horasRestantes(), 154 - 8);
+        assertEquals(policia.horasRestantes(), 154 - 8);
+    }
 
+    @Test
+    public void testHerirConCuchilloUnaVez(){
+        assertEquals(policia.horasRestantes(), 154);
+        caso.herirPoliciaConCuchillo();
+        assertEquals(policia.horasRestantes(), 152);
+    }
 
+    @Test
+    public void testHerirConCuchilloVariasVeces(){
+        assertEquals(policia.horasRestantes(),154);
+        caso.herirPoliciaConCuchillo();
+        caso.herirPoliciaConCuchillo();
+        assertEquals(policia.horasRestantes(),151);
+    }
+
+    @Test
+    public void testSeHaceDeNochePoliciaDuerme(){
+        assertEquals(policia.horasRestantes(),154);
+        policia.descontarHoras(16); // Se hacen las 23 hs
+        assertEquals(policia.horasRestantes(), 130);
+        assertEquals(policia.hora(), 7);
     }
 }
