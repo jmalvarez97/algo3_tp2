@@ -49,13 +49,8 @@ public class Caso {
         CiudadProxima baires = new CiudadProxima("celeste y blanca", "pesos argentinos", "el tango");
         mapa = new Mapa(unaCiudad, baires);
 
-        /*
-        Montreal-Mexico ≃ 3581 km
-        VelocidadNovato = 900 km/h
-
-        => tiempoDeViaje ≃ 4 hs
-         */
-        this.policia.descontarHoras(4);
+        //Montreal-Mexico ≃ 3581 km
+        this.policia.descontarHoras(3581 / this.policia.velocidad());
         // TODO: clase Google Maps, calcular distancias.
     }
 

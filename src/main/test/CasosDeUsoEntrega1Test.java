@@ -58,7 +58,7 @@ public class CasosDeUsoEntrega1Test {
         caso.viajar(mexicoActual);
 
         assertEquals(mexicoActual, caso.ciudadActual());
-        assertEquals(policia.horasRestantes(), 154-4);
+        assertEquals(policia.horasRestantes(), 154-3);
     }
 
     @Test
@@ -79,7 +79,7 @@ public class CasosDeUsoEntrega1Test {
             caso.visitar("banco");
         }
 
-        int tiempoRestanteEsperado = 154 - (1 + 2 + 3) - (1 + 2 + 3 + 3 + 3);
+        int tiempoRestanteEsperado = 154 - (1 + 2 + 3) - (1 + 2 + 3 + 3 + 3) - 6;
         assertEquals(policia.horasRestantes(),tiempoRestanteEsperado);
     }
 }

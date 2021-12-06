@@ -15,6 +15,12 @@ public class CasosDeUsoEntrega2Test {
 
     @Test
     public void testCasoUno(){
+
+        /*
+        - Detective sufre una herida de cuchillo.
+        - Detective duerme.
+         */
+
         //Hora actual: 7 am
         caso.herirPoliciaConCuchillo();
         assertEquals(policia.horasRestantes(),154 - 2);
@@ -27,6 +33,20 @@ public class CasosDeUsoEntrega2Test {
         //Hora actual: 7 am
         assertEquals(policia.horasRestantes(), 130);
         assertEquals(policia.hora(), 7);
+    }
+
+    @Test
+    public void testCasoDos(){
+        // Detective con rango Investigador toma caso de un robo viaja de Montreal a México
+
+        policia = new Investigador();
+        caso = new Caso(policia, ladron, unMapa );
+
+        CiudadActual mexicoActual = new CiudadActual();
+        caso.viajar(mexicoActual);
+
+        assertEquals(caso.ciudadActual(), mexicoActual);
+        assertEquals(policia.horasRestantes(),154 - 2);
     }
 }
 

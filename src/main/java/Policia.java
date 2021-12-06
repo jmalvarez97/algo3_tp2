@@ -5,4 +5,5 @@ public interface Policia{
     void descontarHoras(int horas);
     void herirConCuchillo();
     int hora();
+    int velocidad();
 }
