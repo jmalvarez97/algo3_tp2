@@ -14,7 +14,7 @@ public class PoliciaTest {
         Policia novato = new Novato();
         novato.descontarHoras(8);
 
-        assertEquals(novato.horasDisponibles(), 154 - 8);
+        assertEquals(novato.horasRestantes(), 154 - 8);
 
 
     }

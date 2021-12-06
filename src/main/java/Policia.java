@@ -1,7 +1,7 @@
 public interface Policia{
 
     //int cantidadDeArrestos = 0;
-    int horasDisponibles();
+    int horasRestantes();
     void descontarHoras(int horas);
     void herirConCuchillo();
 }

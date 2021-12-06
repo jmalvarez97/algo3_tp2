@@ -3,7 +3,7 @@ public class Detective implements Policia{
     private int cantidadDeArrestos;
     private int horasPorHeridaCuchillo;
 
-    public int horasDisponibles(){
+    public int horasRestantes(){
         return this.cantidadDeArrestos;
     }
 

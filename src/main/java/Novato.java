@@ -1,19 +1,19 @@
 public class Novato implements Policia{
-    private int cantidadDeArrestos;
+    private Reloj reloj;
     private int horasPorHeridaCuchillo;
 
     public Novato(){
-        this.cantidadDeArrestos = 154;
         this.horasPorHeridaCuchillo = 2;
+        this.reloj = new Reloj();
     }
 
-    public int horasDisponibles(){
-        return this.cantidadDeArrestos;
+    public int horasRestantes(){
+        return this.reloj.horasRestantes();
     }
 
     @Override
     public void descontarHoras(int horas) {
-        this.cantidadDeArrestos = this.cantidadDeArrestos - horas;
+        this.reloj.descontarHoras(horas);
     }
 
     public void herirConCuchillo(){
