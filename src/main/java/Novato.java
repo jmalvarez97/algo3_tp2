@@ -11,6 +11,10 @@ public class Novato implements Policia{
         return this.reloj.horasRestantes();
     }
 
+    public int hora(){
+        return this.reloj.hora();
+    }
+
     @Override
     public void descontarHoras(int horas) {
         this.reloj.descontarHoras(horas);

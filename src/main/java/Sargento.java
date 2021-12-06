@@ -15,4 +15,6 @@ public class Sargento implements Policia{
         this.descontarHoras(horasPorHeridaCuchillo);
         this.horasPorHeridaCuchillo = 1;
     }
+
+    public int hora(){ return 0;}
 }

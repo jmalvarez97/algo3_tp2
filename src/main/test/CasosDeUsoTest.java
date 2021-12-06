@@ -97,4 +97,12 @@ public class CasosDeUsoTest {
         caso.herirPoliciaConCuchillo();
         assertEquals(policia.horasRestantes(),151);
     }
+
+    @Test
+    public void testSeHaceDeNochePoliciaDuerme(){
+        assertEquals(policia.horasRestantes(),154);
+        policia.descontarHoras(16); // Se hacen las 23 hs
+        assertEquals(policia.horasRestantes(), 130);
+        assertEquals(policia.hora(), 7);
+    }
 }
