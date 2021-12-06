@@ -46,7 +46,7 @@ public class CasosDeUsoTest {
 
         assert(pista.contains("pesos"));
         assert(pista2.contains("civilizacion azteca"));
-        assertEquals(policia.horasDisponibles(), 154 - 3);
+        assertEquals(policia.horasDisponibles(), 154 - 4);
     }
 
     @Test
@@ -54,16 +54,11 @@ public class CasosDeUsoTest {
         /* Caso de uso 3
         - Detective viaja de Montreal a México */
 
-
-
-        caso.visitar("banco");
-        String pista = caso.visitar("banco");
-        String pista2 = caso.visitar("biblioteca");
-
         CiudadActual mexicoActual = new CiudadActual();
         caso.viajar(mexicoActual);
 
-        assertEquals(policia.horasDisponibles(), 150 - 4);
+        assertEquals(mexicoActual, caso.ciudadActual());
+        assertEquals(policia.horasDisponibles(), 154-4);
     }
 
     @Test

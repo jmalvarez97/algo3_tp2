@@ -16,5 +16,9 @@ public class Mapa {
         return actual.getVisitas(unEdificio);
     }
 
+    public CiudadActual ciudadActual(){
+        return this.actual;
+    }
+
 
 }

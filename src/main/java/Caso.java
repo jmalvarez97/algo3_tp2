@@ -58,4 +58,8 @@ public class Caso {
         this.policia.descontarHoras(4);
         // TODO: clase Google Maps, calcular distancias.
     }
+
+    public CiudadActual ciudadActual(){
+        return this.mapa.ciudadActual();
+    }
 }
