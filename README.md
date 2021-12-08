@@ -12,7 +12,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Integrante 4** - [Ignacio José de Matías Pose](https://github.com/ignaciodematias)
 * **Integrante 5** - [Kamal Hosain](https://github.com/kamalhosain)
 
-Corrector: **{Corrector}**
+Corrector: **{Santiago Valdez}**
 
 ## Aplicación
 
