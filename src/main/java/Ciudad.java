@@ -1,13 +1,17 @@
-/*
-public class CiudadActual {
-    //Decidir en funcion de que vamos a crear bancos/bolsas o puertos/aeropuertos
-    Edificio banco;
-    //Edificio bolsa;
-    Edificio puerto;
-    //Edificio aeropuerto;
+public class Ciudad {
+    private String moneda;
+    private String coloresDeBandera;
+    private String datoRandom;
+    Edificio banco; //Edificio bolsa;
+    Edificio puerto; //Edificio aeropuerto;
     Edificio biblioteca;
 
-    public CiudadActual(){
+
+    public Ciudad(String colores, String moneda, String datoRandom){
+        this.moneda = moneda;
+        this.coloresDeBandera = colores;
+        this.datoRandom = datoRandom;
+
         //leemos un json para definir si vamos a crear un banco o bolsa/puerto o aeropuerto
         this.banco = new Banco();
         //this.bolsa = new Bolsa();
@@ -16,12 +20,9 @@ public class CiudadActual {
         this.biblioteca = new Biblioteca();
     }
 
-
-    private String visitar(CiudadProxima proxima, Edificio unEdificio){
+    private String visitar(Ciudad proxima, Edificio unEdificio){
         return unEdificio.darPista(proxima);
     }
-
-
 
     // Devuelve el objeto edificio. Modificacion para poder reutilizar la funcion.
     public Edificio detectarEdificio(String unEdificio){
@@ -37,7 +38,7 @@ public class CiudadActual {
         return this.biblioteca;
     }
 
-    public String visitar(CiudadProxima proxima, String unEdificio, Policia policia) {
+    public String visitar(Ciudad proxima, String unEdificio, Policia policia) {
         Edificio edificio = detectarEdificio(unEdificio);
         String pista = edificio.darPista(proxima);
         edificio.descontarHorasDePolicia(policia); // tambien se podria en darPista, cada pista dada lleva un tiempo
@@ -45,7 +46,14 @@ public class CiudadActual {
 
     }
 
+    public String getMoneda(){
+        return this.moneda;
+    }
 
-    //Ladron ladron = new Ladron();
+    public String getColores(){
+        return this.coloresDeBandera;
+    }
+
+    public String getDatoRandom(){ return this.datoRandom;}
 }
-*/
+

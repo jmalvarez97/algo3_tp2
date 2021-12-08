@@ -38,18 +38,18 @@ public class Caso {
         this.policia.herirConCuchillo();
     }
 
-    public void viajar(CiudadActual unaCiudad){
+    public void viajar(Ciudad ciudadActual){
 
         // TODO: generar ciudad de manera random. Investigar JSON.
-        CiudadProxima baires = new CiudadProxima("celeste y blanca", "pesos argentinos", "el tango");
-        mapa = new Mapa(unaCiudad, baires);
+        Ciudad baires = new Ciudad("celeste y blanca", "pesos argentinos", "el tango");
+        mapa = new Mapa(ciudadActual, baires);
 
         //Montreal-Mexico ≃ 3581 km
         this.policia.descontarHoras(3581 / this.policia.velocidad());
         // TODO: clase Google Maps, calcular distancias.
     }
 
-    public CiudadActual ciudadActual(){
+    public Ciudad ciudadActual(){
         return this.mapa.ciudadActual();
     }
 }

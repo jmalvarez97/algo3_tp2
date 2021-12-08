@@ -7,7 +7,7 @@ public class EdificioTest {
     @Test
     public void testCreoUnBancoYMeDaLaMonedaDelPaisProximo(){
         Edificio banco = new Banco();
-        CiudadProxima ciudadProxima = new CiudadProxima("roja blanca y azul","euros", "torre eiffel");
+        Ciudad ciudadProxima = new Ciudad("roja blanca y azul","euros", "torre eiffel");
 
         String pista = banco.darPista(ciudadProxima);
         assert(pista.contains("euros"));
@@ -16,7 +16,7 @@ public class EdificioTest {
     @Test
     public void testCreoUnAeropuertoYMeDaLosColoresDelPaisProximo(){
         Edificio aeropuerto = new Aeropuerto();
-        CiudadProxima ciudadProxima = new CiudadProxima("roja blanca y azul","euros", "torre eiffel");
+        Ciudad ciudadProxima = new Ciudad("roja blanca y azul","euros", "torre eiffel");
 
         String pista = aeropuerto.darPista(ciudadProxima);
         assert(pista.contains("roja blanca y azul"));
@@ -25,7 +25,7 @@ public class EdificioTest {
     @Test
     public void testCreoUnaBibliotecaYMeDaLaPistaRandomDePaisProximo(){
         Edificio biblioteca = new Biblioteca();
-        CiudadProxima ciudadProxima = new CiudadProxima("roja blanca y azul","euros", "la torre eiffel");
+        Ciudad ciudadProxima = new Ciudad("roja blanca y azul","euros", "la torre eiffel");
 
         String pista = biblioteca.darPista(ciudadProxima);
         assert(pista.contains("la torre eiffel"));

@@ -1,10 +1,10 @@
 public class Mapa {
 
-    private CiudadActual actual;
-    private CiudadProxima proxima;
+    private Ciudad actual;
+    private Ciudad proxima;
 
 
-    public Mapa(CiudadActual actual, CiudadProxima proxima){
+    public Mapa(Ciudad actual, Ciudad proxima){
         this.actual = actual;
         this.proxima = proxima;
     }
@@ -13,7 +13,7 @@ public class Mapa {
         return actual.visitar(proxima, unEdificio, policia);
     }
 
-    public CiudadActual ciudadActual(){
+    public Ciudad ciudadActual(){
         return this.actual;
     }
 

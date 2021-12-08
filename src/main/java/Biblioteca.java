@@ -10,7 +10,7 @@ public class Biblioteca implements Edificio{
     }
 
     @Override
-    public String darPista(CiudadProxima ciudad){
+    public String darPista(Ciudad ciudad){
         this.contadorVisitas++;
         return this.pista.darPista(ciudad.getDatoRandom());
     }

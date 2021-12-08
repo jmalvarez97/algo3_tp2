@@ -11,7 +11,7 @@ public class Aeropuerto implements Edificio{
     }
 
     @Override
-    public String darPista(CiudadProxima ciudad){
+    public String darPista(Ciudad ciudad){
         this.contadorVisitas++;
         return this.pista.darPista(ciudad.getColores());
     }

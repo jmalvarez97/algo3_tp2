@@ -7,8 +7,8 @@ public class CasosDeUsoEntrega1Test {
     private Ladron ladron = new Ladron();
 
     // Van aca para que en el caso2 se mantenga la cantidad de visitas en Banco
-    CiudadActual montreal = new CiudadActual();
-    CiudadProxima mexico = new CiudadProxima("roja blanca y verde","pesos","civilizacion azteca");
+    Ciudad montreal = new Ciudad("rojo y blanco","dolar canadiense","segundo pais mas grande");
+    Ciudad mexico = new Ciudad("roja blanca y verde","pesos","civilizacion azteca");
     Mapa unMapa = new Mapa(montreal,mexico);
 
     private Caso caso = new Caso(policia, ladron, unMapa );
@@ -54,7 +54,7 @@ public class CasosDeUsoEntrega1Test {
         /* Caso de uso 3
         - Detective viaja de Montreal a México */
 
-        CiudadActual mexicoActual = new CiudadActual();
+        Ciudad mexicoActual = new Ciudad("roja blanca y verde","pesos","civilizacion azteca");
         caso.viajar(mexicoActual);
 
         assertEquals(mexicoActual, caso.ciudadActual());

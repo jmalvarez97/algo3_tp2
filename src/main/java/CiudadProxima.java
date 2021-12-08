@@ -1,4 +1,4 @@
-
+/*
 public class CiudadProxima {
 
     private String moneda;
@@ -22,4 +22,4 @@ public class CiudadProxima {
     public String getDatoRandom(){ return this.datoRandom;}
 
 }
-
+*/
