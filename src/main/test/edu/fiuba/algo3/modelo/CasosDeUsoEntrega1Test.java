@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CasosDeUsoEntrega1Test {
 
-    private Policia policia = new Novato();
+    private Policia policia = new Policia();
     private Ladron ladron = new Ladron();
 
     // Van aca para que en el caso2 se mantenga la cantidad de visitas en Banco

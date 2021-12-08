@@ -1,0 +1,24 @@
+{
+  {
+    "nombre": "Mexico",
+    "moneda" : "pesos",
+    "colores" : "Rojo verde y blanco",
+    "datoRandom": "Civilizacion azteca"
+  }
+
+  {
+    "nombre" : "Montreal",
+    "moneda" : "dolar",
+    "colores" : "Rojo y blanco",
+    "datoRandom" : "jarabe de maple (xd)"
+  }
+
+  {
+    "nombre" : "Buenos Aires",
+    "moneda" : "pesos",
+    "colores" : "Celeste y blanco",
+    "datoRandom" : "obelisco"
+  }
+
+
+}

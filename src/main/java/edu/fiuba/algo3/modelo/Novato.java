@@ -1,33 +1,28 @@
 package edu.fiuba.algo3.modelo;
 
-public class Novato implements Policia{
-    private Reloj reloj;
-    private int horasPorHeridaCuchillo;
+public class Novato implements StatePolicia {
     private int velocidad;
+    private Policia policia;
+
 
     public Novato(){
-        this.horasPorHeridaCuchillo = 2;
-        this.reloj = new Reloj();
         this.velocidad = 900;
     }
 
-    public int horasRestantes(){
-        return this.reloj.horasRestantes();
+    public int velocidad(){
+        return this.velocidad;
     }
 
-    public int hora(){
-        return this.reloj.hora();
+    public void confirmarCaso(int casosResueltos){
+        if(casosResueltos >= 5){
+            this.policia.setState(new Detective());
+        }
+
     }
 
-    @Override
-    public void descontarHoras(int horas) {
-        this.reloj.descontarHoras(horas);
+    public void setPolicia(Policia policia){
+        this.policia = policia;
     }
 
-    public void herirConCuchillo(){
-        this.descontarHoras(horasPorHeridaCuchillo);
-        this.horasPorHeridaCuchillo = 1;
-    }
 
-    public int velocidad(){ return this.velocidad;}
 }
