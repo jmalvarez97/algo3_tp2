@@ -13,8 +13,8 @@ public class Reloj {
         this.horasDia = this.horasDia + horas;
 
         if(horasDia >= 23){
-            this.horasRestantes = this.horasRestantes - (31 - horasDia); // El policia duerme lo que alcance hasta las 7 am
-            this.horasDia = 7;
+            this.horasRestantes = this.horasRestantes - 8; // El policia duerme 8h
+            this.horasDia += 8 - 24; // Se despierta 8h despues de irse a dormir
         }
     }
 

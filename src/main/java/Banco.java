@@ -15,7 +15,7 @@ public class Banco implements Edificio{
         return this.pista.darPista(ciudad.getMoneda());
     }
 
-
+    @Override
     public void descontarHorasDePolicia(Policia policia){
         int horasASacar = Math.min(contadorVisitas, 3);
         policia.descontarHoras(horasASacar);

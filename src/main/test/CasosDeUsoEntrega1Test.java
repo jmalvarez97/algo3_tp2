@@ -79,7 +79,7 @@ public class CasosDeUsoEntrega1Test {
             caso.visitar("banco");
         }
 
-        int tiempoRestanteEsperado = 154 - (1 + 2 + 3) - (1 + 2 + 3 + 3 + 3) - 6;
+        int tiempoRestanteEsperado = 154 - (1 + 2 + 3) - (1 + 2 + 3 + 3 + 3) - 8;
         assertEquals(policia.horasRestantes(),tiempoRestanteEsperado);
     }
 }

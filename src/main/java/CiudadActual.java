@@ -51,16 +51,11 @@ public class CiudadActual {
         return this.biblioteca;
     }
 
-    public int getVisitas(String unEdificio){
-        Edificio edificio = detectarEdificio(unEdificio);
-
-        return edificio.cantidadVisitas();
-    }
-
     public String visitar(CiudadProxima proxima, String unEdificio, Policia policia) {
         Edificio edificio = detectarEdificio(unEdificio);
+        String pista = edificio.darPista(proxima);
         edificio.descontarHorasDePolicia(policia); // tambien se podria en darPista, cada pista dada lleva un tiempo
-        return edificio.darPista(proxima);
+        return pista;
 
     }
 

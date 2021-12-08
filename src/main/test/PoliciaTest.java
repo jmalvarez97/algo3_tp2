@@ -42,8 +42,8 @@ public class PoliciaTest {
     @Test
     public void testSeHaceDeNochePoliciaDuerme(){
         assertEquals(policia.horasRestantes(),154);
-        policia.descontarHoras(16); // Se hacen las 23 hs
-        assertEquals(policia.horasRestantes(), 130);
-        assertEquals(policia.hora(), 7);
+        policia.descontarHoras(20); // Se hace de noche
+        assertEquals(policia.horasRestantes(), 154 - 20 - 8);
+        assertEquals(policia.hora(), 11); // Se despierta 11am
     }
 }

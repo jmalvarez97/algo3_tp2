@@ -13,10 +13,6 @@ public class Mapa {
         return actual.visitar(proxima, unEdificio, policia);
     }
 
-    public int getVisitas(String unEdificio){
-        return actual.getVisitas(unEdificio);
-    }
-
     public CiudadActual ciudadActual(){
         return this.actual;
     }
