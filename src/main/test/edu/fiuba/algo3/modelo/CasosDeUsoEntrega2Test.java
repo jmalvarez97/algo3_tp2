@@ -58,7 +58,8 @@ public class CasosDeUsoEntrega2Test {
         //Caso de uso 3
         //Cargar en la computadora los datos recopilados y buscar sospechosos.
 
-    
+
+
     }
 }
 
