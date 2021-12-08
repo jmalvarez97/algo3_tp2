@@ -1,3 +1,5 @@
+package edu.fiuba.algo3.modelo;
+
 public class Sargento implements Policia{
     private Reloj reloj;
     private int horasPorHeridaCuchillo;

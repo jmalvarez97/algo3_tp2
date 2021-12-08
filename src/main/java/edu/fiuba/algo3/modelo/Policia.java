@@ -1,3 +1,5 @@
+package edu.fiuba.algo3.modelo;
+
 public interface Policia{
 
     //int cantidadDeArrestos = 0;

@@ -1,11 +1,13 @@
-public class Banco implements Edificio{
+package edu.fiuba.algo3.modelo;
+
+public class Puerto implements Edificio{
 
     private Pista pista;
     private int contadorVisitas;
 
-    public Banco(){
+    public Puerto(){
         // Para que no sea siempre la misma, se agarra con un random de algun archivo?
-        this.pista = new PistaFacil("Banco");
+        this.pista = new PistaFacil("Puerto");
         this.contadorVisitas = 0;
     }
 
@@ -21,4 +23,3 @@ public class Banco implements Edificio{
         policia.descontarHoras(horasASacar);
     }
 }
-

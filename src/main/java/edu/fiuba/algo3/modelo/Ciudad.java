@@ -1,3 +1,5 @@
+package edu.fiuba.algo3.modelo;
+
 public class Ciudad {
     private String moneda;
     private String coloresDeBandera;

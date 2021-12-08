@@ -1,3 +1,5 @@
+package edu.fiuba.algo3.modelo;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

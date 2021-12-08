@@ -1,3 +1,4 @@
+package edu.fiuba.algo3.modelo;
 
 public class Caso {
 
@@ -17,8 +18,7 @@ public class Caso {
 
 
     public String visitar(String unEdificio) {
-        String pista = mapa.visitar(unEdificio,policia);
-        return pista;
+        return mapa.visitar(unEdificio,policia);
     }
 
     /*

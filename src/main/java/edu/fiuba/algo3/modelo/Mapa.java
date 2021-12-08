@@ -1,3 +1,5 @@
+package edu.fiuba.algo3.modelo;
+
 public class Mapa {
 
     private Ciudad actual;

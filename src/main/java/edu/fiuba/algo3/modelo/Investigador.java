@@ -1,12 +1,14 @@
-public class Detective implements Policia{
+package edu.fiuba.algo3.modelo;
+
+public class Investigador implements Policia{
     private Reloj reloj;
     private int horasPorHeridaCuchillo;
     private int velocidad;
 
-    public Detective(){
+    public Investigador(){
         this.horasPorHeridaCuchillo = 2;
         this.reloj = new Reloj();
-        this.velocidad = 1100;
+        this.velocidad = 1300;
     }
 
     public int horasRestantes(){

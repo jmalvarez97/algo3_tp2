@@ -1,12 +1,14 @@
-public class Novato implements Policia{
+package edu.fiuba.algo3.modelo;
+
+public class Detective implements Policia{
     private Reloj reloj;
     private int horasPorHeridaCuchillo;
     private int velocidad;
 
-    public Novato(){
+    public Detective(){
         this.horasPorHeridaCuchillo = 2;
         this.reloj = new Reloj();
-        this.velocidad = 900;
+        this.velocidad = 1100;
     }
 
     public int horasRestantes(){
