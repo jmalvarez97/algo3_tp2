@@ -17,23 +17,18 @@ public class Caso {
 
 
     public String visitar(String unEdificio) {
-        String pista = mapa.visitar(unEdificio);
-
-        descontarHoras(unEdificio);
-
+        String pista = mapa.visitar(unEdificio,policia);
         return pista;
-        //String pista =  actual.visitar(proxima);
-        //policia.descontarHoras(1);
-        //return pista;
     }
 
+    /*
     public void descontarHoras(String unEdificio){
+        // Le mando todos los datos a policia
         int cantidadVisitas = mapa.getVisitas(unEdificio);
-
-        if(cantidadVisitas > 3){cantidadVisitas = 3;}
-
+        if(cantidadVisitas > 3){cantidadVisitas = 3;} //Le pertenece a edificio
         this.policia.descontarHoras(cantidadVisitas);
     }
+     */
 
     public String generarObjetoRobado() {
         return "Tesoro Nacional";

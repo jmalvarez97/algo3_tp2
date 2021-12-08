@@ -16,8 +16,9 @@ public class Banco implements Edificio{
     }
 
     @Override
-    public int cantidadVisitas() {
-        return this.contadorVisitas;
+    public void descontarHorasDePolicia(Policia policia){
+        int horasASacar = Math.min(contadorVisitas, 3);
+        policia.descontarHoras(horasASacar);
     }
 }
 

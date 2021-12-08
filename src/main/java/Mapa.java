@@ -8,12 +8,9 @@ public class Mapa {
         this.actual = actual;
         this.proxima = proxima;
     }
-    public String visitar(String unEdificio){
-        return actual.visitar(proxima, unEdificio);
-    }
 
-    public int getVisitas(String unEdificio){
-        return actual.getVisitas(unEdificio);
+    public String visitar(String unEdificio, Policia policia){
+        return actual.visitar(proxima, unEdificio, policia);
     }
 
     public CiudadActual ciudadActual(){
