@@ -15,12 +15,6 @@ public class CiudadActual {
         this.biblioteca = new Biblioteca();
     }
 
-    public String visitar(CiudadProxima proxima, String unEdificio) {
-
-        Edificio edificio = detectarEdificio(unEdificio);
-
-        return edificio.darPista(proxima);
-    }
 
     private String visitar(CiudadProxima proxima, Edificio unEdificio){
         return unEdificio.darPista(proxima);
@@ -63,8 +57,12 @@ public class CiudadActual {
         return edificio.cantidadVisitas();
     }
 
+    public String visitar(CiudadProxima proxima, String unEdificio, Policia policia) {
+        Edificio edificio = detectarEdificio(unEdificio);
+        edificio.descontarHorasDePolicia(policia); // tambien se podria en darPista, cada pista dada lleva un tiempo
+        return edificio.darPista(proxima);
 
-
+    }
 
 
     //Ladron ladron = new Ladron();

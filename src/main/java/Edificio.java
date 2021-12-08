@@ -6,4 +6,5 @@ public interface Edificio {
 
     String darPista(CiudadProxima ciudadProxima);
     int cantidadVisitas();
+    void descontarHorasDePolicia(Policia policia);
 }
