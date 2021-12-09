@@ -54,7 +54,7 @@ public class CasosDeUsoEntrega2Test {
     }
 
     @Test
-    public void testCasoTres{
+    public void testCasoTres(){
         //Caso de uso 3
         //Cargar en la computadora los datos recopilados y buscar sospechosos.
 
