@@ -6,18 +6,17 @@
         "Pelo": "Negro",
         "Senia":  "Anillo",
         "Vehiculo": "Moto"
-    }
+    },
 
     {
         "Nombre": "Len Bulk",
         "Sexo": "Masculino",
         "Hobby": "Alpinismo",
         "Pelo": "Rojo",
-        "Senia":  "Tatuaje", 
+        "Senia":  "Tatuaje",
         "Vehiculo": "Convertible"
-    
-    }
 
+    },
     {
         "Nombre": "Ihor Ihorovitch",
         "Sexo": "Masculino",
@@ -25,7 +24,7 @@
         "Pelo": "Rubio",
         "Senia": "Tatuaje",
         "Vehiculo": "Limusina"
-    }
+    },
 
     {
         "Nombre": "Fast Eddie B.",
@@ -34,7 +33,7 @@
         "Pelo": "Negro",
         "Senia":  "Joyas",
         "Vehiculo": "Convertible"
-    }
+    },
 
     {
         "Nombre": "Scar Graynolt",
@@ -43,7 +42,7 @@
         "Pelo": "Rojo",
         "Senia":  "Anillo",
         "Vehiculo": "Limusina"
-    }
+    },
 
     {
         "Nombre": "Merey Laroc",
@@ -52,7 +51,7 @@
         "Pelo": "Castaño",
         "Senia":  "Joyas",
         "Vehiculo": "Limusina"
-    }
+    },
 
     {
         "Nombre": "Lady Agatha",
@@ -62,7 +61,7 @@
         "Senia":  "Anillo",
         "Vehiculo": "Convertible"
 
-    }
+    },
 
     {
         "Nombre": "Katherine Drib",
@@ -71,7 +70,7 @@
         "Pelo": "Castaño",
         "Senia":  "Tatuaje",
         "Vehiculo": "Moto"
-    }
+    },
 
     {
         "Nombre": "Dazzle Annie",
@@ -80,7 +79,7 @@
         "Pelo": "Rubio",
         "Senia":  "Tatuaje",
         "Vehiculo": "Limusina"
-    }
+    },
 
     {
         "Nombre": "Carmen Sandiego",

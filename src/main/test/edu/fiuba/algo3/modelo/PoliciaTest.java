@@ -17,7 +17,6 @@ public class PoliciaTest {
 
     private Caso caso = new Caso(policia, ladron, unMapa );
 
-
     @Test
     public void testLeDescuentoHorasAUnPolicia(){
 

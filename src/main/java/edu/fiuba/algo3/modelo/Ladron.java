@@ -1,14 +1,12 @@
 package edu.fiuba.algo3.modelo;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+
+import java.io.*;
+import java.util.List;
 import java.util.Random;
 
-
 public class Ladron {
-
+    private String nombre;
     private String sexo;
     private String hobby;
     private String cabello;
@@ -16,7 +14,8 @@ public class Ladron {
     private String vehiculo;
 
 
-    public Ladron(String sexo, String hobby, String cabello, String senia, String vehiculo){
+    public Ladron(String nombre,String sexo, String hobby, String cabello, String senia, String vehiculo){
+        this.nombre = nombre;
         this.sexo = sexo;
         this.hobby = hobby;
         this.cabello = cabello;
@@ -69,5 +68,12 @@ public class Ladron {
 
         return;
     }
+
+    public String getHobby(){
+        return this.hobby;
+    }
+
 }
+
+
 
