@@ -6,9 +6,6 @@ public abstract class Decorator implements Ladron{
     String cualidad;
     Ladron ladron;
 
-    Decorator(Ladron ladron){
-        this.ladron = ladron;
-    }
     Decorator(Ladron ladron, String cualidad){
         this.ladron = ladron;
         this.cualidad = cualidad;
@@ -19,7 +16,7 @@ public abstract class Decorator implements Ladron{
         return ladron.misCualidades();
     }
 
-    public boolean coinciden(Decorator otroLadron) {
+    public boolean contiene(Decorator otroLadron) {
         ArrayList<String> lista = this.misCualidades();
         return otroLadron.incluyeA(lista);
 

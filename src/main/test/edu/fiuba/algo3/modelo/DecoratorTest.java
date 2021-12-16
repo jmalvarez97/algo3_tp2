@@ -11,32 +11,34 @@ public class DecoratorTest {
     public void testCreoDosLadronesYVeoSuLogicaDeComparacion() {
 
         LadronBase ladron = new LadronBase();
-        PeloRubio pelo = new PeloRubio(ladron);
-        Tenis ladronConPeloRubioYJuegaTenis = new Tenis(pelo);
+        Capa pelo = new Capa(ladron,"Rubio");
+        Capa ladronConPeloRubioYJuegaTenis = new Capa(pelo,"Tenis");
 
 
         LadronBase ladron2 = new LadronBase();
-        PeloRubio pelo2 = new PeloRubio(ladron2);
-        Tenis tenis2 = new Tenis(pelo2);
-        Vehiculo ladronConPeloRubioJuegaTenisYTieneLimusina = new Vehiculo(tenis2, "Limusina");
+        Capa pelo2 = new Capa(ladron2,"Rubio");
+        Capa tenis2 = new Capa(pelo2,"Tenis");
+        Capa ladronConPeloRubioJuegaTenisYTieneLimusina = new Capa(tenis2, "Limusina");
 
 
-        boolean a = ladronConPeloRubioYJuegaTenis.coinciden(ladronConPeloRubioJuegaTenisYTieneLimusina);
+        boolean a = ladronConPeloRubioYJuegaTenis.contiene(ladronConPeloRubioJuegaTenisYTieneLimusina);
 
-        assert(a);
+        assertEquals(a,true);
     }
 
     @Test
     public void testCreoDosLadronesDistintosPorLoTantoDaFalse(){
         LadronBase ladron = new LadronBase();
-        PeloRubio pelo = new PeloRubio(ladron);
-        Tenis ladronConPeloRubioYJuegaTenis = new Tenis(pelo);
+        Capa pelo = new Capa(ladron,"Rubio");
+        Capa ladronConPeloRubioYJuegaTenis = new Capa(pelo,"Tenis");
+
 
         LadronBase ladron2 = new LadronBase();
-        PeloRojo pelo2 = new PeloRojo(ladron2);
-        Tenis ladronConPeloRojoJuegaTenis = new Tenis(pelo2);
+        Capa pelo2 = new Capa(ladron2,"False");
+        Capa ladronConPeloRojoJuegaTenis = new Capa(pelo2,"Tenis");
 
-        boolean esFalso = ladronConPeloRubioYJuegaTenis.coinciden(ladronConPeloRojoJuegaTenis);
+
+        boolean esFalso = ladronConPeloRubioYJuegaTenis.contiene(ladronConPeloRojoJuegaTenis);
         assertEquals(esFalso,false);
     }
 }
