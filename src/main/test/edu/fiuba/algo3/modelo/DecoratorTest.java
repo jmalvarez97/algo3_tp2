@@ -1,36 +1,44 @@
-import edu.fiuba.algo3.Decorator.LadronBase;
-import edu.fiuba.algo3.Decorator.PeloRubio;
-import edu.fiuba.algo3.Decorator.Tenis;
-import edu.fiuba.algo3.Decorator.Vehiculo;
+import edu.fiuba.algo3.Decorator.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class DecoratorTest {
+
     @Test
-    public void testCreoUnLadronBaseYLeAgregoCaracteristicas(){
+    public void testCreoDosLadronesYVeoSuLogicaDeComparacion() {
+
         LadronBase ladron = new LadronBase();
         PeloRubio pelo = new PeloRubio(ladron);
-        Tenis LadronConPeloRubioYJuegaTenis = new Tenis(pelo);
+        Tenis ladronConPeloRubioYJuegaTenis = new Tenis(pelo);
 
-        ArrayList<String> lista = LadronConPeloRubioYJuegaTenis.misCualidades();
-        System.out.println(lista.get(0));
-        System.out.println(lista.get(1));
 
-        assert(true);
+        LadronBase ladron2 = new LadronBase();
+        PeloRubio pelo2 = new PeloRubio(ladron2);
+        Tenis tenis2 = new Tenis(pelo2);
+        Vehiculo ladronConPeloRubioJuegaTenisYTieneLimusina = new Vehiculo(tenis2, "Limusina");
+
+
+        boolean a = ladronConPeloRubioYJuegaTenis.coinciden(ladronConPeloRubioJuegaTenisYTieneLimusina);
+
+        assert(a);
     }
 
     @Test
-    public void testCreoUnLadronConElConstructorModificado(){
+    public void testCreoDosLadronesDistintosPorLoTantoDaFalse(){
         LadronBase ladron = new LadronBase();
         PeloRubio pelo = new PeloRubio(ladron);
-        Vehiculo ladronConPeloYVehiculo = new Vehiculo(pelo, "Convertible");
-        ArrayList<String> lista = ladronConPeloYVehiculo.misCualidades();
-        System.out.println(lista.get(0));
-        System.out.println(lista.get(1));
+        Tenis ladronConPeloRubioYJuegaTenis = new Tenis(pelo);
 
-        assert(true);
+        LadronBase ladron2 = new LadronBase();
+        PeloRojo pelo2 = new PeloRojo(ladron2);
+        Tenis ladronConPeloRojoJuegaTenis = new Tenis(pelo2);
 
-
+        boolean esFalso = ladronConPeloRubioYJuegaTenis.coinciden(ladronConPeloRojoJuegaTenis);
+        assertEquals(esFalso,false);
     }
 }
+
+

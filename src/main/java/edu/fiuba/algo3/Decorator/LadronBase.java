@@ -8,6 +8,7 @@ public class LadronBase implements Ladron{
     @Override
     public ArrayList<String> misCualidades() {
         this.lista = new ArrayList<String>();
-        return lista;
+        return this.lista;
     }
+
 }

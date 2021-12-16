@@ -18,4 +18,16 @@ public abstract class Decorator implements Ladron{
     public ArrayList<String> misCualidades() {
         return ladron.misCualidades();
     }
+
+    public boolean coinciden(Decorator otroLadron) {
+        ArrayList<String> lista = this.misCualidades();
+        return otroLadron.incluyeA(lista);
+
+    }
+
+    protected boolean incluyeA(ArrayList<String> lista) {
+        ArrayList<String> miLista = this.misCualidades();
+        return miLista.containsAll(lista);
+
+    }
 }
