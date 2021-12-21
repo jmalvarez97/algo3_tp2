@@ -13,15 +13,17 @@ import java.util.ArrayList;
 
 public class LecturaLadrones {
 
-    public void leerLadrones() {
+    public static ArrayList<Ladron> leerLadrones() {
         //leemos un json con los ladrones y los cargamos en una lista
         JSONParser parser = new JSONParser();
+        ArrayList<Ladron> listaLadrones = new ArrayList<Ladron>();
+
         try (FileReader reader = new FileReader("dossiers.json")) {
             //Leemos el archivo JSON
             Object obj = parser.parse(reader);
 
             JSONArray listaLadronesJson = (JSONArray) obj;
-            ArrayList<Ladron> listaLadrones = new ArrayList<Ladron>();
+
 
             //Itero la lista de Ladrones
             for(int i=0; i > listaLadronesJson.size(); i++) {
@@ -36,6 +38,8 @@ public class LecturaLadrones {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+        return listaLadrones;
     }
 
 

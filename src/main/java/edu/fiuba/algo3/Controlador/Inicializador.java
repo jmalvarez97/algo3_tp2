@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.Controlador;
 
 import edu.fiuba.algo3.modelo.Ciudad;
+import edu.fiuba.algo3.modelo.Ladron;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -12,6 +13,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Inicializador {
+
+    ArrayList<Ciudad> listaCiudades = LecturaCiudades.leerCiudades();
+    ArrayList<Ladron> listaLadrones = LecturaLadrones.leerLadrones();
 
 
 }

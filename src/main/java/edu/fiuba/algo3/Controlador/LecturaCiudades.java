@@ -13,15 +13,17 @@ import java.util.ArrayList;
 
 public class LecturaCiudades {
 
-    public void leerCiudades() {
+    public static ArrayList<Ciudad> leerCiudades() {
         //leemos un json para definir si vamos a crear un banco o bolsa/puerto o aeropuerto
         JSONParser parser = new JSONParser();
+        ArrayList<Ciudad> listaCiudades = new ArrayList<Ciudad>();
+
         try (FileReader reader = new FileReader("ciudadesSinTerminar.json")) {
             //Leemos el archivo JSON
             Object obj = parser.parse(reader);
 
-            JSONArray listaLadronesJson = (JSONArray) obj;
-            ArrayList<Ciudad> listaCiudades = new ArrayList<Ciudad>();
+            JSONArray listaCiudadesJson = (JSONArray) obj;
+
 
             //Itero la lista de ciudades
             for(int i=0; i > listaCiudadesJson.size(); i++) {
@@ -36,6 +38,8 @@ public class LecturaCiudades {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+        return listaCiudades;
     }
     private static Ciudad parseCiudadObject(JSONObject ciudad)
     {
