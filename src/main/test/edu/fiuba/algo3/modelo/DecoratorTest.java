@@ -1,46 +1,31 @@
 import edu.fiuba.algo3.Decorator.*;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DecoratorTest {
 
     @Test
     public void testCreoDosLadronesYVeoSuLogicaDeComparacion() {
 
-        LadronBase ladron = new LadronBase();
-        Capa pelo = new Capa(ladron,"Rubio");
-        Capa ladronConPeloRubioYJuegaTenis = new Capa(pelo,"Tenis");
+        Ladron ladron = new Ladron();
+        ColorDePelo pelo = new ColorDePelo(ladron,"Rubio");
+        Hobby ladronConPeloRubioYJuegaTenis = new Hobby(pelo,"Tenis");
 
 
-        LadronBase ladron2 = new LadronBase();
-        Capa pelo2 = new Capa(ladron2,"Rubio");
-        Capa tenis2 = new Capa(pelo2,"Tenis");
-        Capa ladronConPeloRubioJuegaTenisYTieneLimusina = new Capa(tenis2, "Limusina");
+        Ladron ladron2 = new Ladron();
+        ColorDePelo pelo2 = new ColorDePelo(ladron2,"Rubio");
+        Hobby tenis2 = new Hobby(pelo2,"Tenis");
+        Vehiculo ladronConPeloRubioJuegaTenisYTieneLimusina = new Vehiculo(tenis2, "Limusina");
 
 
-        boolean a = ladronConPeloRubioYJuegaTenis.contiene(ladronConPeloRubioJuegaTenisYTieneLimusina);
+        boolean a = ladronConPeloRubioYJuegaTenis.preguntar("Rubio");
+        boolean b = ladronConPeloRubioJuegaTenisYTieneLimusina.preguntar("Convertible");
 
-        assertEquals(a,true);
+        assertTrue(a);
+        assertFalse(b);
     }
 
-    @Test
-    public void testCreoDosLadronesDistintosPorLoTantoDaFalse(){
-        LadronBase ladron = new LadronBase();
-        Capa pelo = new Capa(ladron,"Rubio");
-        Capa ladronConPeloRubioYJuegaTenis = new Capa(pelo,"Tenis");
-
-
-        LadronBase ladron2 = new LadronBase();
-        Capa pelo2 = new Capa(ladron2,"False");
-        Capa ladronConPeloRojoJuegaTenis = new Capa(pelo2,"Tenis");
-
-
-        boolean esFalso = ladronConPeloRubioYJuegaTenis.contiene(ladronConPeloRojoJuegaTenis);
-        assertEquals(esFalso,false);
-    }
 }
 
 

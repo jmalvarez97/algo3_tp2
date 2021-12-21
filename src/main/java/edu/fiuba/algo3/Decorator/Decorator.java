@@ -2,29 +2,17 @@ package edu.fiuba.algo3.Decorator;
 
 import java.util.ArrayList;
 
-public abstract class Decorator implements Ladron{
+public abstract class Decorator implements Pregunta {
     String cualidad;
-    Ladron ladron;
+    Pregunta pregunta;
 
-    Decorator(Ladron ladron, String cualidad){
-        this.ladron = ladron;
+    Decorator(Pregunta pregunta, String cualidad){
+        this.pregunta = pregunta;
         this.cualidad = cualidad;
     }
 
     @Override
-    public ArrayList<String> misCualidades() {
-        return ladron.misCualidades();
-    }
-
-    public boolean contiene(Decorator otroLadron) {
-        ArrayList<String> lista = this.misCualidades();
-        return otroLadron.incluyeA(lista);
-
-    }
-
-    protected boolean incluyeA(ArrayList<String> lista) {
-        ArrayList<String> miLista = this.misCualidades();
-        return miLista.containsAll(lista);
-
+    public boolean preguntar(String dato) {
+        return this.preguntar(dato);
     }
 }

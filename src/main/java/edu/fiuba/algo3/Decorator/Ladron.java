@@ -1,8 +1,10 @@
 package edu.fiuba.algo3.Decorator;
 
-import java.util.ArrayList;
+public class Ladron implements Pregunta {
 
-public interface Ladron {
-    ArrayList<String> misCualidades();
 
+    @Override
+    public boolean preguntar(String dato) {
+        return false;
+    }
 }
