@@ -1,5 +1,11 @@
 package edu.fiuba.algo3.modelo;
 
+
+import org.json.simple.JSONArray;
+import org.json.simple.parser.JSONParser;
+
+import java.io.FileReader;
+
 public class Ciudad {
     private String moneda;
     private String coloresDeBandera;
@@ -10,11 +16,16 @@ public class Ciudad {
 
 
     public Ciudad(String colores, String moneda, String datoRandom){
+
+
         this.moneda = moneda;
         this.coloresDeBandera = colores;
         this.datoRandom = datoRandom;
 
-        //leemos un json para definir si vamos a crear un banco o bolsa/puerto o aeropuerto
+
+
+
+
         this.banco = new Banco();
         //this.bolsa = new Bolsa();
         this.puerto = new Puerto();
