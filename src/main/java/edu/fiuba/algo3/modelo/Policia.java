@@ -1,15 +1,19 @@
 package edu.fiuba.algo3.modelo;
 
+import java.util.ArrayList;
+
 public class Policia {
     private Reloj reloj;
     private StatePolicia state;
+    private Computadora computadora;
     private int casosResueltos;
     private int horasPorHeridaCuchillo;
 
 
-    public Policia(){
-        setState(new Novato());
+    public Policia(ArrayList<Ladron> listaLadrones){
         this.reloj = new Reloj();
+        setState(new Novato());
+        this.computadora = new Computadora(listaLadrones);
         this.casosResueltos = 0;
         this.horasPorHeridaCuchillo = 2;
     }
@@ -18,6 +22,7 @@ public class Policia {
         return (this.state).valorObjetoRobado();
     }
 
+    public void descontarHorasDeViaje(double distancia) { descontarHoras(state.horasDeViaje(distancia));}
 
     public int horasRestantes(){
         return this.reloj.horasRestantes();

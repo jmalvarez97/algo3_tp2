@@ -29,5 +29,10 @@ public class Detective implements StatePolicia {
         this.policia = policia;
     }
 
+    @Override
+    public int horasDeViaje(double distancia) {
+        return distancia * this.velocidad;
+    }
+
 
 }

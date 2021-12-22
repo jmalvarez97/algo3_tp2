@@ -25,6 +25,10 @@ public class Novato implements StatePolicia {
 
     }
 
+    public int horasDeViaje(double distancia) {
+        return distancia * this.velocidad;
+    }
+
     public void setPolicia(Policia policia){
         this.policia = policia;
     }

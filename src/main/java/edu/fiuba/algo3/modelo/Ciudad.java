@@ -144,11 +144,8 @@ public class Ciudad {
     public String getMoneda(){
         return this.moneda;
     }
-
-    public String getColores(){
-        return this.coloresDeBandera;
-    }
-
-    public String getDatoRandom(){ return this.datoRandom;}
+    public String getNombre() { return this.nombre; }
+    public double getLatitud() {return this.latitud;}
+    public double getLongitud() {return this.longitud;}
 }
 

@@ -19,7 +19,7 @@ public class Partida{
         this.listaLadrones = LecturaLadrones.leerLadrones();
         this.listaTesoros = LecturaTesoros.leerTesoros();
 
-        this.policia = new Policia();
+        this.policia = new Policia(listaLadrones);
         nuevoCaso();
     }
 
@@ -42,7 +42,7 @@ public class Partida{
         Ciudad ciudadProxima  = this.listaCiudades.get(randomIndex);
 
         //Creamos un mapa
-        Mapa unMapa = new Mapa(ciudadInicial, ciudadProxima);
+        Mapa unMapa = new Mapa(ciudadInicial, ciudadProxima, listaCiudades);
 
         //Creamos un caso
         this.caso = new Caso(this.policia, tesoroDelCaso, ladronDelCaso, unMapa);
