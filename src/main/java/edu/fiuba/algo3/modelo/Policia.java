@@ -19,7 +19,7 @@ public class Policia {
     }
 
     public String devolverValorTesoro(){
-        return (this.state).valorObjetoRobado();
+        return (this.state).valorObjetoBuscado();
     }
 
     public void descontarHorasDeViaje(double distancia) { descontarHoras(state.horasDeViaje(distancia));}

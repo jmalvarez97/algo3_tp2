@@ -2,19 +2,23 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.*;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CasosDeUsoEntrega1Test {
 
-    private Policia policia = new Policia();
     private Ladron ladron = new Ladron();
+    private Policia policia = new Policia(new ArrayList<Ladron>(){{add(ladron);}});
+    private Tesoro tesoro = new Tesoro();
 
     // Van aca para que en el caso2 se mantenga la cantidad de visitas en Banco
     Ciudad montreal = new Ciudad("rojo y blanco","dolar canadiense","segundo pais mas grande");
     Ciudad mexico = new Ciudad("roja blanca y verde","pesos","civilizacion azteca");
-    Mapa unMapa = new Mapa(montreal,mexico);
+    Mapa unMapa = new Mapa(montreal,mexico, new ArrayList<Ciudad>(){{add(montreal); add(mexico);}});
 
-    private Caso caso = new Caso(policia, ladron, unMapa );
+    private Caso caso = new Caso(policia, tesoro, ladron, unMapa );
 
 
     @Test
@@ -57,10 +61,9 @@ public class CasosDeUsoEntrega1Test {
         /* Caso de uso 3
         - Detective viaja de Montreal a México */
 
-        Ciudad mexicoActual = new Ciudad("roja blanca y verde","pesos","civilizacion azteca");
-        caso.viajar(mexicoActual);
+        unMapa.viajar(mexico);
 
-        assertEquals(mexicoActual, caso.ciudadActual());
+        assertEquals(mexico, caso.ciudadActual());
         assertEquals(policia.horasRestantes(), 154-3);
     }
 

@@ -147,5 +147,7 @@ public class Ciudad {
     public String getNombre() { return this.nombre; }
     public double getLatitud() {return this.latitud;}
     public double getLongitud() {return this.longitud;}
+    public ArrayList<String> getColores() {return this.colorBandera;}
+    public String getDatoRandom() {return this.arte;}
 }
 
