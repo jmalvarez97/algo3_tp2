@@ -14,6 +14,10 @@ public class Policia {
         this.horasPorHeridaCuchillo = 2;
     }
 
+    public String devolverValorTesoro(){
+        return (this.state).valorObjetoRobado();
+    }
+
 
     public int horasRestantes(){
         return this.reloj.horasRestantes();

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3;
+package edu.fiuba.algo3.Vista;
 
 import javafx.event.EventHandler;
 import javafx.scene.control.Label;

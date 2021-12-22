@@ -1,12 +1,14 @@
-package edu.fiuba.algo3;
+package edu.fiuba.algo3.Controlador;
 
+import edu.fiuba.algo3.Vista.SystemInfo;
+import edu.fiuba.algo3.Vista.BotonEnviarEventHandler;
+import edu.fiuba.algo3.Vista.TextoEventHandler;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;

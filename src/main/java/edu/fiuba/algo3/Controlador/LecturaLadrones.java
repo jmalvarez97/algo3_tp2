@@ -27,7 +27,7 @@ public class LecturaLadrones {
 
             //Itero la lista de Ladrones
             for(int i=0; i > listaLadronesJson.size(); i++) {
-                listaLadrones.add( parseLadronObject((JSONObject) listaLadronesJson.get(i)) );
+                listaLadrones.add( new Ladron( (JSONObject) listaLadronesJson.get(i)) );
             }
 
 
@@ -40,41 +40,5 @@ public class LecturaLadrones {
         }
 
         return listaLadrones;
-    }
-
-
-
-
-
-    private static Ladron parseLadronObject(JSONObject dossier)
-    {
-        //Leemos el nombre de la Ladron
-        String nombre = (String) dossier.get("nombre");
-
-        //Leemos el sexo
-        String sexo = (String) dossier.get("sexo");
-
-        //Leemos la ocupacion
-        String ocupacion = (String) dossier.get("ocupacion");
-
-        //Leemos el hobby
-        String hobby = (String) dossier.get("hobby");
-
-        //Leemos el colorDelPelo
-        String colorDelPelo = (String) dossier.get("colorDelPelo");
-
-        //Leemos el coche
-        String coche = (String) dossier.get("coche");
-
-        //Leemos las señas particulares
-        String senias = (String) dossier.get("señasParticulares");
-
-        //Leemos "otros"
-        String otros = (String) dossier.get("otros");
-
-
-        //Esto no puede ser asi
-        Ladron newLadron = new Ladron(nombre, sexo, ocupacion, hobby, colorDelPelo, coche, senias, otros);
-        return newLadron;
     }
 }

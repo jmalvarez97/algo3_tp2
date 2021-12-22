@@ -1,9 +1,9 @@
-package edu.fiuba.algo3.Decorator;
+package edu.fiuba.algo3.modelo.Decorator;
 
 import java.util.Objects;
 
-public class Hobby extends Decorator{
-    public Hobby(Pregunta pregunta, String cualidad) {
+public class Senia extends Decorator{
+    public Senia(Pregunta pregunta, String cualidad) {
         super(pregunta, cualidad);
     }
 

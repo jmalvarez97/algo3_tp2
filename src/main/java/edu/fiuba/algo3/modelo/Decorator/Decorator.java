@@ -1,6 +1,4 @@
-package edu.fiuba.algo3.Decorator;
-
-import java.util.ArrayList;
+package edu.fiuba.algo3.modelo.Decorator;
 
 public abstract class Decorator implements Pregunta {
     String cualidad;

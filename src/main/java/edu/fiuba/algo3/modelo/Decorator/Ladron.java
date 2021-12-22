@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.Decorator;
+package edu.fiuba.algo3.modelo.Decorator;
 
 public class Ladron implements Pregunta {
 

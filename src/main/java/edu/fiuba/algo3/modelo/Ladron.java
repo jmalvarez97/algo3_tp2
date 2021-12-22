@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
 
+import org.json.simple.JSONObject;
+
 import java.io.*;
 import java.util.List;
 import java.util.Random;
@@ -8,66 +10,42 @@ import java.util.Random;
 public class Ladron {
     private String nombre;
     private String sexo;
+    private String ocupacion;
     private String hobby;
-    private String cabello;
+    private String colorDelPelo;
     private String senia;
-    private String vehiculo;
+    private String coche;
+    private String otros;
 
 
-    public Ladron(String nombre,String sexo, String hobby, String cabello, String senia, String vehiculo){
-        this.nombre = nombre;
-        this.sexo = sexo;
-        this.hobby = hobby;
-        this.cabello = cabello;
-        this.senia = senia;
-        this.vehiculo = vehiculo;
+    public Ladron(JSONObject dossier){
+
+        //Leemos el nombre de la Ladron
+        this.nombre = (String) dossier.get("nombre");
+
+        //Leemos el sexo
+        this.sexo = (String) dossier.get("sexo");
+
+        //Leemos la ocupacion
+        this.ocupacion = (String) dossier.get("ocupacion");
+
+        //Leemos el hobby
+        this.hobby = (String) dossier.get("hobby");
+
+        //Leemos el colorDelPelo
+        this.colorDelPelo = (String) dossier.get("colorDelPelo");
+
+        //Leemos el coche
+        this.coche = (String) dossier.get("coche");
+
+        //Leemos las señas particulares
+        this.senia = (String) dossier.get("señasParticulares");
+
+        //Leemos "otros"
+        this.otros = (String) dossier.get("otros");
     }
 
-    // Crea Ladron con datos random leidos de "datosLadron.csv"
-    public Ladron(){
-        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/datosLadron.csv"))) {
-            String line;
-            Random random = new Random();
-            int numRandom;
 
-            // Sexo
-            line = br.readLine();
-            String[] values = line.split(",");
-            numRandom = random.nextInt(2);
-            this.sexo = values[numRandom];
-
-            // Hobby
-            line = br.readLine();
-            values = line.split(",");
-            numRandom = random.nextInt(6);
-            this.hobby = values[numRandom];
-
-            // Cabello
-            line = br.readLine();
-            values = line.split(",");
-            numRandom = random.nextInt(4);
-            this.cabello = values[numRandom];
-
-            // Senia
-            line = br.readLine();
-            values = line.split(",");
-            numRandom = random.nextInt(4);
-            this.senia = values[numRandom];
-
-            // Vehiculo
-            line = br.readLine();
-            values = line.split(",");
-            numRandom = random.nextInt(4);
-            this.vehiculo = values[numRandom];
-
-        } catch (FileNotFoundException ex) {
-            return;
-        } catch (IOException io) {
-            return;
-        }
-
-        return;
-    }
 
     public String getHobby(){
         return this.hobby;
