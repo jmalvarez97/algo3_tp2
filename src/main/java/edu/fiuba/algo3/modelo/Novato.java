@@ -14,6 +14,7 @@ public class Novato implements StatePolicia {
     public int velocidad(){
         return this.velocidad;
     }
+
     public String valorObjetoBuscado(){
         return this.valorObjetoBuscado;
     }
@@ -25,13 +26,11 @@ public class Novato implements StatePolicia {
 
     }
 
-    public int horasDeViaje(double distancia) {
-        return distancia * this.velocidad;
-    }
-
     public void setPolicia(Policia policia){
         this.policia = policia;
     }
 
-
+    public int horasDeViaje(double distancia) {
+        return (int) distancia * this.velocidad;
+    }
 }

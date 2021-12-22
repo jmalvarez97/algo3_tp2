@@ -21,12 +21,12 @@ public class Sargento implements StatePolicia {
     public void confirmarCaso(int casosResueltos){
     }
 
-    public int horasDeViaje(double distancia) {
-        return distancia * this.velocidad;
-    }
-
     public void setPolicia(Policia policia){
         this.policia = policia;
+    }
+
+    public int horasDeViaje(double distancia) {
+        return (int) distancia * this.velocidad;
     }
 
 

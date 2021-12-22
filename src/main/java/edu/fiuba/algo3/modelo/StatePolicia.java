@@ -6,5 +6,5 @@ public interface StatePolicia {
     void confirmarCaso(int casosResueltos);
     void setPolicia(Policia policia);
     int horasDeViaje(double distancia);
-    String valorObjetoRobado();
+    String valorObjetoBuscado();
 }

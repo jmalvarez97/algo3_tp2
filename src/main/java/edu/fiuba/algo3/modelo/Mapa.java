@@ -39,7 +39,7 @@ public class Mapa {
     public double distanciaA(Ciudad destino) {
         // hipotenusa del triangulo con catetos distancia en longitud y en latitud
         double dLongitud = Math.abs(actual.getLongitud() - destino.getLongitud());
-        double dLatitud = Math.abs(actual.getLatitud() - destino.getLatitud())
+        double dLatitud = Math.abs(actual.getLatitud() - destino.getLatitud());
         double distancia = Math.sqrt(Math.pow(dLongitud,2) + Math.pow(dLatitud,2));
         return distancia;
     }
@@ -51,7 +51,13 @@ public class Mapa {
         randomIndex = (int) (Math.random() - 1);
         Ciudad random2 = this.listaCiudades.get(randomIndex);
 
-        return new ArrayList<Ciudad>(actual, proxima, random1, random2);
+        ArrayList<Ciudad> listaOpciones = new ArrayList<Ciudad>();
+        listaOpciones.add(this.actual);
+        listaOpciones.add(this.proxima);
+        listaOpciones.add(random1);
+        listaOpciones.add(random2);
+
+        return listaOpciones;
     }
 
     public Ciudad ciudadActual(){

@@ -20,6 +20,10 @@ public class Caso {
         return mapa.visitar(unEdificio,policia);
     }
 
+    public void viajar(Ciudad destino){
+        double distanciaViaje = (this.mapa).viajar(destino);
+        (this.policia).descontarHorasDeViaje(distanciaViaje);
+    }
 
     public String generarObjetoRobado() {
         return "Tesoro Nacional";

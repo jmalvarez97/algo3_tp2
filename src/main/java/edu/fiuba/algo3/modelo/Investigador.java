@@ -29,14 +29,8 @@ public class Investigador implements StatePolicia {
         this.policia = policia;
     }
 
-    @Override
     public int horasDeViaje(double distancia) {
-        return distancia * this.velocidad;
-    }
-
-    @Override
-    public String valorObjetoRobado() {
-        return null;
+        return (int) distancia * this.velocidad;
     }
 
 

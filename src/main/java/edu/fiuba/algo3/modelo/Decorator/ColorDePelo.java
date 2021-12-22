@@ -3,6 +3,8 @@ package edu.fiuba.algo3.modelo.Decorator;
 import java.util.Objects;
 
 public class ColorDePelo extends Decorator{
+
+
     public ColorDePelo(Pregunta pregunta, String cualidad) {
         super(pregunta, cualidad);
     }

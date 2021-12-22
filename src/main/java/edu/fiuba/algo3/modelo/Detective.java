@@ -31,7 +31,7 @@ public class Detective implements StatePolicia {
 
     @Override
     public int horasDeViaje(double distancia) {
-        return distancia * this.velocidad;
+        return (int) distancia * this.velocidad;
     }
 
 

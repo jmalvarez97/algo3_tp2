@@ -59,7 +59,18 @@ public class App extends Application {
 
     public static void main(String[] args) {
         Partida partida = new Partida();
-        launch();
+        launch(); //Inicializamos la interfaz grafica
+        //Primer Pantalla:
+        //Mensaje introductorio al juego. Mencionar que tesoro fue robado y su valor.
+        //Mencionar el sexo del sospechoso. "Toque cualquier tecla para continuar"
+
+        //Segunda Pantalla (se itera de ciudad a ciudad):
+        //Opcion 1: Usar la computadora y cargar datos/ver sospechosos
+        //Opcion 2: Viajar/elegir pais proximo
+        //Opcion 3: Entrar a algun edificio
+        //Tercera Pantalla:
+        //Pop up Opcion 2: Ingresar a algun edifico
+        //Al elegir un edificio -> dar una pista relacionada al edificio
     }
 
 }
