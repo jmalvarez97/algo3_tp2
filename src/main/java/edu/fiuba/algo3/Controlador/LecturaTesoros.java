@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.Controlador;
 
-import edu.fiuba.algo3.modelo.Tesoro;
+import edu.fiuba.algo3.Modelardo.Tesoro;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
