@@ -1,21 +1,11 @@
 package edu.fiuba.algo3.modelo;
 
-public class Investigador implements StatePolicia {
-    private int velocidad;
-    private Policia policia;
-    private String valorObjetoBuscado;
 
+public class Investigador extends StatePolicia {
 
     public Investigador(){
         this.velocidad = 1300;
         this.valorObjetoBuscado = "Valioso";
-    }
-
-    public int velocidad(){
-        return this.velocidad;
-    }
-    public String valorObjetoBuscado(){
-        return this.valorObjetoBuscado;
     }
 
     public void confirmarCaso(int casosResueltos){
@@ -24,14 +14,5 @@ public class Investigador implements StatePolicia {
         }
 
     }
-
-    public void setPolicia(Policia policia){
-        this.policia = policia;
-    }
-
-    public int horasDeViaje(double distancia) {
-        return (int) distancia * this.velocidad;
-    }
-
 
 }

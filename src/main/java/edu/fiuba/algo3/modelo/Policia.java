@@ -18,8 +18,8 @@ public class Policia {
         this.horasPorHeridaCuchillo = 2;
     }
 
-    public String devolverValorTesoro(){
-        return (this.state).valorObjetoBuscado();
+    public Tesoro devolverTesoroAcorde(ArrayList<Tesoro> listaTesoros){
+        return (this.state).devolverTesoroAcorde(listaTesoros);
     }
 
     public void descontarHorasDeViaje(double distancia) { descontarHoras(state.horasDeViaje(distancia));}

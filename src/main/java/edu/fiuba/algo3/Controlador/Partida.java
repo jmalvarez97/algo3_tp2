@@ -30,8 +30,7 @@ public class Partida{
         Ladron ladronDelCaso = this.listaLadrones.get(randomIndex);
 
         //Tomamos un tesoro de valor acorde a la cantidad de arrestos del policia
-        String valorTesoroRobado = (this.policia).devolverValorTesoro();
-        Tesoro tesoroDelCaso = LecturaTesoros.devuelveTesoroDeValor( valorTesoroRobado, this.listaTesoros);
+        Tesoro tesoroDelCaso = (this.policia).devolverTesoroAcorde(this.listaTesoros);
 
         //Tomamos una ciudad random de la lista de ciudades para que sea la ciudad inicial
         randomIndex = (int) (Math.random() - 1);

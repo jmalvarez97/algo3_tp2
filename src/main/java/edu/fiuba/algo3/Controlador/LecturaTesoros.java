@@ -40,13 +40,4 @@ public class LecturaTesoros {
 
         return listaTesoros;
     }
-
-    public static Tesoro devuelveTesoroDeValor(String valor, ArrayList<Tesoro> listaTesoros){
-        for(int i = 0; i < listaTesoros.size(); i++){
-            if( (listaTesoros.get(i)).esValor(valor) ){
-                return listaTesoros.get(i);
-            }
-        }
-        return null;
-    }
 }
