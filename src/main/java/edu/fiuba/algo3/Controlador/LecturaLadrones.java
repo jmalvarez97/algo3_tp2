@@ -6,10 +6,12 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+
 
 public class LecturaLadrones {
 
@@ -18,16 +20,16 @@ public class LecturaLadrones {
         JSONParser parser = new JSONParser();
         ArrayList<Ladron> listaLadrones = new ArrayList<Ladron>();
 
-        try (FileReader reader = new FileReader("dossiers.json")) {
+        try (FileReader reader = new FileReader("src/main/java/edu/fiuba/algo3/Controlador/dossiers.json")) {
+
             //Leemos el archivo JSON
-            Object obj = parser.parse(reader);
+            JSONObject obj = (JSONObject) parser.parse(reader);
+            JSONArray listaLadronesJson  = (JSONArray) obj.get("dossiers");
 
-            JSONArray listaLadronesJson = (JSONArray) obj;
+            //Itero la lista de ciudades
+            for(int i=0; i < listaLadronesJson.size(); i++) {
 
-
-            //Itero la lista de Ladrones
-            for(int i=0; i > listaLadronesJson.size(); i++) {
-                listaLadrones.add( new Ladron( (JSONObject) listaLadronesJson.get(i)) );
+                listaLadrones.add(new Ladron( (JSONObject) listaLadronesJson.get(i)) );
             }
 
 

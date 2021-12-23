@@ -1,16 +1,17 @@
 package edu.fiuba.algo3.Modelardo.Decorator;
 
+import edu.fiuba.algo3.Modelardo.Ladron;
+
 public abstract class Decorator implements Pregunta {
     String cualidad;
     Pregunta pregunta;
 
-    Decorator(Pregunta pregunta, String cualidad){
-        this.pregunta = pregunta;
+    Decorator(Pregunta unaPregunta,String cualidad){
+        this.pregunta = unaPregunta;
         this.cualidad = cualidad;
     }
 
-    @Override
-    public boolean preguntar(String dato) {
-        return this.preguntar(dato);
+    public boolean comparar(Ladron otroLadron) {
+        return this.pregunta.comparar(otroLadron);
     }
 }

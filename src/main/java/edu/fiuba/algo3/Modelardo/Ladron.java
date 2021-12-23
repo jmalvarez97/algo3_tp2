@@ -1,9 +1,12 @@
 package edu.fiuba.algo3.Modelardo;
 
 
+import edu.fiuba.algo3.Modelardo.Decorator.Pregunta;
 import org.json.simple.JSONObject;
 
-public class Ladron {
+import java.util.Objects;
+
+public class Ladron implements Pregunta {
     private String nombre;
     private String sexo;
     private String ocupacion;
@@ -12,6 +15,14 @@ public class Ladron {
     private String senia;
     private String coche;
     private String otros;
+
+    public Ladron(String colorDelPelo, String hobby, String coche, String sexo, String senia){
+        this.colorDelPelo = colorDelPelo;
+        this.hobby = hobby;
+        this.coche = coche;
+        this.sexo = sexo;
+        this.senia = senia;
+    }
 
 
     public Ladron(JSONObject dossier){
@@ -41,12 +52,35 @@ public class Ladron {
         this.otros = (String) dossier.get("otros");
     }
 
+    public Ladron() {
 
-
-    public String getHobby(){
-        return this.hobby;
     }
 
+
+    public boolean tienePeloDeColor(String cualidad) {
+        return Objects.equals(this.colorDelPelo, cualidad);
+    }
+
+    public boolean tieneHobby(String cualidad) {
+        return Objects.equals(this.hobby, cualidad);
+    }
+
+    public boolean tieneVehiculo(String cualidad) {
+        return Objects.equals(this.coche,cualidad);
+    }
+
+    public boolean tieneSexo(String cualidad){
+        return Objects.equals(this.sexo, cualidad);
+    }
+
+    public boolean tieneSenia(String cualidad){
+        return Objects.equals(this.senia, cualidad);
+    }
+
+    @Override
+    public boolean comparar(Ladron otroLadron) {
+        return true;
+    }
 }
 
 

@@ -1,18 +1,18 @@
 package edu.fiuba.algo3.Modelardo.Decorator;
 
-import java.util.Objects;
+import edu.fiuba.algo3.Modelardo.Ladron;
 
 public class ColorDePelo extends Decorator{
 
 
-    public ColorDePelo(Pregunta pregunta, String cualidad) {
-        super(pregunta, cualidad);
+    public ColorDePelo(Pregunta unaPregunta, String cualidad) {
+        super(unaPregunta, cualidad);
     }
 
     @Override
-    public boolean preguntar(String dato) {
-        if (Objects.equals(this.cualidad, dato))
-            return true;
-        return this.pregunta.preguntar(dato);
+    public boolean comparar(Ladron otroLadron) {
+        return super.comparar(otroLadron) && otroLadron.tienePeloDeColor(this.cualidad);
+
+
     }
 }

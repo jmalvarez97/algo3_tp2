@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.Controlador;
 
+import edu.fiuba.algo3.Modelardo.Ciudad;
 import edu.fiuba.algo3.Modelardo.Tesoro;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -18,15 +19,13 @@ public class LecturaTesoros {
         JSONParser parser = new JSONParser();
         ArrayList<Tesoro> listaTesoros = new ArrayList<Tesoro>();
 
-        try (FileReader reader = new FileReader("tesoros.json")) {
+        try (FileReader reader = new FileReader("src/main/java/edu/fiuba/algo3/Controlador/tesoros.json")) {
             //Leemos el archivo JSON
-            Object obj = parser.parse(reader);
+            JSONObject obj = (JSONObject) parser.parse(reader);
+            JSONArray listaTesorosJson  = (JSONArray) obj.get("tesoros");
 
-            JSONArray listaTesorosJson = (JSONArray) obj;
-
-
-            //Itero la lista de Tesoroes
-            for(int i=0; i > listaTesorosJson.size(); i++) {
+            //Itero la lista de ciudades
+            for(int i=0; i < listaTesorosJson.size(); i++) {
                 listaTesoros.add(new Tesoro( (JSONObject) listaTesorosJson.get(i)) );
             }
 

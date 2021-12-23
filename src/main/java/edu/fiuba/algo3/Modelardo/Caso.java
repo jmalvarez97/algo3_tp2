@@ -36,4 +36,5 @@ public class Caso {
     public Ciudad ciudadActual(){
         return this.mapa.ciudadActual();
     }
+
 }
