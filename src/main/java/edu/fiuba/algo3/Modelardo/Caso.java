@@ -37,6 +37,8 @@ public class Caso {
         return this.mapa.ciudadActual();
     }
 
-
+    public boolean chequearOrdenDeArresto(){
+        return policia.chequearOrdenDeArresto(this.ladron);
+    }
 
 }

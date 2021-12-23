@@ -54,4 +54,7 @@ public class Policia {
         this.state.setPolicia(this);
     }
 
+    public boolean chequearOrdenDeArresto(Ladron ladron) {
+        return this.computadora.chequearOrdenDeArresto(ladron);
+    }
 }

@@ -4,10 +4,12 @@ import edu.fiuba.algo3.Controlador.LecturaLadrones;
 import edu.fiuba.algo3.Modelardo.Decorator.*;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Computadora {
     private ArrayList<Ladron> listaLadrones;
     private Pregunta ladron;
+    private Ladron ladronOrdenDeArresto = null;
 
 
     public Computadora(ArrayList<Ladron> listaLadrones){
@@ -45,9 +47,19 @@ public class Computadora {
                 listaSospechosos.add(listaLadrones.get(i));
             }
         }
-        return listaSospechosos;
 
+        if(listaSospechosos.size() == 1){
+            emitirOrdenDeArresto(listaSospechosos.get(0));
+        }
+
+        return listaSospechosos;
     }
 
+    public void emitirOrdenDeArresto(Ladron ladron){
+        this.ladronOrdenDeArresto = ladron;
+    }
 
+    public boolean chequearOrdenDeArresto(Ladron ladronReal) {
+        return Objects.equals(ladronReal.nombre(),ladronOrdenDeArresto.nombre());
+    }
 }

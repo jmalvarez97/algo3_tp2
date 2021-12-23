@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.Modelardo;
 
 
+import edu.fiuba.algo3.Modelardo.Decorator.Nombre;
 import edu.fiuba.algo3.Modelardo.Decorator.Pregunta;
 import org.json.simple.JSONObject;
 
@@ -57,6 +58,10 @@ public class Ladron implements Pregunta {
     }
 
 
+    public boolean seLlama(String nombre) {
+        return Objects.equals(this.nombre, nombre);
+    }
+
     public boolean tienePeloDeColor(String cualidad) {
         return Objects.equals(this.colorDelPelo, cualidad);
     }
@@ -81,6 +86,9 @@ public class Ladron implements Pregunta {
     public boolean comparar(Ladron otroLadron) {
         return true;
     }
+
+    // Getter necesario? Para comparar ladronReal con ladronOrdenDeArresto sin romper Decorator
+    public String nombre(){ return this.nombre;}
 }
 
 
