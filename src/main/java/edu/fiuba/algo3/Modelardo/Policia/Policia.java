@@ -1,4 +1,8 @@
-package edu.fiuba.algo3.Modelardo;
+package edu.fiuba.algo3.Modelardo.Policia;
+
+import edu.fiuba.algo3.Modelardo.Computadora;
+import edu.fiuba.algo3.Modelardo.Ladron;
+import edu.fiuba.algo3.Modelardo.Tesoro;
 
 import java.util.ArrayList;
 

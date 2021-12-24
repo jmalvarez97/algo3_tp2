@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.Modelardo;
 
+import edu.fiuba.algo3.Modelardo.Policia.Policia;
+
 public class Aeropuerto implements Edificio{
 
     private Pista pista;

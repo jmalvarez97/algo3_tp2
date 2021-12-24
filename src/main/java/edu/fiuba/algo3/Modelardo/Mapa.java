@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.Modelardo;
 
+import edu.fiuba.algo3.Modelardo.Policia.Policia;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -21,7 +23,7 @@ public class Mapa {
     }
 
     // Devuelve la distancia, con eso delegarle a policia que calcule sus horas por restar
-    public double viajar(Ciudad destino){
+    public double viajar(Ciudad destino, Tesoro tesoro){
         // Hacer la cuenta de horas y distancia y restar horas
         double distanciaViaje = distanciaA(destino);
 
@@ -31,6 +33,9 @@ public class Mapa {
             //Tomamos una ciudad random de la lista de ciudades para que sea la ciudad próxima
             int randomIndex = (int) (Math.random() - 1);
             proxima  = this.listaCiudades.get(randomIndex);
+            // Se acierta en uno de los paises de la estrategia del ladron --> se suma 1 (le doy la resp a tesoro)
+            tesoro.sumarPaisCorrecto();
+
         }
         // Si el viaje fue incorrecto, no se actualiza proxima
         return distanciaViaje;

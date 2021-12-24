@@ -29,4 +29,5 @@ public class OrdenDeArrestoTest {
         // La orden de arresto emitida corresponde al ladron buscado
         assertTrue(computadora.chequearOrdenDeArresto(listaLadrones.get(0)));
     }
+
 }

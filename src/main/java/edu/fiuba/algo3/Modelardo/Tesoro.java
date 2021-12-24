@@ -4,11 +4,12 @@ import org.json.simple.JSONObject;
 
 import java.util.Objects;
 
-public class Tesoro {
+public abstract class Tesoro {
 
-    private final String ciudad;
-    private final String objeto;
-    private final String valor;
+    protected final String ciudad;
+    protected final String objeto;
+    protected final String valor;
+    protected int paisesVisitados;
 
     public Tesoro(JSONObject tesoro){
 
@@ -28,4 +29,11 @@ public class Tesoro {
         }
         return false;
     }
+
+    public void sumarPaisCorrecto() {
+        paisesVisitados++;
+    }
+
+    public abstract boolean cumplePaisesNecesarios();
+
 }

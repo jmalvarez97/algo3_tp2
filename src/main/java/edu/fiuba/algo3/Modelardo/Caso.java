@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.Modelardo;
 
+import edu.fiuba.algo3.Modelardo.Policia.Policia;
+
 public class Caso {
 
     private Policia policia;
@@ -21,13 +23,10 @@ public class Caso {
     }
 
     public void viajar(Ciudad destino){
-        double distanciaViaje = (this.mapa).viajar(destino);
+        double distanciaViaje = (this.mapa).viajar(destino, this.tesoro);
         (this.policia).descontarHorasDeViaje(distanciaViaje);
     }
 
-    public String generarObjetoRobado() {
-        return "Tesoro Nacional";
-    }
 
     public void herirPoliciaConCuchillo(){
         this.policia.herirConCuchillo();
@@ -40,5 +39,7 @@ public class Caso {
     public boolean chequearOrdenDeArresto(){
         return policia.chequearOrdenDeArresto(this.ladron);
     }
+
+    public boolean chequearCantidadDePaises(){return tesoro.cumplePaisesNecesarios();}
 
 }

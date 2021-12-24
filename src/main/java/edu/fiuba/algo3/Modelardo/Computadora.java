@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.Modelardo;
 
-import edu.fiuba.algo3.Controlador.LecturaLadrones;
+
 import edu.fiuba.algo3.Modelardo.Decorator.*;
 
 import java.util.ArrayList;
@@ -60,6 +60,7 @@ public class Computadora {
     }
 
     public boolean chequearOrdenDeArresto(Ladron ladronReal) {
+        //return ladronOrdenDeArresto.esIgualA(ladronReal, pelo, hobby, vehiculo ... );
         return Objects.equals(ladronReal.nombre(),ladronOrdenDeArresto.nombre());
     }
 }

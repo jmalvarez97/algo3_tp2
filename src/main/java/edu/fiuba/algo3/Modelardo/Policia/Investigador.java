@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.Modelardo;
+package edu.fiuba.algo3.Modelardo.Policia;
 
 
 public class Investigador extends StatePolicia {
