@@ -31,7 +31,7 @@ public class Mapa {
         // Si se viaja a la ciudad correcta, se actualiza proxima
         if(Objects.equals(destino.getNombre(), proxima.getNombre())) {
             //Tomamos una ciudad random de la lista de ciudades para que sea la ciudad próxima
-            int randomIndex = (int) (Math.random() - 1);
+            int randomIndex = (int) (Math.random()*10 - 1);
             proxima  = this.listaCiudades.get(randomIndex);
             // Se acierta en uno de los paises de la estrategia del ladron --> se suma 1 (le doy la resp a tesoro)
             tesoro.sumarPaisCorrecto();
@@ -51,9 +51,9 @@ public class Mapa {
 
     public ArrayList<Ciudad> opcionesParaViajar(){
         // Devuelve actual, proxima + 2 ciudades random
-        int randomIndex = (int) (Math.random() - 1);
+        int randomIndex = (int) (Math.random()*10 - 1);
         Ciudad random1 = this.listaCiudades.get(randomIndex);
-        randomIndex = (int) (Math.random() - 1);
+        randomIndex = (int) (Math.random()*10 - 1);
         Ciudad random2 = this.listaCiudades.get(randomIndex);
 
         ArrayList<Ciudad> listaOpciones = new ArrayList<Ciudad>();
@@ -70,4 +70,13 @@ public class Mapa {
     }
 
 
+    public void mostrarEdificios() {
+        this.actual.mostrarEdificios();
+    }
+
+    public double viajarCorrecto(Tesoro tesoro) {
+        System.out.println("Estaba en: "+ this.actual.getNombre());
+        System.out.println("Viaje a : " + proxima.getNombre());
+        return viajar(proxima, tesoro);
+    }
 }

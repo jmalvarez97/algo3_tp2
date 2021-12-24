@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.Modelardo;
 
 import edu.fiuba.algo3.Modelardo.Policia.Policia;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import java.util.ArrayList;
 
@@ -59,47 +60,47 @@ public class Ciudad {
         this.descripcion = (String) ciudad.get("descripcion");
 
         //Tenemos que agregar múltiples colores de bandera
-        JSONObject coloresBanderaObject = (JSONObject) ciudad.get("colorBandera");
+        JSONArray coloresBanderaObject = (JSONArray) ciudad.get("colorBandera");
         for(int i = 0; i < coloresBanderaObject.size() ; i++){
             colorBandera.add( (String) coloresBanderaObject.get(i) );
         }
 
         //Tenemos que agregar múltiples idiomas
-        JSONObject idiomasObject = (JSONObject) ciudad.get("idiomas");
+        JSONArray idiomasObject = (JSONArray) ciudad.get("idiomas");
         for(int i = 0; i < idiomasObject.size() ; i++){
             idiomas.add( (String) idiomasObject.get(i) );
         }
 
 
         //Tenemos que agregar múltiples caracteristicas
-        JSONObject caracteristicasObject = (JSONObject) ciudad.get("caracteristicas");
+        JSONArray caracteristicasObject = (JSONArray) ciudad.get("caracteristicas");
         for(int i = 0; i < caracteristicasObject.size() ; i++){
             caracteristicas.add( (String) caracteristicasObject.get(i) );
         }
 
         //Tenemos que agregar múltiples industrias
-        JSONObject industriasObject = (JSONObject) ciudad.get("industrias");
+        JSONArray industriasObject = (JSONArray) ciudad.get("industrias");
         for(int i = 0; i < industriasObject.size() ; i++){
             industrias.add( (String) industriasObject.get(i) );
         }
 
         //Tenemos que agregar múltiples animales
-        JSONObject animalesObject = (JSONObject) ciudad.get("animales");
+        JSONArray animalesObject = (JSONArray) ciudad.get("animales");
         for(int i = 0; i < animalesObject.size() ; i++){
             animales.add( (String) animalesObject.get(i) );
         }
 
         //Tenemos que agregar múltiples etnias
-        JSONObject etniasObject = (JSONObject) ciudad.get("etnias");
+        JSONArray etniasObject = (JSONArray) ciudad.get("etnias");
         for(int i = 0; i < etniasObject.size() ; i++){
             etnias.add( (String) etniasObject.get(i) );
         }
 
-        //Tenemos que agregar una lista de "otros"
-        JSONObject otrosObject = (JSONObject) ciudad.get("otros");
-        for(int i = 0; i < otrosObject.size() ; i++){
-            otros.add( (String) otrosObject.get(i) );
-        }
+//        //Tenemos que agregar una lista de "otros"
+//        JSONArray otrosObject = (JSONArray) ciudad.get("otros");
+//        for(int i = 0; i < otrosObject.size() ; i++){
+//            otros.add( (String) otrosObject.get(i) );
+//        }
 
 
 
@@ -145,5 +146,13 @@ public class Ciudad {
     public double getLongitud() {return this.longitud;}
     public ArrayList<String> getColores() {return this.colorBandera;}
     public String getDatoRandom() {return this.arte;}
+
+    public void mostrarse() {
+        System.out.println("-" + this.nombre);
+    }
+
+    public void mostrarEdificios() {
+        System.out.println("guot");
+    }
 }
 

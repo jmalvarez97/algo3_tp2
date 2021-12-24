@@ -2,6 +2,7 @@ package edu.fiuba.algo3.Controlador;
 
 import edu.fiuba.algo3.Modelardo.Ciudad;
 import edu.fiuba.algo3.Modelardo.Tesoro;
+import edu.fiuba.algo3.Modelardo.TesoroComun;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -26,7 +27,8 @@ public class LecturaTesoros {
 
             //Itero la lista de ciudades
             for(int i=0; i < listaTesorosJson.size(); i++) {
-                listaTesoros.add(new Tesoro( (JSONObject) listaTesorosJson.get(i)) );
+
+                listaTesoros.add(new TesoroComun( (JSONObject) listaTesorosJson.get(i)) );
             }
 
         } catch (FileNotFoundException e) {

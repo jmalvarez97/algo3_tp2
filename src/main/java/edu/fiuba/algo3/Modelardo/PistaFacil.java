@@ -21,7 +21,7 @@ public class PistaFacil implements Pista {
 
 
     private String buscarPorArchivo(String nombreEdificio) {
-        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/pistasFaciles.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/edu/fiuba/algo3/Modelardo/pistasFaciles.csv"))) {
             String line;
             Random random = new Random();
             int numRandom;
