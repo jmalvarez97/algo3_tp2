@@ -28,7 +28,7 @@ public class Ciudad {
     Edificio puerto; //Edificio aeropuerto;
     Edificio biblioteca;
 
-    public Ciudad (String nombre, String moneda, String geografia, String arte, String religion, String representante, double latitud, double longitud, String descripcion, ArrayList<String> colorBandera , ArrayList<String> idiomas,ArrayList<String> caracteristicas, ArrayList<String> industrias, ArrayList<String> animales, ArrayList<String> etnias, ArrayList<String> otros ){
+    public Ciudad (String nombre, double latitud, double longitud, String moneda, String geografia, String arte, String religion, String representante, String descripcion, ArrayList<String> colorBandera , ArrayList<String> idiomas,ArrayList<String> caracteristicas, ArrayList<String> industrias, ArrayList<String> animales, ArrayList<String> etnias, ArrayList<String> otros ){
         //Leemos el nombre de la ciudad
         this.nombre = nombre;
 
