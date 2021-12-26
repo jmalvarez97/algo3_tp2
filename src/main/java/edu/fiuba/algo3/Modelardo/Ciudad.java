@@ -28,6 +28,60 @@ public class Ciudad {
     Edificio puerto; //Edificio aeropuerto;
     Edificio biblioteca;
 
+    public Ciudad (String nombre, String moneda, String geografia, String arte, String religion, String representante, double latitud, double longitud, String descripcion, ArrayList<String> colorBandera , ArrayList<String> idiomas,ArrayList<String> caracteristicas, ArrayList<String> industrias, ArrayList<String> animales, ArrayList<String> etnias, ArrayList<String> otros ){
+        //Leemos el nombre de la ciudad
+        this.nombre = nombre;
+
+        //Leemos la moneda
+        this.moneda = moneda;
+
+        //Leemos la geografia
+        this.geografia = geografia;
+
+        //Leemos el arte
+        this.arte = arte;
+
+        //Leemos la religion
+        this.religion = religion;
+
+        //Leemos el representante
+        this.representante = representante;
+
+        //Leemos el latitud
+        this.latitud = latitud;
+
+        //Leemos el longitud
+        this.longitud = longitud;
+
+        //Leemos la descripcion
+        this.descripcion = descripcion;
+
+        //Tenemos que agregar múltiples colores de bandera
+        this.colorBandera=colorBandera;
+
+        //Tenemos que agregar múltiples idiomas
+        this.idiomas=idiomas;
+
+
+        //Tenemos que agregar múltiples caracteristicas
+        this.caracteristicas=caracteristicas;
+
+        this.industrias=industrias;
+
+        this.animales=animales;
+
+        this.etnias=etnias;
+
+        this.otros=otros;
+
+
+
+        this.banco = new Banco();
+        //this.bolsa = new Bolsa();
+        this.puerto = new Puerto();
+        //this.aeropuerto = new Aeropuerto();
+        this.biblioteca = new Biblioteca();
+    }
 
     public Ciudad(JSONObject ciudad){
 
