@@ -8,14 +8,16 @@ public class Caso {
     private Tesoro tesoro;
     private Ladron ladron;
     private Mapa mapa;
+    private Computadora computadora;
 
 
     // Constructor con Mapa, lo generamos aleatorio?
-    public Caso(Policia policia, Tesoro tesoro, Ladron ladron, Mapa unMapa){
+    public Caso(Policia policia, Tesoro tesoro, Ladron ladron, Mapa unMapa, Computadora computadora){
         this.policia = policia;
         this.tesoro = tesoro;
         this.ladron = ladron;
         this.mapa = unMapa;
+        this.computadora = computadora;
     }
 
     public String visitar(String unEdificio) {
@@ -37,7 +39,7 @@ public class Caso {
     }
 
     public boolean chequearOrdenDeArresto(){
-        return policia.chequearOrdenDeArresto(this.ladron);
+        return computadora.chequearOrdenDeArresto(this.ladron);
     }
 
     public boolean chequearCantidadDePaises(){return tesoro.cumplePaisesNecesarios();}

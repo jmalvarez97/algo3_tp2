@@ -20,7 +20,7 @@ public class Partida{
         this.listaLadrones = LecturaLadrones.leerLadrones();
         this.listaTesoros = LecturaTesoros.leerTesoros();
 
-        this.policia = new Policia(listaLadrones);
+        this.policia = new Policia();
         nuevoCaso();
     }
 
@@ -44,8 +44,11 @@ public class Partida{
         //Creamos un mapa
         Mapa unMapa = new Mapa(ciudadInicial, ciudadProxima, listaCiudades);
 
+        //Creamos la computadora
+        Computadora computadora = new Computadora(listaLadrones);
+
         //Creamos un caso
-        this.caso = new Caso(this.policia, tesoroDelCaso, ladronDelCaso, unMapa);
+        this.caso = new Caso(this.policia, tesoroDelCaso, ladronDelCaso, unMapa, computadora);
     }
 
 }
