@@ -1,3 +1,5 @@
+package edu.fiuba.algo3.Modelardo;
+
 import edu.fiuba.algo3.Controlador.LecturaLadrones;
 import edu.fiuba.algo3.Modelardo.Decorator.*;
 import edu.fiuba.algo3.Modelardo.Ladron;
