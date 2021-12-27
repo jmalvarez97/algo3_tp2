@@ -1,15 +1,17 @@
 package edu.fiuba.algo3.Modelardo;
 
+import edu.fiuba.algo3.Controlador.LecturaLadrones;
 import edu.fiuba.algo3.Modelardo.Policia.Policia;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CasosDeUsoEntrega2Test {
-
-    private Ladron ladron = new Ladron();
+    private Ladron ladron = new Ladron("Castaño", "Tenis", "Descapotable Packard 1939", "Femenino", "Jamás se muestra en público sin su collar de rubíes");
     private Policia policia = new Policia();
     private Tesoro tesoro = new Tesoro("Montreal", "Tesoro Nacional de Montreal", "Comun");
     private Computadora computadora = new Computadora(new ArrayList<Ladron>(){{add(ladron);}});
@@ -63,7 +65,19 @@ public class CasosDeUsoEntrega2Test {
         //Caso de uso 3
         //Cargar en la computadora los datos recopilados y buscar sospechosos.
 
+        // Cargamos los datos correspondientes a 'Carmen Sandiego'
+        computadora.cargarSexo("Femenino");
+        computadora.cargarPelo("Castaño");
+        computadora.cargarHobby("Tenis");
+        computadora.cargarVehiculo("Descapotable Packard 1939");
 
+        // Debería dar un solo sospechoso y generar la orden de arresto
+        ArrayList<Ladron> listaSospechosos = computadora.buscarSospechosos();
+
+        Assert.assertEquals(listaSospechosos.size(), 1);
+
+        // La orden de arresto emitida corresponde al ladron buscado
+        assertTrue(computadora.chequearOrdenDeArresto(ladron));
 
     }
 }
