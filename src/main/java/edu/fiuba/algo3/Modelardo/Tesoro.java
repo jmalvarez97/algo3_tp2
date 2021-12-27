@@ -4,7 +4,7 @@ import org.json.simple.JSONObject;
 
 import java.util.Objects;
 
-public abstract class Tesoro {
+public class Tesoro {
 
     protected final String ciudad;
     protected final String objeto;
@@ -23,6 +23,12 @@ public abstract class Tesoro {
         this.valor = (String) tesoro.get("valor");
     }
 
+    public Tesoro(String ciudad, String objeto, String valor) {
+        this.ciudad = ciudad;
+        this.objeto = objeto;
+        this.valor = valor;
+    }
+
     public boolean esValor(String valor){
         if(Objects.equals(this.valor, valor)){
             return true;
@@ -34,6 +40,6 @@ public abstract class Tesoro {
         paisesVisitados++;
     }
 
-    public abstract boolean cumplePaisesNecesarios();
+    public boolean cumplePaisesNecesarios() {return paisesVisitados >= 4;};
 
 }

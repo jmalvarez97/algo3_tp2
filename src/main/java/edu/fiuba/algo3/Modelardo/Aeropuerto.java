@@ -17,7 +17,7 @@ public class Aeropuerto implements Edificio{
     @Override
     public String darPista(Ciudad ciudad){
         this.contadorVisitas++;
-        return this.pista.darPista(ciudad.getColores().get(1));
+        return this.pista.darPista(ciudad.getColores().get(0));
     }
 
     @Override

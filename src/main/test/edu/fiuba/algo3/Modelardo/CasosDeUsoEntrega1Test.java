@@ -11,11 +11,11 @@ public class CasosDeUsoEntrega1Test {
 
     private Ladron ladron = new Ladron();
     private Policia policia = new Policia(new ArrayList<Ladron>(){{add(ladron);}});
-    private Tesoro tesoro = new Tesoro();
+    private Tesoro tesoro = new Tesoro("Montreal", "Tesoro Nacional de Montreal", "Comun");
 
     // Van aca para que en el caso2 se mantenga la cantidad de visitas en Banco
-    Ciudad montreal = new Ciudad("rojo y blanco","dolar canadiense","segundo pais mas grande");
-    Ciudad mexico = new Ciudad("roja blanca y verde","pesos","civilizacion azteca");
+    Ciudad montreal = new Ciudad("Montreal",37.984167,23.728056,null,null,null,null,null,null,null,null,null,null,null,null,null);
+    Ciudad mexico = new Ciudad ("Mexico",33.35,44.416667,"pesos",null,"civilizacion azteca",null,null,null,null,null,null,null,null,null,null);
     Mapa unMapa = new Mapa(montreal,mexico, new ArrayList<Ciudad>(){{add(montreal); add(mexico);}});
 
     private Caso caso = new Caso(policia, tesoro, ladron, unMapa );
@@ -29,7 +29,6 @@ public class CasosDeUsoEntrega1Test {
         - Detective novato comienza en Montreal.
         - Vista un Banco:
             - se despliega una pista. */
-        caso.generarObjetoRobado();
         String pista = caso.visitar("banco");
 
         assert(pista.contains("pesos"));
@@ -45,8 +44,6 @@ public class CasosDeUsoEntrega1Test {
         - Vista una Biblioteca:
             - Se despliega una pista. */
 
-
-        caso.generarObjetoRobado();
         caso.visitar("banco");
         String pista = caso.visitar("banco");
         String pista2 = caso.visitar("biblioteca");
@@ -59,12 +56,13 @@ public class CasosDeUsoEntrega1Test {
     @Test
     public void testCasoTres(){
         /* Caso de uso 3
-        - Detective viaja de Montreal a México */
+        - Policia novato viaja de Montreal a México */
 
-        unMapa.viajar(mexico);
+        policia.descontarHorasDeViaje(unMapa.viajar(mexico, tesoro));
+        double horasDeVuelo = 21 / 900;
 
         assertEquals(mexico, caso.ciudadActual());
-        assertEquals(policia.horasRestantes(), 154-3);
+        assertEquals(policia.horasRestantes(), 154-horasDeVuelo);
     }
 
     @Test

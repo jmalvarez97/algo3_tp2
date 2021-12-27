@@ -15,7 +15,7 @@ public abstract class StatePolicia{
 
 
     public int horasDeViaje(double distancia) {
-        return (int) distancia * this.velocidad;
+        return (int) distancia / this.velocidad;
     }
 
     public void setPolicia(Policia policia){

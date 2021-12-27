@@ -11,11 +11,11 @@ public class CasosDeUsoEntrega2Test {
 
     private Ladron ladron = new Ladron();
     private Policia policia = new Policia(new ArrayList<Ladron>(){{add(ladron);}});
-    private Tesoro tesoro = new Tesoro();
+    private Tesoro tesoro = new Tesoro("Montreal", "Tesoro Nacional de Montreal", "Comun");
 
     // Van aca para que en el caso2 se mantenga la cantidad de visitas en Banco
-    Ciudad montreal = new Ciudad("rojo y blanco"," dolar canadiense", "segundo pais mas grande");
-    Ciudad mexico = new Ciudad("roja blanca y verde","pesos","civilizacion azteca");
+    Ciudad montreal = new Ciudad("Montreal",37.984167,23.728056,null,null,null,null,null,null,null,null,null,null,null,null,null);
+    Ciudad mexico = new Ciudad ("Mexico",33.35,44.416667,null,null,null,null,null,null,null,null,null,null,null,null,null);
     Mapa unMapa = new Mapa(montreal,mexico, new ArrayList<Ciudad>(){{add(montreal); add(mexico);}});
 
     private Caso caso = new Caso(policia, tesoro, ladron, unMapa );
@@ -50,10 +50,11 @@ public class CasosDeUsoEntrega2Test {
             policia.confirmarCaso();
         }
 
-        unMapa.viajar(mexico);
+        policia.descontarHorasDeViaje(unMapa.viajar(mexico, tesoro));
+        double horasDeVuelo = 21 / 1300;
 
         assertEquals(caso.ciudadActual(), mexico);
-        assertEquals(policia.horasRestantes(),154-2);
+        assertEquals(policia.horasRestantes(),154-horasDeVuelo);
     }
 
     @Test

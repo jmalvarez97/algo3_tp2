@@ -3,19 +3,23 @@ package edu.fiuba.algo3.Modelardo;
 import edu.fiuba.algo3.Modelardo.Policia.Policia;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PoliciaTest {
 
-    private Policia policia = new Policia();
     private Ladron ladron = new Ladron();
+    private Policia policia = new Policia(new ArrayList<Ladron>(){{add(ladron);}});
+    private Tesoro tesoro = new Tesoro("Montreal", "Tesoro Nacional de Montreal", "Comun");
+
 
     // Van aca para que en el caso2 se mantenga la cantidad de visitas en Banco
-    Ciudad montreal = new Ciudad("rojo y blanco"," dolar canadiense", "segundo pais mas grande");
-    Ciudad mexico = new Ciudad("roja blanca y verde","pesos","civilizacion azteca");
-    Mapa unMapa = new Mapa(montreal,mexico);
+    Ciudad montreal = new Ciudad("Montreal",37.984167,23.728056,null,null,null,null,null,null,null,null,null,null,null,null,null);
+    Ciudad mexico = new Ciudad ("Mexico",33.35,44.416667,null,null,null,null,null,null,null,null,null,null,null,null,null);
+    Mapa unMapa = new Mapa(montreal,mexico, new ArrayList<Ciudad>(){{add(montreal); add(mexico);}});
 
-    private Caso caso = new Caso(policia, ladron, unMapa );
+    private Caso caso = new Caso(policia, tesoro, ladron, unMapa );
 
     @Test
     public void testLeDescuentoHorasAUnPolicia(){
