@@ -80,5 +80,12 @@ public class CasosDeUsoEntrega2Test {
         assertTrue(computadora.chequearOrdenDeArresto(ladron));
 
     }
+
+    @Test
+    public void testCasoCuatro() {
+        // Caso de uso 4
+        // Se intenta atrapar al sospechoso sin tener la orden de arresto emitida
+        assert(!(computadora.chequearOrdenDeArresto(ladron)));
+    }
 }
 
