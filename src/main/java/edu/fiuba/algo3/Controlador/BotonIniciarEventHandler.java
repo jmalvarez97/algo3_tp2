@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.Controlador;
 
 import edu.fiuba.algo3.Modelardo.Tesoro;
+import edu.fiuba.algo3.Vista.ContenedorInicioJuego;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -25,39 +26,7 @@ public class BotonIniciarEventHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
 
-        Label instruccion = new Label();
-        instruccion.setText("Ingrese su nombre: ");
-        instruccion.setAlignment(Pos.CENTER);
-
-        //INGRESAR NOMBRE DEL JUGADOR
-        TextField nombreJugadorTextField = new TextField();
-        nombreJugadorTextField.setPromptText("Ingrese su nombre");
-
-
-        Label etiqueta = new Label();
-
-        //BOTON SUBMIT NOMBRE
-        Button botonEnviarNombre = new Button();
-        botonEnviarNombre.setText("OK");
-        BotonEnviarNombreEventHandler botonEnviarNombreEventHandler = new BotonEnviarNombreEventHandler(nombreJugadorTextField,etiqueta);
-        botonEnviarNombre.setOnAction(botonEnviarNombreEventHandler);
-
-        NombreJugadorTextFieldEventHandler nombreJugadorTextFieldEventHandler = new NombreJugadorTextFieldEventHandler(botonEnviarNombre);
-        nombreJugadorTextField.setOnKeyPressed(nombreJugadorTextFieldEventHandler);
-
-        //CONTENEDOR HORIZONTAL TEXTFIELD + BOTON_ENVIAR
-        HBox contenedorHorizontal = new HBox();
-        contenedorHorizontal.getChildren().addAll(nombreJugadorTextField,botonEnviarNombre);
-        contenedorHorizontal.setAlignment(Pos.CENTER);
-
-        contenedorHorizontal.setSpacing(15);
-
-        //CONTENEDOR VERTICAL INSTRUCCION + CONT_HORIZONTAL + LABEL_SALUDO
-        VBox contenedorVertical = new VBox();
-        contenedorVertical.getChildren().addAll(instruccion,contenedorHorizontal,etiqueta);
-        contenedorVertical.setAlignment(Pos.CENTER);
-
-        contenedorVertical.setSpacing(15);
+        ContenedorInicioJuego contenedorVertical = new ContenedorInicioJuego(this.partida, this.stage);
 
         //CAMBIO DE ESCENA
         Scene nuevaEscena = new Scene(contenedorVertical, 640, 480);

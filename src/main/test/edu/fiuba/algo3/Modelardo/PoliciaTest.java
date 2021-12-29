@@ -62,4 +62,7 @@ public class PoliciaTest {
         assertEquals(policia.hora(), 11); // Se despierta 11am
     }
 
+    //@Test
+    //public void testUnNovatoArresta10LadronesSeConvierteEnDetective(){}
+
 }

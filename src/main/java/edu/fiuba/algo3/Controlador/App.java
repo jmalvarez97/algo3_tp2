@@ -24,7 +24,6 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        Partida partida = new Partida();
         launch();
         //Primer Pantalla:
         //Mensaje introductorio al juego. Mencionar que tesoro fue robado y su valor.
