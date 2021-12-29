@@ -1,17 +1,14 @@
 package edu.fiuba.algo3.Controlador;
 
+import edu.fiuba.algo3.Vista.ContenedorInicio;
 import edu.fiuba.algo3.Vista.SystemInfo;
-import edu.fiuba.algo3.Vista.BotonEnviarEventHandler;
-import edu.fiuba.algo3.Vista.TextoEventHandler;
 import javafx.application.Application;
-import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 /**
  * JavaFX App
@@ -23,6 +20,7 @@ public class App extends Application {
         var javaVersion = SystemInfo.javaVersion();
         stage.setTitle("Dónde $@#! está Carmen Sandiego?");
 
+        /*
         Label labelNombreJuego = new Label("Where in the World is Carmen Sandiego? // Grupo 4");
         Label labelVersion = new Label("running on Java " + javaVersion + ".");
 
@@ -49,17 +47,20 @@ public class App extends Application {
         layout.getChildren().add(etiqueta);
         layout.setSpacing(15);
         layout.setPadding(new Insets(20));
+         */
 
+        Partida partida = new Partida();
 
+        ContenedorInicio contenedorInicio = new ContenedorInicio(partida, stage);
 
-        var scene = new Scene(layout, 640, 480);
+        var scene = new Scene(contenedorInicio, 640, 480);
         stage.setScene(scene);
         stage.show();
     }
 
     public static void main(String[] args) {
         Partida partida = new Partida();
-        launch(); //Inicializamos la interfaz grafica
+        launch();
         //Primer Pantalla:
         //Mensaje introductorio al juego. Mencionar que tesoro fue robado y su valor.
         //Mencionar el sexo del sospechoso. "Toque cualquier tecla para continuar"
