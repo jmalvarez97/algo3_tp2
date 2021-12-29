@@ -2,6 +2,7 @@ package edu.fiuba.algo3.Modelardo;
 
 import edu.fiuba.algo3.Modelardo.Decorator.*;
 import edu.fiuba.algo3.Modelardo.Policia.Policia;
+import net.bytebuddy.build.ToStringPlugin;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -13,6 +14,8 @@ public class PoliciaTest {
     private Ladron ladron = new Ladron("Castaño", "Tenis", "Descapotable Packard 1939", "Femenino", "Jamás se muestra en público sin su collar de rubíes");
     private Policia policia = new Policia();
     private Tesoro tesoro = new Tesoro("Montreal", "Tesoro Nacional de Montreal", "Comun");
+    private Tesoro tesoro2 = new Tesoro("Buenos Aires", "Sombrero de Gardel", "Valioso");
+    private ArrayList<Tesoro> listaTesoros = new ArrayList<Tesoro>(){{add(tesoro); add(tesoro2);}};
     private Computadora computadora = new Computadora(new ArrayList<Ladron>(){{add(ladron);}});
 
 
@@ -62,7 +65,25 @@ public class PoliciaTest {
         assertEquals(policia.hora(), 11); // Se despierta 11am
     }
 
-    //@Test
-    //public void testUnNovatoArresta10LadronesSeConvierteEnDetective(){}
+    @Test
+    public void testUnNovatoArresta10LadronesSeConvierteEnInvestigador(){
+        for(int i = 0; i < 10; i++) {
+            policia.confirmarCaso();
+        }
+
+        assertEquals(policia.velocidad(), 1300);
+
+    }
+
+    @Test
+    public void testDetectiveAgarraCasoConTesoroValioso() {
+        for(int i = 0; i < 5; i++) {
+            policia.confirmarCaso();
+        }
+
+        Tesoro nuevoTesoro = policia.devolverTesoroAcorde(listaTesoros);
+
+        assert(nuevoTesoro.esValor("Valioso"));
+    }
 
 }
