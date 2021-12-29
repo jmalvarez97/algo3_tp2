@@ -1,17 +1,17 @@
-package edu.fiuba.algo3.Vista;
+package edu.fiuba.algo3.Controlador;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.event.ActionEvent;
 import javafx.scene.paint.Color;
 
-public class BotonEnviarEventHandler implements EventHandler<ActionEvent> {
+public class BotonEnviarNombreEventHandler implements EventHandler<ActionEvent> {
 
     private TextField textField;
     private Label label;
 
-    public BotonEnviarEventHandler(TextField textField, Label label){
+    public BotonEnviarNombreEventHandler(TextField textField, Label label){
         this.textField = textField;
         this.label = label;
     }
