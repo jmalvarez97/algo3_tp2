@@ -60,7 +60,9 @@ public class Computadora {
     }
 
     public boolean chequearOrdenDeArresto(Ladron ladronReal) {
-        //return ladronOrdenDeArresto.esIgualA(ladronReal, pelo, hobby, vehiculo ... );
+        if(ladronOrdenDeArresto == null) {
+            return false;
+        }
         return Objects.equals(ladronReal.nombre(),ladronOrdenDeArresto.nombre());
     }
 }

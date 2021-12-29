@@ -61,4 +61,18 @@ public class ComputadoraTest {
         assertTrue(computadora.chequearOrdenDeArresto(listaLadrones.get(0)));
     }
 
+    @Test
+    public void testSeChequeaOrdenDeArrestoSinTenerEmitidaLaOrdenDeArresto(){
+
+        // Cargamos los datos correspondientes a 'Carmen Sandiego'
+        computadora.cargarSexo("Masculino");
+        computadora.cargarPelo("Rubio");
+        computadora.cargarHobby("Futbol");
+        computadora.cargarVehiculo("Descapotable Packard 1940");
+
+
+        // La orden de arresto emitida no existe
+        assert(!(computadora.chequearOrdenDeArresto(listaLadrones.get(0))));
+    }
+
 }
