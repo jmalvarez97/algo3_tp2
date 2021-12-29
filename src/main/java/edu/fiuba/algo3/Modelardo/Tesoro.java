@@ -42,4 +42,8 @@ public class Tesoro {
 
     public boolean cumplePaisesNecesarios() {return paisesVisitados >= 4;};
 
+    public String nombreCompleto() {
+        return (this.objeto + " de " + this.ciudad);
+    }
+
 }

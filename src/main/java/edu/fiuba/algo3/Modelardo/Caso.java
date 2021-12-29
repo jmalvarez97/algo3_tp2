@@ -44,4 +44,8 @@ public class Caso {
 
     public boolean chequearCantidadDePaises(){return tesoro.cumplePaisesNecesarios();}
 
+    public String nombreCompletoTesoro() {
+        return (this.tesoro).nombreCompleto();
+    }
+
 }

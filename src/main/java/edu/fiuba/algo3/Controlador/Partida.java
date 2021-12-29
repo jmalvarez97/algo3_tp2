@@ -51,4 +51,8 @@ public class Partida{
         this.caso = new Caso(this.policia, tesoroDelCaso, ladronDelCaso, unMapa, computadora);
     }
 
+    public String nombreCompletoTesoro() {
+        return (this.caso).nombreCompletoTesoro();
+    }
+
 }
