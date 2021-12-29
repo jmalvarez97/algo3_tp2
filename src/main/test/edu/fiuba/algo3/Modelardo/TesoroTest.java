@@ -6,16 +6,44 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class TesoroTest {
-    Tesoro tesoro = new Tesoro("Buenos Aires","objeto", "valor");
+    Tesoro tesoroComun = new Tesoro("Buenos Aires","Sombrero de Gardel", "Comun");
+    Tesoro tesoroValioso = new Tesoro("Buenos Aires", "Sombrero de Gardel", "Valioso");
+    Tesoro tesoroMuyValioso = new Tesoro("Buenos Aires", "Sombrero de Gardel", "Muy Valioso");
 
     @Test
-    public void testSeVisitanVariosPaisesConCondicionDeVictoria(){
+    public void testTesoroComunSeVisitan4PaisesSeChequeaCondicionVictoria(){
         for(int i = 0; i<4 ; i++){
-            tesoro.sumarPaisCorrecto();
+            tesoroComun.sumarPaisCorrecto();
         }
 
-        assertEquals(tesoro.paisesVisitados,4);
-
-        assertEquals(tesoro.cumplePaisesNecesarios(),true);
+        assert(tesoroComun.cumplePaisesNecesarios());
     }
+
+    @Test
+    public void testTesoroValiosoSeVisitan5PaisesSeChequeaCondicionVictoria(){
+        for(int i = 0; i<5 ; i++){
+            tesoroValioso.sumarPaisCorrecto();
+        }
+
+        assert(tesoroValioso.cumplePaisesNecesarios());
+    }
+
+    @Test
+    public void testTesoroMuyValiosoSeVisitan7PaisesSeChequeaCondicionVictoria(){
+        for(int i = 0; i<7 ; i++){
+            tesoroMuyValioso.sumarPaisCorrecto();
+        }
+
+        assert(tesoroMuyValioso.cumplePaisesNecesarios());
+    }
+
+    @Test
+    public void testTesoroMuyValiosoSeVisitan5PaisesSeChequeaCondicionVictoria(){
+        for(int i = 0; i<5 ; i++){
+            tesoroMuyValioso.sumarPaisCorrecto();
+        }
+
+        assert(!(tesoroMuyValioso.cumplePaisesNecesarios()));
+    }
+
 }

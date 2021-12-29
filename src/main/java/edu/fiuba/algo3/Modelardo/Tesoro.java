@@ -9,7 +9,7 @@ public class Tesoro {
     protected final String ciudad;
     protected final String objeto;
     protected final String valor;
-    protected int paisesVisitados;
+    protected int paisesCorrectosPorVisitar;
 
     public Tesoro(JSONObject tesoro){
 
@@ -21,12 +21,30 @@ public class Tesoro {
 
         //Leemos la ocupacion
         this.valor = (String) tesoro.get("valor");
+
+        if(this.valor == "Comun") {
+            this.paisesCorrectosPorVisitar = 4;
+
+        } else if (this.valor == "Valioso") {
+            this.paisesCorrectosPorVisitar = 5;
+        } else {
+            this.paisesCorrectosPorVisitar = 7;
+        }
     }
 
     public Tesoro(String ciudad, String objeto, String valor) {
         this.ciudad = ciudad;
         this.objeto = objeto;
         this.valor = valor;
+
+        if(this.valor == "Comun") {
+            this.paisesCorrectosPorVisitar = 4;
+
+        } else if (this.valor == "Valioso") {
+            this.paisesCorrectosPorVisitar = 5;
+        } else {
+            this.paisesCorrectosPorVisitar = 7;
+        }
     }
 
     public boolean esValor(String valor){
@@ -37,10 +55,10 @@ public class Tesoro {
     }
 
     public void sumarPaisCorrecto() {
-        paisesVisitados++;
+        this.paisesCorrectosPorVisitar--;
     }
 
-    public boolean cumplePaisesNecesarios() {return paisesVisitados >= 4;};
+    public boolean cumplePaisesNecesarios() {return this.paisesCorrectosPorVisitar <= 0;};
 
     public String nombreCompleto() {
         return (this.objeto + " de " + this.ciudad);
