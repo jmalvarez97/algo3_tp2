@@ -55,4 +55,5 @@ public class Partida{
         return (this.caso).nombreCompletoTesoro();
     }
 
+    public Ciudad ciudadActual () {return (this.caso).ciudadActual();}
 }

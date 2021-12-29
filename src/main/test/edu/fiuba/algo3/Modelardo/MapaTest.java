@@ -25,7 +25,7 @@ public class MapaTest {
     public void testCalculoDistanciaEntreDosCiudades(){
         Mapa mapa=creoMapa();
         double distancia = mapa.distanciaA(buenosaires);
-        assertEquals((int)distancia, 109);
+        assertEquals((int)distancia, 12164);
     }
 
 
