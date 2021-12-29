@@ -7,6 +7,9 @@ import java.util.Objects;
 
 public class Mapa {
 
+    // Factor de proporcionalidad para pasar de coordenadas a kms
+    private final int CONSTANTE_KMS = 111; // 2 * pi * radioTierra / 360
+
     private Ciudad actual;
     private Ciudad proxima;
     private ArrayList<Ciudad> listaCiudades;
@@ -46,7 +49,7 @@ public class Mapa {
         double dLongitud = Math.abs(actual.getLongitud() - destino.getLongitud());
         double dLatitud = Math.abs(actual.getLatitud() - destino.getLatitud());
         double distancia = Math.sqrt(Math.pow(dLongitud,2) + Math.pow(dLatitud,2));
-        return distancia;
+        return distancia * this.CONSTANTE_KMS;
     }
 
     public ArrayList<Ciudad> opcionesParaViajar(){
