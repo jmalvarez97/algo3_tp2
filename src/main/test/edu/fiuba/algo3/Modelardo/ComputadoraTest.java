@@ -43,4 +43,22 @@ public class ComputadoraTest {
         assertTrue(computadora.chequearOrdenDeArresto(listaLadrones.get(0)));
     }
 
+    @Test
+    public void testSeChequeaOrdenDeArrestoTeniendoUnUnicoSospechosoPosibleNoEsValida(){
+
+        // Cargamos los datos correspondientes a 'Carmen Sandiego'
+        computadora.cargarSexo("Masculino");
+        computadora.cargarPelo("Rubio");
+        computadora.cargarHobby("Futbol");
+        computadora.cargarVehiculo("Descapotable Packard 1940");
+
+        // Debería dar un solo sospechoso y generar la orden de arresto
+        ArrayList<Ladron> listaSospechosos = computadora.buscarSospechosos();
+
+        assertEquals(listaSospechosos.size(), 1);
+
+        // La orden de arresto emitida corresponde al ladron buscado
+        assertTrue(computadora.chequearOrdenDeArresto(listaLadrones.get(0)));
+    }
+
 }
