@@ -10,6 +10,9 @@ import java.util.Random;
 public class PistaFacil implements Pista {
     String cuerpo;
 
+    public PistaFacil(Edificio edificio, String pista){
+        this.cuerpo=pista;
+    }
     public PistaFacil(String edificio) {
         this.cuerpo = buscarPorArchivo(edificio);
     }
