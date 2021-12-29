@@ -22,8 +22,8 @@ public class PistaFacil implements Pista {
         return this.cuerpo + dato;
     }
 
-
-    private String buscarPorArchivo(String nombreEdificio) {
+    @Override
+    public String buscarPorArchivo(String nombreEdificio) {
         try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/pistasFaciles.csv"))) {
             String line;
             Random random = new Random();

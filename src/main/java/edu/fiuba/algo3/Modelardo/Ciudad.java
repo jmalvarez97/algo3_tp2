@@ -201,5 +201,6 @@ public class Ciudad {
     public double getLongitud() {return this.longitud;}
     public ArrayList<String> getColores() {return this.colorBandera;}
     public String getDatoRandom() {return this.arte;}
+    public String getDescripcion() {return this.descripcion;}
 }
 
