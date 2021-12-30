@@ -26,7 +26,7 @@ public class Ciudad {
 
 
     Edificio banco; //Edificio bolsa;
-    Edificio puerto; //Edificio aeropuerto;
+    Edificio aeropuerto; //Edificio aeropuerto;
     Edificio biblioteca;
 
     public Ciudad (String nombre, double latitud, double longitud, String moneda, String geografia, String arte, String religion, String representante, String descripcion, ArrayList<String> colorBandera , ArrayList<String> idiomas,ArrayList<String> caracteristicas, ArrayList<String> industrias, ArrayList<String> animales, ArrayList<String> etnias, ArrayList<String> otros ){
@@ -78,9 +78,7 @@ public class Ciudad {
 
 
         this.banco = new Banco();
-        //this.bolsa = new Bolsa();
-        this.puerto = new Puerto();
-        //this.aeropuerto = new Aeropuerto();
+        this.aeropuerto = new Aeropuerto();
         this.biblioteca = new Biblioteca();
     }
 
@@ -160,15 +158,9 @@ public class Ciudad {
 
 
         this.banco = new Banco();
-        //this.bolsa = new Bolsa();
-        this.puerto = new Puerto();
-        //this.aeropuerto = new Aeropuerto();
+        this.aeropuerto = new Aeropuerto();
         this.biblioteca = new Biblioteca();
 
-    }
-
-    private String visitar(Ciudad proxima, Edificio unEdificio){
-        return unEdificio.darPista(proxima);
     }
 
     // Devuelve el objeto edificio. Modificacion para poder reutilizar la funcion.
@@ -178,8 +170,8 @@ public class Ciudad {
             return this.banco;
         }
 
-        if(unEdificio.equals("puerto")){
-            return this.puerto;
+        if(unEdificio.equals("aeropuerto")){
+            return this.aeropuerto;
         }
 
         return this.biblioteca;
@@ -187,7 +179,8 @@ public class Ciudad {
 
     public String visitar(Ciudad proxima, String unEdificio, Policia policia) {
         Edificio edificio = detectarEdificio(unEdificio);
-        String pista = edificio.darPista(proxima);
+        Pista pistaValor = policia.pistaValorCorrespondiente();
+        String pista = edificio.darPista(pistaValor, proxima);
         edificio.descontarHorasDePolicia(policia); // tambien se podria en darPista, cada pista dada lleva un tiempo
         return pista;
 
@@ -199,7 +192,7 @@ public class Ciudad {
     public String getNombre() { return this.nombre; }
     public double getLatitud() {return this.latitud;}
     public double getLongitud() {return this.longitud;}
-    public ArrayList<String> getColores() {return this.colorBandera;}
+    public String getColores() {return this.colorBandera.get(0);}
     public String getDatoRandom() {return this.arte;}
     public String getDescripcion() {return this.descripcion;}
 }

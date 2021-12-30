@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.Modelardo.Policia;
 
 
+import edu.fiuba.algo3.Modelardo.PistaMedia;
+
 public class Investigador extends StatePolicia {
 
     public Investigador(){
@@ -13,6 +15,10 @@ public class Investigador extends StatePolicia {
             this.policia.setState(new Sargento());
         }
 
+    }
+
+    public PistaMedia pistaValorCorrespondiente(){
+        return new PistaMedia();
     }
 
 }
