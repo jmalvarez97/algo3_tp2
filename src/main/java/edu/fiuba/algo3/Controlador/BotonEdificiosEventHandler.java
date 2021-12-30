@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.Controlador;
 
+import edu.fiuba.algo3.Vista.ContenedorEdificios;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -29,30 +30,20 @@ public class BotonEdificiosEventHandler implements EventHandler<ActionEvent> {
 
         Label label = new Label("A qué edificio querés entrar?");
 
-        Button botonBanco = new Button();
-        botonBanco.setText("Banco");
-        BotonBancoEventHandler botonBancoEventHandler = new BotonBancoEventHandler(stage,partida,botonBanco);
-        botonBanco.setOnAction(botonBancoEventHandler);
+        ContenedorEdificios contenedorEdificios = new ContenedorEdificios(stage,partida,escenaCiudad);
 
-        Button botonAeropuerto = new Button();
-        botonAeropuerto.setText("Aeropuerto");
-        //BotonAeropuertoEventHandler botonAeropuertoEventHandler = new BotonAeropuertoEventHandler();
-        //botonAeropuerto.setOnAction(botonAeropuertoEventHandler);
-
-        Button botonBiblioteca = new Button();
-        botonBiblioteca.setText("Biblioteca");
-        //BotonBibliotecaEventHandler botonBibliotecaEventHandler = new BotonBibliotecaEventHandler();
-        //botonBiblioteca.setOnAction(botonBibliotecaEventHandler);
-
-        Button botonVolver = new Button();
-        botonVolver.setText("Volver");
-        BotonVolverEventHandler botonVolverEventHandler = new BotonVolverEventHandler(stage,escenaCiudad);
-        botonVolver.setOnAction(botonVolverEventHandler);
-
+        /*
         HBox contenedorEdificios = new HBox();
         contenedorEdificios.getChildren().addAll(botonBanco,botonAeropuerto,botonBiblioteca);
         contenedorEdificios.setSpacing(20);
         contenedorEdificios.setAlignment(Pos.CENTER);
+         */
+
+        //BOTON VOLVER
+        Button botonVolver = new Button();
+        botonVolver.setText("Volver");
+        BotonVolverEventHandler botonVolverEventHandler = new BotonVolverEventHandler(stage,escenaCiudad);
+        botonVolver.setOnAction(botonVolverEventHandler);
 
         VBox contenedor = new VBox();
         contenedor.getChildren().addAll(label,contenedorEdificios,botonVolver);
@@ -61,5 +52,6 @@ public class BotonEdificiosEventHandler implements EventHandler<ActionEvent> {
 
         Scene escenaNueva = new Scene(contenedor,640,480);
         stage.setScene(escenaNueva);
+        stage.show();
     }
 }

@@ -8,15 +8,16 @@ import javafx.stage.Stage;
 public class BotonVolverEventHandler implements EventHandler<ActionEvent> {
 
     private Stage stage;
-    private Scene escenaCiudad;
+    private Scene escenaAnterior;
 
-    public BotonVolverEventHandler(Stage stage,Scene escenaCiudad){
+    public BotonVolverEventHandler(Stage stage,Scene escenaAnterior){
         this.stage = stage;
-        this.escenaCiudad = escenaCiudad;
+        this.escenaAnterior = escenaAnterior;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        stage.setScene(escenaCiudad);
+        stage.setScene(escenaAnterior);
+        stage.show();
     }
 }

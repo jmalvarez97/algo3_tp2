@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.Controlador;
 
+import edu.fiuba.algo3.Vista.ContenedorEdificioPista;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -11,33 +12,34 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
 
-public class BotonBancoEventHandler implements EventHandler<ActionEvent> {
+public class BotonEdificioEventHandler implements EventHandler<ActionEvent> {
 
     private Stage stage;
     private Partida partida;
     private Button boton;
+    private Scene escenaEdificios;
 
-    public BotonBancoEventHandler(Stage stage,Partida partida,Button boton){
+    public BotonEdificioEventHandler(Stage stage,Partida partida,Button boton,Scene escenaEdificios){
         this.stage = stage;
         this.partida = partida;
         this.boton = boton;
+        this.escenaEdificios = escenaEdificios;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
         String pista = partida.visitar(boton.getText());
 
-        Text nombreEdificio = new Text();
-        nombreEdificio.setText(boton.getText());
-        nombreEdificio.setFont(Font.font("", FontWeight.EXTRA_BOLD, FontPosture.ITALIC,40));
-        nombreEdificio.setTextAlignment(TextAlignment.CENTER);
+        ContenedorEdificioPista contenedorEdificioPista = new ContenedorEdificioPista(boton,pista);
 
-        Label labelPista = new Label();
-        labelPista.setText(pista);
-        labelPista.setWrapText(true);
+        //BOTON VOLVER
+        Button botonVolver = new Button();
+        botonVolver.setText("Volver");
+        BotonVolverEventHandler botonVolverEventHandler = new BotonVolverEventHandler(stage,escenaEdificios);
+        botonVolver.setOnAction(botonVolverEventHandler);
 
         VBox contenedorVertical = new VBox();
-        contenedorVertical.getChildren().addAll(nombreEdificio,labelPista);
+        contenedorVertical.getChildren().addAll(contenedorEdificioPista,botonVolver);
         contenedorVertical.setAlignment(Pos.TOP_CENTER);
         contenedorVertical.setPadding(new Insets(20));
 

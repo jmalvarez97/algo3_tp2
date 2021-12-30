@@ -43,6 +43,7 @@ public class BotonEnviarNombreEventHandler implements EventHandler<ActionEvent> 
 
             Button botonContinuar = new Button();
             botonContinuar.setText("Continuar");
+            botonContinuar.requestFocus();
 
             BotonContinuarEventHandler botonContinuarEventHandler = new BotonContinuarEventHandler(this.partida,this.stage);
             botonContinuar.setOnAction(botonContinuarEventHandler);

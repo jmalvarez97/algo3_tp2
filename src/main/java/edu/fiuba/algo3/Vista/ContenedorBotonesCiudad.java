@@ -22,16 +22,19 @@ public class ContenedorBotonesCiudad extends HBox {
         this.escenaCiudad = escenaCiudad;
         this.partida = partida;
 
+        //BOTON VIAJAR
         Button botonViajar = new Button();
         botonViajar.setText("Viajar");
         BotonViajarEventHandler botonViajarEventHandler = new BotonViajarEventHandler(stage,escenaCiudad,partida);
         botonViajar.setOnAction(botonViajarEventHandler);
 
+        //BOTON EDIFICIOS
         Button botonEdificios = new Button();
         botonEdificios.setText("Edificios");
         BotonEdificiosEventHandler botonEdificiosEventHandler = new BotonEdificiosEventHandler(stage,escenaCiudad,partida);
         botonEdificios.setOnAction(botonEdificiosEventHandler);
 
+        //BOTON COMPUTADORA
         Button botonComputadora = new Button();
         botonComputadora.setText("PC");
         BotonComputadoraEventHandler botonComputadoraEventHandler = new BotonComputadoraEventHandler(stage,escenaCiudad,partida);

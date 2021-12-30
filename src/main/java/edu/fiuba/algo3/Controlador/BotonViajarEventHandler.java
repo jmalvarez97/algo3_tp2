@@ -48,6 +48,7 @@ public class BotonViajarEventHandler implements EventHandler<ActionEvent> {
         contenedorCiudades.setSpacing(10);
         contenedorCiudades.setAlignment(Pos.CENTER);
 
+        //BOTON VOLVER
         Button botonVolver = new Button();
         botonVolver.setText("Volver");
         BotonVolverEventHandler botonVolverEventHandler = new BotonVolverEventHandler(stage,escenaCiudad);
