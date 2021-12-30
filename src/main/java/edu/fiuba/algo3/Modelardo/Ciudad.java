@@ -224,9 +224,7 @@ public class Ciudad {
     }
 
     public String pistaColores() {return MENSAJE_AEROPUERTO+this.colorBandera;}
-    public String pistaMoneda(){
-        return (MENSAJE_BANCO + this.moneda);
-    }
+    public String pistaMoneda() {return (MENSAJE_BANCO + this.moneda);}
     public String pistaArte() {return MENSAJE_BIBLIOTECA+this.arte;}
     public String pistaReligion(){return MENSAJE_BIBLIOTECA+this.religion;}
     public String pistaRepresentante(){return MENSAJE_BANCO+this.representante;}
