@@ -58,16 +58,16 @@ public class CiudadTest {
 
     @Test
     public void testReciboNombreDeEdificioYDevuelveObjetoBanco(){
-        assertEquals(montreal.detectarEdificio("banco"),montreal.banco);
+        assertEquals(montreal.detectarEdificio("Banco"),montreal.banco);
     }
 
     @Test
     public void testReciboNombreDeEdificioYDevuelveObjetoBiblioteca(){
-        assertEquals(montreal.detectarEdificio("biblioteca"),montreal.biblioteca);
+        assertEquals(montreal.detectarEdificio("Biblioteca"),montreal.biblioteca);
     }
 
     @Test
     public void testReciboNombreDeEdificioYDevuelveObjetoAeropuerto(){
-        assertEquals(montreal.detectarEdificio("aeropuerto"), montreal.aeropuerto);
+        assertEquals(montreal.detectarEdificio("Aeropuerto"), montreal.aeropuerto);
     }
 }

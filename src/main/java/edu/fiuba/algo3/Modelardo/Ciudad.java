@@ -212,11 +212,11 @@ public class Ciudad {
     // Devuelve el objeto edificio. Modificacion para poder reutilizar la funcion.
     public Edificio detectarEdificio(String unEdificio){
 
-        if(unEdificio.equals("banco")){
+        if(unEdificio.equals("Banco")){
             return this.banco;
         }
 
-        if(unEdificio.equals("aeropuerto")){
+        if(unEdificio.equals("Aeropuerto")){
             return this.aeropuerto;
         }
 
