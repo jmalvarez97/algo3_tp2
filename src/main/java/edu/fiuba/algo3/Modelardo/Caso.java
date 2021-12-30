@@ -92,4 +92,12 @@ public class Caso {
     public ArrayList<Ladron> buscarSospechosos(){
         return this.computadora.buscarSospechosos();
     }
+
+    public boolean tieneTiempo(){
+        if(this.policia.horasRestantes() <= 0){
+            return false;
+        }
+
+        return true;
+    }
 }

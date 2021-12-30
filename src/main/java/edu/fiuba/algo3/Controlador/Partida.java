@@ -80,7 +80,7 @@ public class Partida{
     }
 
     public boolean ganoUsuario() {
-        if (this.caso.chequearOrdenDeArresto()) {
+        if (this.caso.chequearOrdenDeArresto() && this.caso.tieneTiempo()) {
             this.policia.confirmarCaso();
             return true;
         }
