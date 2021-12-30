@@ -57,17 +57,19 @@ public class Mapa {
         // Devuelve actual, proxima + 2 ciudades random
         ArrayList<Ciudad> listaOpciones = new ArrayList<Ciudad>();
 
+
         listaOpciones.add(this.proxima);
         int indexProxima = this.listaCiudades.indexOf(this.proxima);
+        int indexActual = this.listaCiudades.indexOf(this.actual);
 
         int randomIndex1=indexProxima;
-        while (randomIndex1 == indexProxima ){
+        while (randomIndex1 == indexProxima || randomIndex1==indexActual){
             randomIndex1 = (int) (Math.random()*10 - 1);
         }
         Ciudad random1 = this.listaCiudades.get(randomIndex1);
 
         int randomIndex2=randomIndex1;
-        while (randomIndex1 == randomIndex2 || randomIndex2==indexProxima){
+        while (randomIndex1 == randomIndex2 || randomIndex2==indexProxima || randomIndex2==indexActual){
             randomIndex2 = (int) (Math.random()*10 - 1);
         }
         Ciudad random2 = this.listaCiudades.get(randomIndex2);
