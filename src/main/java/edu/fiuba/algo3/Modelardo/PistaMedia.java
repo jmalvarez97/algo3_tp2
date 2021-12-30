@@ -10,16 +10,16 @@ import java.util.Random;
 public class PistaMedia implements Pista{
     @Override
     public String darPistaEconomica(Ciudad proxima) {
-        return proxima.getMoneda();
+        return proxima.getIndustria();
     }
 
     @Override
     public String darPistaViaje(Ciudad proxima) {
-        return proxima.getColores();
+        return proxima.getIdiomas();
     }
 
     @Override
     public String darPistaCultura(Ciudad proxima) {
-        return proxima.getDatoRandom();
+        return proxima.getEtnias();
     }
 }

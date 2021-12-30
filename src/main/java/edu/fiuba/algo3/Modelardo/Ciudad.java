@@ -236,5 +236,11 @@ public class Ciudad {
     public String getColores() {return this.colorBandera;}
     public String getDatoRandom() {return this.arte;}
     public String getDescripcion() {return this.descripcion;}
+    public String getReligion(){return this.religion;}
+    public String getRepresentante(){return this.representante;}
+    public String getGeografia(){return this.geografia;}
+    public String getEtnias(){return this.etnias;}
+    public String getIndustria(){return this.industrias;}
+    public String getIdiomas(){return this.idiomas;}
 }
 
