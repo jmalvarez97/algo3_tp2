@@ -14,7 +14,7 @@ public class Biblioteca implements Edificio{
     @Override
     public String darPista(Pista pistaValor, Ciudad ciudad){
         this.contadorVisitas++;
-        return pistaValor.darPistaDato(ciudad);
+        return pistaValor.darPistaCultura(ciudad);
     }
 
     @Override

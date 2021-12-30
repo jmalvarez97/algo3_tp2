@@ -19,7 +19,7 @@ public class LecturaCiudades {
         JSONParser parser = new JSONParser();
         ArrayList<Ciudad> listaCiudades = new ArrayList<Ciudad>();
 
-        try (FileReader reader = new FileReader("src/main/java/edu/fiuba/algo3/Controlador/ciudadesSinTerminar.json")) {
+        try (FileReader reader = new FileReader("src/main/java/edu/fiuba/algo3/Controlador/ciudades.json")) {
             //Leemos el archivo JSON
             JSONObject obj = (JSONObject) parser.parse(reader);
             JSONArray listaCiudadesJson  = (JSONArray) obj.get("ciudades");

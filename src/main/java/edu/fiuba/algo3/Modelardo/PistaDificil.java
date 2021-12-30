@@ -14,12 +14,12 @@ public class PistaDificil implements Pista{
     }
 
     @Override
-    public String darPistaBandera(Ciudad proxima) {
+    public String darPistaViaje(Ciudad proxima) {
         return proxima.getColores();
     }
 
     @Override
-    public String darPistaDato(Ciudad proxima) {
+    public String darPistaCultura(Ciudad proxima) {
         return proxima.getDatoRandom();
     }
 

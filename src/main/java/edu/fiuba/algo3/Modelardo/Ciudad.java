@@ -15,13 +15,13 @@ public class Ciudad {
     private final double latitud;
     private final double longitud;
     private final String descripcion;
-    private ArrayList<String> colorBandera = new ArrayList<>();
-    private ArrayList<String> idiomas = new ArrayList<>();
-    private ArrayList<String> caracteristicas = new ArrayList<>();
-    private ArrayList<String> industrias = new ArrayList<>();
-    private ArrayList<String> animales = new ArrayList<>();
-    private ArrayList<String> etnias = new ArrayList<>();
-    private ArrayList<String> otros = new ArrayList<>();
+    private final String colorBandera;
+    private final String idiomas;
+    private final String caracteristicas;
+    private final String industrias;
+    private final String animales;
+    private final String etnias;
+    private final String otros;
 
 
 
@@ -29,7 +29,7 @@ public class Ciudad {
     Edificio aeropuerto; //Edificio aeropuerto;
     Edificio biblioteca;
 
-    public Ciudad (String nombre, double latitud, double longitud, String moneda, String geografia, String arte, String religion, String representante, String descripcion, ArrayList<String> colorBandera , ArrayList<String> idiomas,ArrayList<String> caracteristicas, ArrayList<String> industrias, ArrayList<String> animales, ArrayList<String> etnias, ArrayList<String> otros ){
+    public Ciudad (String nombre, double latitud, double longitud, String moneda, String geografia, String arte, String religion, String representante, String descripcion, String colorBandera ,String idiomas,String caracteristicas, String industrias, String animales, String etnias, String otros ){
         //Leemos el nombre de la ciudad
         this.nombre = nombre;
 
@@ -111,48 +111,89 @@ public class Ciudad {
         //Leemos la descripcion
         this.descripcion = (String) ciudad.get("descripcion");
 
-        //Tenemos que agregar múltiples colores de bandera
+        //Tenemos que agregar colores de bandera
+        this.colorBandera=(String) ciudad.get("colorBandera");
+        /*
         JSONArray coloresBanderaObject = (JSONArray) ciudad.get("colorBandera");
         for(int i = 0; i < coloresBanderaObject.size() ; i++){
             colorBandera.add( (String) coloresBanderaObject.get(i) );
+
+
         }
 
-        //Tenemos que agregar múltiples idiomas
+         */
+
+        //Tenemos que agregar idiomas
+        this.idiomas = (String) ciudad.get("idiomas");
+        /*
         JSONArray idiomasObject = (JSONArray) ciudad.get("idiomas");
         for(int i = 0; i < idiomasObject.size() ; i++){
             idiomas.add( (String) idiomasObject.get(i) );
+
         }
 
+         */
 
-        //Tenemos que agregar múltiples caracteristicas
+
+        //Tenemos que agregar caracteristicas
+        this.caracteristicas=(String) ciudad.get("caracteristicas");
+        /*
         JSONArray caracteristicasObject = (JSONArray) ciudad.get("caracteristicas");
         for(int i = 0; i < caracteristicasObject.size() ; i++){
             caracteristicas.add( (String) caracteristicasObject.get(i) );
+
+
         }
 
-        //Tenemos que agregar múltiples industrias
+         */
+
+        //Tenemos que agregar industrias
+        this.industrias=(String) ciudad.get("industrias");
+        /*
         JSONArray industriasObject = (JSONArray) ciudad.get("industrias");
         for(int i = 0; i < industriasObject.size() ; i++){
             industrias.add( (String) industriasObject.get(i) );
+
+
         }
 
-        //Tenemos que agregar múltiples animales
+         */
+
+        //Tenemos que agregar animales
+        this.animales=(String) ciudad.get("animales");
+        /*
         JSONArray animalesObject = (JSONArray) ciudad.get("animales");
         for(int i = 0; i < animalesObject.size() ; i++){
             animales.add( (String) animalesObject.get(i) );
+
+
         }
 
-        //Tenemos que agregar múltiples etnias
+         */
+
+        //Tenemos que agregar etnias
+        this.etnias=(String) ciudad.get("etnias");
+        /*
         JSONArray etniasObject = (JSONArray) ciudad.get("etnias");
         for(int i = 0; i < etniasObject.size() ; i++){
             etnias.add( (String) etniasObject.get(i) );
+
+
         }
 
-        //Tenemos que agregar una lista de "otros"
+         */
+
+        //Tenemos que agregar "otros"
+        this.otros=(String)  ciudad.get("otros");
+        /*
         JSONArray otrosObject = (JSONArray) ciudad.get("otros");
         for(int i = 0; i < otrosObject.size() ; i++){
             otros.add( (String) otrosObject.get(i) );
+
+
         }
+
+         */
 
 
 
@@ -192,7 +233,7 @@ public class Ciudad {
     public String getNombre() { return this.nombre; }
     public double getLatitud() {return this.latitud;}
     public double getLongitud() {return this.longitud;}
-    public String getColores() {return this.colorBandera.get(0);}
+    public String getColores() {return this.colorBandera;}
     public String getDatoRandom() {return this.arte;}
     public String getDescripcion() {return this.descripcion;}
 }

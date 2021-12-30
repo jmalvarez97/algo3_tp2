@@ -15,8 +15,8 @@ public class CasosDeUsoEntrega1Test {
     private Computadora computadora = new Computadora(new ArrayList<Ladron>(){{add(ladron);}});
 
     // Van aca para que en el caso2 se mantenga la cantidad de visitas en Banco
-    Ciudad montreal = new Ciudad("Montreal",37.984167,23.728056,null,null,null,null,null,null,new ArrayList<String>(){{add("blanco");}},null,null,null,null,null,null);
-    Ciudad mexico = new Ciudad ("Mexico",33.35,44.416667,"pesos",null,"civilizacion azteca",null,null,null,new ArrayList<String>(){{add("blanco");}},null,null,null,null,null,null);
+    Ciudad montreal = new Ciudad("Montreal",37.984167,23.728056,null,null,null,null,null,null,"blanco",null,null,null,null,null,null);
+    Ciudad mexico = new Ciudad ("Mexico",33.35,44.416667,"pesos",null,"civilizacion azteca",null,null,null,"blanco",null,null,null,null,null,null);
     Mapa unMapa = new Mapa(montreal,mexico, new ArrayList<Ciudad>(){{add(montreal); add(mexico);}});
 
     private Caso caso = new Caso(policia, tesoro, ladron, unMapa, computadora);
