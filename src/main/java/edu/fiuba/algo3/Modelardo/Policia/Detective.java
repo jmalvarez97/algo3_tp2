@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.Modelardo.Policia;
 
 
-import edu.fiuba.algo3.Modelardo.PistaMedia;
+import edu.fiuba.algo3.Modelardo.Pistas.PistaMedia;
 
 public class Detective extends StatePolicia {
 

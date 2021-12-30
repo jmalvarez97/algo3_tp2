@@ -1,4 +1,6 @@
-package edu.fiuba.algo3.Modelardo;
+package edu.fiuba.algo3.Modelardo.UnPocoDeCodigo;
+
+import edu.fiuba.algo3.Modelardo.UnPocoDeCodigo.Localize;
 
 public class Message extends Localize {
 

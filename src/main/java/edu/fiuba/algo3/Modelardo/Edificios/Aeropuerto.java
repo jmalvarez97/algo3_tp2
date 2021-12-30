@@ -1,21 +1,23 @@
-package edu.fiuba.algo3.Modelardo;
+package edu.fiuba.algo3.Modelardo.Edificios;
 
+import edu.fiuba.algo3.Modelardo.Ciudad;
+import edu.fiuba.algo3.Modelardo.Pistas.Pista;
 import edu.fiuba.algo3.Modelardo.Policia.Policia;
-import javafx.scene.effect.Effect;
 
-public class Banco implements Edificio{
+public class Aeropuerto implements Edificio {
 
     private Pista pista;
     private int contadorVisitas;
 
-    public Banco(){
+
+    public Aeropuerto(){
         this.contadorVisitas = 0;
     }
 
     @Override
     public String darPista(Pista pistaValor, Ciudad ciudad){
         this.contadorVisitas++;
-        return pistaValor.darPistaEconomica(ciudad);
+        return pistaValor.darPistaViaje(ciudad);
     }
 
     @Override
@@ -24,4 +26,3 @@ public class Banco implements Edificio{
         policia.descontarHoras(horasASacar);
     }
 }
-

@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.Modelardo;
 
+import edu.fiuba.algo3.Modelardo.Decorator.Ladron;
 import edu.fiuba.algo3.Modelardo.Policia.Policia;
 import org.junit.jupiter.api.Test;
 

@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.Modelardo;
 
-import org.junit.jupiter.api.Test;
+import edu.fiuba.algo3.Modelardo.Edificios.Banco;
+import edu.fiuba.algo3.Modelardo.Edificios.Edificio;
+import edu.fiuba.algo3.Modelardo.Pistas.PistaFacil;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

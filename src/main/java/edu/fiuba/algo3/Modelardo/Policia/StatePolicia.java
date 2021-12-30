@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.Modelardo.Policia;
 
-import edu.fiuba.algo3.Modelardo.Pista;
+import edu.fiuba.algo3.Modelardo.Pistas.Pista;
 import edu.fiuba.algo3.Modelardo.Tesoro;
 
 import java.util.ArrayList;

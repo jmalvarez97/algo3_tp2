@@ -1,8 +1,6 @@
-package edu.fiuba.algo3.Modelardo;
+package edu.fiuba.algo3.Modelardo.Decorator;
 
 
-import edu.fiuba.algo3.Modelardo.Decorator.Nombre;
-import edu.fiuba.algo3.Modelardo.Decorator.Pregunta;
 import org.json.simple.JSONObject;
 
 import java.util.Objects;

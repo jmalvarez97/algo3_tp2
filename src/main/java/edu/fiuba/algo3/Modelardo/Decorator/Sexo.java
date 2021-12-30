@@ -1,7 +1,5 @@
 package edu.fiuba.algo3.Modelardo.Decorator;
 
-import edu.fiuba.algo3.Modelardo.Ladron;
-
 public class Sexo extends Decorator{
 
 

@@ -1,8 +1,10 @@
-package edu.fiuba.algo3.Modelardo;
+package edu.fiuba.algo3.Modelardo.Edificios;
 
+import edu.fiuba.algo3.Modelardo.Ciudad;
+import edu.fiuba.algo3.Modelardo.Pistas.Pista;
 import edu.fiuba.algo3.Modelardo.Policia.Policia;
 
-public class Biblioteca implements Edificio{
+public class Biblioteca implements Edificio {
 
     private Pista pista;
     private int contadorVisitas;

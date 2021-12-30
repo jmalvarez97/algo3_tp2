@@ -2,7 +2,6 @@ package edu.fiuba.algo3.Modelardo;
 
 import edu.fiuba.algo3.Modelardo.Decorator.*;
 import edu.fiuba.algo3.Modelardo.Policia.Policia;
-import net.bytebuddy.build.ToStringPlugin;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

@@ -1,4 +1,6 @@
-package edu.fiuba.algo3.Modelardo;
+package edu.fiuba.algo3.Modelardo.Pistas;
+
+import edu.fiuba.algo3.Modelardo.Ciudad;
 
 public interface Pista {
 

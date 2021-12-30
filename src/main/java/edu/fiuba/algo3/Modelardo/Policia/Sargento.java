@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.Modelardo.Policia;
 
-import edu.fiuba.algo3.Modelardo.PistaDificil;
+import edu.fiuba.algo3.Modelardo.Pistas.PistaDificil;
 
 public class Sargento extends StatePolicia {
 

@@ -1,11 +1,7 @@
-package edu.fiuba.algo3.Modelardo;
+package edu.fiuba.algo3.Modelardo.Pistas;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Objects;
-import java.util.Random;
+import edu.fiuba.algo3.Modelardo.Ciudad;
+import edu.fiuba.algo3.Modelardo.Pistas.Pista;
 
 public class PistaFacil implements Pista {
     @Override

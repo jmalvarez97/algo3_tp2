@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.Modelardo;
+package edu.fiuba.algo3.Modelardo.UnPocoDeCodigo;
 
 public class Localize {
     protected final String esContent;
