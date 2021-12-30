@@ -78,15 +78,14 @@ public class DecoratorTest {
 
         Ladron ladronALlenar = new Ladron();
         ColorDePelo ladronesCastaños = new ColorDePelo(ladronALlenar, "Castaño");
-        Ocupacion ladronesCastañosConOcupacion = new Ocupacion(ladronesCastaños, "Bailarina profesional de aerobic");
 
         for(int i = 0; i < listaLadrones.size(); i++) {
-            if (ladronesCastañosConOcupacion.comparar(listaLadrones.get(i))) {
+            if (ladronesCastaños.comparar(listaLadrones.get(i))) {
                 castaños += 1;
             }
         }
 
-        assertEquals(castaños,1);
+        assertEquals(castaños,3);
 
 
     }

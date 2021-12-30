@@ -9,7 +9,7 @@ public class IntegracionTest {
 
 
     @Test
-    public void testJuegoCompletoDondeGanaUnNovato1(){
+    public void testJuegoCompletoDondeGanaUnNovato(){
         int horasDia = 8;
         int horasRestantes = 154;
         Partida partida = new Partida();
@@ -54,17 +54,6 @@ public class IntegracionTest {
         // Segundo pais, se muestran los siguientes paises de donde pudo haber ido el ladron
         partida.opcionesParaViajar();
 
-        // Visita un banco
-        partida.visitar("Banco");
-
-        // se le resta 1 hora
-        horasRestantes -= 1;
-        horasDia+=1;
-
-        if (horasDia > 23){
-            horasRestantes-=8;
-            horasDia = horasDia -24 + 8;
-        }
         assertEquals(partida.horasRestantes(), horasRestantes);
 
         // visita aeropuerto
@@ -118,18 +107,26 @@ public class IntegracionTest {
         // tercer pais, se muestran los siguientes paises de donde pudo haber ido el ladron
         partida.opcionesParaViajar();
 
-        // Visita un banco
-        partida.visitar("Banco");
+        // Visita una Biblioteca
+        partida.visitar("Biblioteca");
 
         // se le resta 1 hora
         horasRestantes -= 1;
         horasDia+=1;
+
+        // aca hieren con cuchillo al policia , por ser primera vez, se le quita dos horas
+        if(partida.herirConCuchillo()){
+            horasRestantes -=2;
+            horasDia+=2;
+        }
+
 
         if (horasDia > 23){
             horasRestantes-=8;
             horasDia = horasDia -24 + 8;
         }
         assertEquals(partida.horasRestantes(), horasRestantes);
+
 
         // visita aeropuerto
         partida.visitar("Aeropuerto");

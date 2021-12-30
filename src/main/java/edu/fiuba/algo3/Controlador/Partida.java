@@ -91,4 +91,8 @@ public class Partida{
         }
         return false;
     }
+
+    public int hora(){
+        return this.policia.hora();
+    }
 }
