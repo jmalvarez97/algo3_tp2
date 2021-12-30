@@ -40,7 +40,7 @@ public class CasosDeUsoEntrega1Test {
         - Detective novato comienza en Montreal.
         - Vista un Banco:
             - se despliega una pista. */
-        String pista = caso.visitar("banco");
+        String pista = caso.visitar("Banco");
 
         assert(pista.contains("pesos"));
         assertEquals(policia.horasRestantes(), 154-1);
@@ -56,8 +56,8 @@ public class CasosDeUsoEntrega1Test {
             - Se despliega una pista. */
 
         caso.visitar("banco");
-        String pista = caso.visitar("banco");
-        String pista2 = caso.visitar("biblioteca");
+        String pista = caso.visitar("Banco");
+        String pista2 = caso.visitar("Biblioteca");
 
         assert(pista.contains("pesos"));
         assert(pista2.contains("civilizacion azteca"));
@@ -87,11 +87,11 @@ public class CasosDeUsoEntrega1Test {
         */
 
         for(int i=0;i<3;i++){
-            caso.visitar("aeropuerto");
+            caso.visitar("Aeropuerto");
         }
 
         for(int i=0;i<5;i++){
-            caso.visitar("banco");
+            caso.visitar("Banco");
         }
 
         int tiempoRestanteEsperado = 154 - (1 + 2 + 3) - (1 + 2 + 3 + 3 + 3) - 8;
