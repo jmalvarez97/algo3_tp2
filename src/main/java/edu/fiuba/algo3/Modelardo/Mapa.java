@@ -31,17 +31,24 @@ public class Mapa {
         // Hacer la cuenta de horas y distancia y restar horas
         double distanciaViaje = distanciaA(destino);
 
+        int indexActual = this.listaCiudades.indexOf(this.actual);
+        int indexDestino = this.listaCiudades.indexOf(destino);
+
         actual = destino;
         // Si se viaja a la ciudad correcta, se actualiza proxima
         if(Objects.equals(destino.getNombre(), proxima.getNombre())) {
             //Tomamos una ciudad random de la lista de ciudades para que sea la ciudad próxima
-            int randomIndex = (int) ((Math.random()*10) - 1);
+            int randomIndex=indexActual;
+
+            while (randomIndex==indexActual || randomIndex==indexDestino){
+                randomIndex = (int) (Math.random()*10 - 1);
+            }
             proxima  = this.listaCiudades.get(randomIndex);
             // Se acierta en uno de los paises de la estrategia del ladron --> se suma 1 (le doy la resp a tesoro)
             tesoro.sumarPaisCorrecto();
 
         }
-        // Si el viaje fue incorrecto, no se actualiza proxima
+        // Si el viaje fue incorrecto, no se actualiza proxima pero puedo conseguir pistas para ir a la correcta
         return distanciaViaje;
     }
 
