@@ -52,4 +52,19 @@ public class Caso {
     }
 
     public ArrayList<Ciudad> opcionesParaViajar (){return (this.mapa).opcionesParaViajar();}
+
+    public void emitirOrdenDeArresto(Ladron ladron){
+        this.computadora.emitirOrdenDeArresto(ladron);
+        this.policia.descontarHoras(3);
+    }
+
+    public double viajarCorrecto() {
+        double distanciaViaje = this.mapa.viajarCorrecto(this.tesoro);
+        this.policia.descontarHorasDeViaje(distanciaViaje);
+        return distanciaViaje;
+    }
+
+    public void emitirOrdenCorrecta() {
+        emitirOrdenDeArresto(this.ladron);
+    }
 }

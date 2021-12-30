@@ -63,4 +63,16 @@ public class Partida{
     public void viajar (Ciudad proxima){(this.caso).viajar(proxima);}
 
     public String visitar(String nombreEdificio){return (this.caso).visitar(nombreEdificio);}
+
+    public double viajarCorrecto() {
+        return this.caso.viajarCorrecto();
+    }
+
+    public int horasRestantes() {
+        return this.policia.horasRestantes();
+    }
+
+    public void emitirOrdenCorrecta() {
+        this.caso.emitirOrdenCorrecta();
+    }
 }

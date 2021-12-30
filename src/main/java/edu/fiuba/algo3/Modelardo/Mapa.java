@@ -95,4 +95,8 @@ public class Mapa {
     }
 
 
+    public double viajarCorrecto(Tesoro tesoro) {
+        return viajar(proxima, tesoro);
+
+    }
 }
