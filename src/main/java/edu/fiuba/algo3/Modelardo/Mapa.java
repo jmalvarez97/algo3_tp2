@@ -3,6 +3,7 @@ package edu.fiuba.algo3.Modelardo;
 import edu.fiuba.algo3.Modelardo.Policia.Policia;
 
 import java.util.ArrayList;
+import java.util.*;
 import java.util.Objects;
 
 public class Mapa {
@@ -54,17 +55,29 @@ public class Mapa {
 
     public ArrayList<Ciudad> opcionesParaViajar(){
         // Devuelve actual, proxima + 2 ciudades random
-        int randomIndex = (int) (Math.random()*10 - 1);
-        Ciudad random1 = this.listaCiudades.get(randomIndex);
-        randomIndex = (int) (Math.random()*10 - 1);
-        Ciudad random2 = this.listaCiudades.get(randomIndex);
-
         ArrayList<Ciudad> listaOpciones = new ArrayList<Ciudad>();
-        listaOpciones.add(this.actual);
+
         listaOpciones.add(this.proxima);
+        int indexProxima = this.listaCiudades.indexOf(this.proxima);
+
+        int randomIndex1=indexProxima;
+        while (randomIndex1 == indexProxima ){
+            randomIndex1 = (int) (Math.random()*10 - 1);
+        }
+        Ciudad random1 = this.listaCiudades.get(randomIndex1);
+
+        int randomIndex2=randomIndex1;
+        while (randomIndex1 == randomIndex2 || randomIndex2==indexProxima){
+            randomIndex2 = (int) (Math.random()*10 - 1);
+        }
+        Ciudad random2 = this.listaCiudades.get(randomIndex2);
+
+
         listaOpciones.add(random1);
         listaOpciones.add(random2);
 
+
+        Collections.shuffle(listaOpciones);
         return listaOpciones;
     }
 
