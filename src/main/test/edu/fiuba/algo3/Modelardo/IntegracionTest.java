@@ -3,7 +3,7 @@ package edu.fiuba.algo3.Modelardo;
 import edu.fiuba.algo3.Controlador.Partida;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class IntegracionTest {
 
@@ -42,6 +42,14 @@ public class IntegracionTest {
         }
         horasRestantes -= horasASacar;
         assertEquals(partida.horasRestantes(), horasRestantes);
+
+        // Chequeamos si gano el usuario
+        assertFalse(partida.ganoUsuario());
+
+
+
+
+
 
         // Segundo pais, se muestran los siguientes paises de donde pudo haber ido el ladron
         partida.opcionesParaViajar();
@@ -100,6 +108,62 @@ public class IntegracionTest {
             horasDia = horasDia - 24 + 8;
         }
         assertEquals(partida.horasRestantes(), horasRestantes);
+
+        // Chequeamos si gano el usuario
+        assertFalse(partida.ganoUsuario());
+
+
+
+
+        // tercer pais, se muestran los siguientes paises de donde pudo haber ido el ladron
+        partida.opcionesParaViajar();
+
+        // Visita un banco
+        partida.visitar("Banco");
+
+        // se le resta 1 hora
+        horasRestantes -= 1;
+        horasDia+=1;
+
+        if (horasDia > 23){
+            horasRestantes-=8;
+            horasDia = horasDia -24 + 8;
+        }
+        assertEquals(partida.horasRestantes(), horasRestantes);
+
+        // visita aeropuerto
+        partida.visitar("Aeropuerto");
+
+        // se le resta 1 hora
+        horasRestantes -= 1;
+        horasDia+=1;
+
+        if (horasDia > 23){
+            horasRestantes-=8;
+            horasDia = horasDia -24 + 8;
+        }
+        assertEquals(partida.horasRestantes(), horasRestantes);
+
+        // Policia viaja correcto a proxima
+        distancia = partida.viajarCorrecto();
+        // Le va a Llevar Distancia/VelocidadNovato hacer esto. Distancias muy cortas llevan 1 hora
+        horasASacar = (int) (distancia) / 900;
+        if (horasASacar==0)
+            horasASacar+=1;
+
+        // y si la distancia fue muy grande, tambien el detective procede a dormir
+        // por lo tanto se le descuentan las horas
+        horasDia += horasASacar;
+
+        if (horasDia > 23) {
+            horasRestantes -= 8;
+            horasDia = horasDia - 24 + 8;
+        }
+        horasRestantes -= horasASacar;
+        assertEquals(partida.horasRestantes(), horasRestantes);
+
+        // Chequeamos si gano el usuario
+        assertTrue(partida.ganoUsuario());
     }
 
 

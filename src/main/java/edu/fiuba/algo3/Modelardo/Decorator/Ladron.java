@@ -3,6 +3,7 @@ package edu.fiuba.algo3.Modelardo.Decorator;
 
 import org.json.simple.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Ladron implements Pregunta {
@@ -87,6 +88,12 @@ public class Ladron implements Pregunta {
 
     // Getter necesario? Para comparar ladronReal con ladronOrdenDeArresto sin romper Decorator
     public String nombre(){ return this.nombre;}
+
+    public String darCaracteristica() {
+        ArrayList<String> arreglo = new ArrayList<String>(){{add(sexo); add(hobby);add(senia);add(colorDelPelo);add(coche);add(ocupacion);add(otros);}};
+        int r = (int) (Math.random() * (6 - 0)) + 0;
+        return "\nLa caracteristica que recuerdo del ladron: " + arreglo.get(r);
+    }
 }
 
 

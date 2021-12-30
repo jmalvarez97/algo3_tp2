@@ -78,4 +78,8 @@ public class Partida{
     public void emitirOrdenCorrecta() {
         this.caso.emitirOrdenCorrecta();
     }
+
+    public boolean ganoUsuario() {
+        return this.caso.chequearOrdenDeArresto() && this.caso.cumplePaisesNecesarios();
+    }
 }

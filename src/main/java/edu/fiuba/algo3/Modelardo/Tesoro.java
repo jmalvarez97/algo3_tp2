@@ -9,7 +9,7 @@ public class Tesoro {
     protected final String ciudad;
     protected final String objeto;
     protected final String valor;
-    protected int paisesCorrectosPorVisitar;
+    protected int viajesPorHacer;
 
     public Tesoro(JSONObject tesoro){
 
@@ -19,16 +19,16 @@ public class Tesoro {
         //Leemos el sexo
         this.objeto = (String) tesoro.get("tesoro");
 
-        //Leemos la ocupacion
+        //Leemos el valor
         this.valor = (String) tesoro.get("valor");
 
-        if(this.valor == "Comun") {
-            this.paisesCorrectosPorVisitar = 4;
+        if(Objects.equals(this.valor, "Comun")) {
+            this.viajesPorHacer = 3;
 
-        } else if (this.valor == "Valioso") {
-            this.paisesCorrectosPorVisitar = 5;
+        } else if (Objects.equals(this.valor, "Valioso")) {
+            this.viajesPorHacer = 4;
         } else {
-            this.paisesCorrectosPorVisitar = 7;
+            this.viajesPorHacer = 6;
         }
     }
 
@@ -37,13 +37,13 @@ public class Tesoro {
         this.objeto = objeto;
         this.valor = valor;
 
-        if(this.valor == "Comun") {
-            this.paisesCorrectosPorVisitar = 4;
+        if(Objects.equals(this.valor, "Comun")) {
+            this.viajesPorHacer = 4;
 
-        } else if (this.valor == "Valioso") {
-            this.paisesCorrectosPorVisitar = 5;
+        } else if (Objects.equals(this.valor, "Valioso")) {
+            this.viajesPorHacer = 5;
         } else {
-            this.paisesCorrectosPorVisitar = 7;
+            this.viajesPorHacer = 7;
         }
     }
 
@@ -55,10 +55,10 @@ public class Tesoro {
     }
 
     public void sumarPaisCorrecto() {
-        this.paisesCorrectosPorVisitar--;
+        this.viajesPorHacer--;
     }
 
-    public boolean cumplePaisesNecesarios() {return this.paisesCorrectosPorVisitar <= 0;};
+    public boolean cumplePaisesNecesarios() {return this.viajesPorHacer <= 0;};
 
     public String nombreCompleto() {
         return (this.objeto + " de " + this.ciudad);

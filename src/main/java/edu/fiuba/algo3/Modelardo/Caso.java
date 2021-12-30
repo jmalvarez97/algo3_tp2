@@ -24,7 +24,7 @@ public class Caso {
     }
 
     public String visitar(String unEdificio) {
-        return mapa.visitar(unEdificio,policia);
+        return mapa.visitar(unEdificio,policia,this.ladron);
     }
 
     public void viajar(Ciudad destino){
@@ -66,5 +66,9 @@ public class Caso {
 
     public void emitirOrdenCorrecta() {
         emitirOrdenDeArresto(this.ladron);
+    }
+
+    public boolean cumplePaisesNecesarios() {
+        return this.tesoro.cumplePaisesNecesarios();
     }
 }

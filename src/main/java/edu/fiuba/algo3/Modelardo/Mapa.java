@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.Modelardo;
 
+import edu.fiuba.algo3.Modelardo.Decorator.Ladron;
 import edu.fiuba.algo3.Modelardo.Policia.Policia;
 
 import java.util.ArrayList;
@@ -22,8 +23,8 @@ public class Mapa {
         this.listaCiudades = listaCiudades;
     }
 
-    public String visitar(String unEdificio, Policia policia){
-        return actual.visitar(proxima, unEdificio, policia);
+    public String visitar(String unEdificio, Policia policia, Ladron ladron){
+        return actual.visitar(proxima, unEdificio, policia,ladron );
     }
 
     // Devuelve la distancia, con eso delegarle a policia que calcule sus horas por restar

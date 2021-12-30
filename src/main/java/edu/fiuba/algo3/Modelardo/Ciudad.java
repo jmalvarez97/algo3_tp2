@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.Modelardo;
 
+import edu.fiuba.algo3.Modelardo.Decorator.Ladron;
 import edu.fiuba.algo3.Modelardo.Edificios.Aeropuerto;
 import edu.fiuba.algo3.Modelardo.Edificios.Banco;
 import edu.fiuba.algo3.Modelardo.Edificios.Biblioteca;
@@ -234,12 +235,13 @@ public class Ciudad {
     public String pistaIdiomas(){return MENSAJE_AEROPUERTO+this.idiomas;}
 
 
-    public String visitar(Ciudad proxima, String unEdificio, Policia policia) {
+    public String visitar(Ciudad proxima, String unEdificio, Policia policia, Ladron ladron) {
         Edificio edificio = detectarEdificio(unEdificio);
         Pista pistaValor = policia.pistaValorCorrespondiente();
         String pista = edificio.darPista(pistaValor, proxima);
+        String pistaLadron = ladron.darCaracteristica();
         edificio.descontarHorasDePolicia(policia); // tambien se podria en darPista, cada pista dada lleva un tiempo
-        return pista;
+        return pista + pistaLadron;
 
     }
 
