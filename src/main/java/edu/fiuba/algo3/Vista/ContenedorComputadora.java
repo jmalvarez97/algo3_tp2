@@ -2,10 +2,9 @@ package edu.fiuba.algo3.Vista;
 
 import edu.fiuba.algo3.Controlador.BotonCargarDatosEventHandler;
 import edu.fiuba.algo3.Controlador.Partida;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
@@ -16,10 +15,12 @@ public class ContenedorComputadora extends VBox {
 
     private Stage stage;
     private Partida partida;
+    private Scene escenaComputadora;
 
-    public ContenedorComputadora(Stage stage, Partida partida){
+    public ContenedorComputadora(Stage stage, Partida partida, Scene escenaComputadora){
         this.stage = stage;
         this.partida = partida;
+        this.escenaComputadora = escenaComputadora;
 
         Button botonCargarDatos = new Button();
         botonCargarDatos.setText("Cargar Datos");
@@ -46,7 +47,7 @@ public class ContenedorComputadora extends VBox {
         contenedores.add(contenedorPelo);
         contenedores.add(contenedorCoche);
 
-        BotonCargarDatosEventHandler botonCargarDatosEventHandler = new BotonCargarDatosEventHandler(stage, partida, contenedores);
+        BotonCargarDatosEventHandler botonCargarDatosEventHandler = new BotonCargarDatosEventHandler(stage, partida, contenedores,this.escenaComputadora);
         botonCargarDatos.setOnAction(botonCargarDatosEventHandler);
 
         this.getChildren().add(tituloPC);
@@ -54,7 +55,6 @@ public class ContenedorComputadora extends VBox {
             this.getChildren().add(contenedores.get(i));
         }
         this.getChildren().add(botonCargarDatos);
-        //this.setPadding(new Insets(10));
     }
 }
 

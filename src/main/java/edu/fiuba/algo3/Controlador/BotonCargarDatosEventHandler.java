@@ -23,11 +23,13 @@ public class BotonCargarDatosEventHandler implements EventHandler<ActionEvent> {
     private Stage stage;
     private Partida partida;
     private ArrayList<ContenedorDato> contenedores;
+    private Scene escenaComputadora;
 
-    public BotonCargarDatosEventHandler(Stage stage,Partida partida,ArrayList<ContenedorDato> contenedores){
+    public BotonCargarDatosEventHandler(Stage stage,Partida partida,ArrayList<ContenedorDato> contenedores,Scene escenaComputadora){
         this.stage = stage;
         this.partida = partida;
         this.contenedores = contenedores;
+        this.escenaComputadora = escenaComputadora;
     }
 
     @Override
@@ -66,7 +68,7 @@ public class BotonCargarDatosEventHandler implements EventHandler<ActionEvent> {
             contenedorNombres.getChildren().add(nombreLadron);
         }
 
-        ContenedorSospechosos contenedorSospechosos = new ContenedorSospechosos(stage,partida,contenedorNombres,listaSospechosos.size());
+        ContenedorSospechosos contenedorSospechosos = new ContenedorSospechosos(stage,partida,contenedorNombres,listaSospechosos.size(),this.escenaComputadora);
         contenedorSospechosos.setAlignment(Pos.TOP_LEFT);
         contenedorSospechosos.setPadding(new Insets(20));
         contenedorSospechosos.setSpacing(10);

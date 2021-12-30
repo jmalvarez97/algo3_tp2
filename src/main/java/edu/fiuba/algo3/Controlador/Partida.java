@@ -80,16 +80,16 @@ public class Partida{
     }
 
     public boolean ganoUsuario() {
-        return this.caso.chequearOrdenDeArresto();
-    }
-
-    public boolean cumplePaisesNecesarios(){
-        if (this.caso.cumplePaisesNecesarios()) {
+        if (this.caso.chequearOrdenDeArresto()) {
             this.policia.confirmarCaso();
             return true;
         }
-        return false;
 
+        return false;
+    }
+
+    public boolean cumplePaisesNecesarios(){
+        return this.caso.cumplePaisesNecesarios();
     }
 
 

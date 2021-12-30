@@ -28,7 +28,10 @@ public class BotonComputadoraEventHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
 
-        ContenedorComputadora contenedorComputadora = new ContenedorComputadora(stage,partida);
+        VBox contenedor = new VBox();
+        Scene escenaNueva = new Scene(contenedor,640,480);
+
+        ContenedorComputadora contenedorComputadora = new ContenedorComputadora(stage,partida,escenaNueva);
         contenedorComputadora.setAlignment(Pos.CENTER);
 
         //BOTON VOLVER
@@ -37,12 +40,10 @@ public class BotonComputadoraEventHandler implements EventHandler<ActionEvent> {
         BotonVolverEventHandler botonVolverEventHandler = new BotonVolverEventHandler(stage,escenaCiudad);
         botonVolver.setOnAction(botonVolverEventHandler);
 
-        VBox contenedor = new VBox();
         contenedor.getChildren().addAll(contenedorComputadora,botonVolver);
         contenedor.setSpacing(15);
         contenedor.setAlignment(Pos.CENTER);
 
-        Scene escenaNueva = new Scene(contenedor,640,480);
         stage.setScene(escenaNueva);
         stage.show();
     }
