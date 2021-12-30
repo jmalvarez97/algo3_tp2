@@ -80,7 +80,11 @@ public class Partida{
     }
 
     public boolean ganoUsuario() {
-        return this.caso.chequearOrdenDeArresto() && this.caso.cumplePaisesNecesarios();
+        if( this.caso.chequearOrdenDeArresto() && this.caso.cumplePaisesNecesarios()){
+            this.policia.confirmarCaso();
+            return true;
+        }
+        return false;
     }
 
     public boolean herirConCuchillo(){
@@ -117,4 +121,5 @@ public class Partida{
     public ArrayList<Ladron> buscarSospechosos(){
         return this.caso.buscarSospechosos();
     }
+
 }

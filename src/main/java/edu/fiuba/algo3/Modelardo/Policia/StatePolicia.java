@@ -33,13 +33,12 @@ public abstract class StatePolicia{
         ArrayList<Tesoro> sublistaTesorosAcorde = new ArrayList<>();
         for(int i = 0; i < listaTesoros.size(); i++){
             if( (listaTesoros.get(i)).esValor(this.valorObjetoBuscado) ){
-                //return listaTesoros.get(i);
                 sublistaTesorosAcorde.add(listaTesoros.get(i));
             }
         }
         int randomInt = (int) (Math.random() * (sublistaTesorosAcorde.size()));
         return sublistaTesorosAcorde.get(randomInt);
     }
-    //a
+
     public abstract Pista pistaValorCorrespondiente();
 }
