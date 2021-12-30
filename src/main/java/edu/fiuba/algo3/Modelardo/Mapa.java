@@ -54,9 +54,9 @@ public class Mapa {
 
     public ArrayList<Ciudad> opcionesParaViajar(){
         // Devuelve actual, proxima + 2 ciudades random
-        int randomIndex = (int) (Math.random() - 1);
+        int randomIndex = (int) (Math.random()*10 - 1);
         Ciudad random1 = this.listaCiudades.get(randomIndex);
-        randomIndex = (int) (Math.random() - 1);
+        randomIndex = (int) (Math.random()*10 - 1);
         Ciudad random2 = this.listaCiudades.get(randomIndex);
 
         ArrayList<Ciudad> listaOpciones = new ArrayList<Ciudad>();
