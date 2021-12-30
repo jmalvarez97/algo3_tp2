@@ -23,7 +23,9 @@ public class Ciudad {
     private final String etnias;
     private final String otros;
 
-
+    private final String MENSAJE_BANCO="Bienvenido al Banco Policía. Esta es la información que le puedo dar: ";
+    private final String MENSAJE_AEROPUERTO = "Bienvenido al Aeropuerto Policía. Esta es la información que le puedo dar: ";
+    private final String MENSAJE_BIBLIOTECA = "Bienvenido a la Biblioteca Policía. Esta es la información que le puedo dar: ";
 
     Edificio banco; //Edificio bolsa;
     Edificio aeropuerto; //Edificio aeropuerto;
@@ -227,20 +229,22 @@ public class Ciudad {
 
     }
 
-    public String getMoneda(){
-        return this.moneda;
+    public String pistaColores() {return MENSAJE_AEROPUERTO+this.colorBandera;}
+    public String pistaMoneda(){
+        return (MENSAJE_BANCO + this.moneda);
     }
-    public String getNombre() { return this.nombre; }
+    public String pistaArte() {return MENSAJE_BIBLIOTECA+this.arte;}
+    public String pistaReligion(){return MENSAJE_BIBLIOTECA+this.religion;}
+    public String pistaRepresentante(){return MENSAJE_BANCO+this.representante;}
+    public String pistaGeografia(){return MENSAJE_AEROPUERTO+this.geografia;}
+    public String pistaEtnias(){return MENSAJE_BIBLIOTECA+this.etnias;}
+    public String pistaIndustria(){return MENSAJE_BANCO+this.industrias;}
+    public String pistaIdiomas(){return MENSAJE_AEROPUERTO+this.idiomas;}
+
+
+    public String getNombre() { return (this.nombre); }
     public double getLatitud() {return this.latitud;}
     public double getLongitud() {return this.longitud;}
-    public String getColores() {return this.colorBandera;}
-    public String getDatoRandom() {return this.arte;}
     public String getDescripcion() {return this.descripcion;}
-    public String getReligion(){return this.religion;}
-    public String getRepresentante(){return this.representante;}
-    public String getGeografia(){return this.geografia;}
-    public String getEtnias(){return this.etnias;}
-    public String getIndustria(){return this.industrias;}
-    public String getIdiomas(){return this.idiomas;}
 }
 

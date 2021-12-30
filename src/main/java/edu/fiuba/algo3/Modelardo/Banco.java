@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.Modelardo;
 
 import edu.fiuba.algo3.Modelardo.Policia.Policia;
+import javafx.scene.effect.Effect;
 
 public class Banco implements Edificio{
 

@@ -10,17 +10,17 @@ import java.util.Random;
 public class PistaFacil implements Pista {
     @Override
     public String darPistaEconomica(Ciudad proxima) {
-        return proxima.getMoneda();
+        return proxima.pistaMoneda();
     }
 
     @Override
     public String darPistaViaje(Ciudad proxima) {
-        return proxima.getColores();
+        return proxima.pistaColores();
     }
 
     @Override
     public String darPistaCultura(Ciudad proxima) {
-        return proxima.getDatoRandom();
+        return proxima.pistaArte();
     }
 
 }
