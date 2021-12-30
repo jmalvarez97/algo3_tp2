@@ -82,4 +82,17 @@ public class Partida{
     public boolean ganoUsuario() {
         return this.caso.chequearOrdenDeArresto() && this.caso.cumplePaisesNecesarios();
     }
+
+    public boolean herirConCuchillo(){
+        int random = (int) Math.random();
+        if (random < 0.1) {
+            this.policia.herirConCuchillo();
+            return true;
+        }
+        return false;
+    }
+
+    public int hora(){
+        return this.policia.hora();
+    }
 }
