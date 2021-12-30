@@ -15,6 +15,7 @@ public class ContenedorDato extends HBox {
     private Stage stage;
     private Partida partida;
     private Button botonCargar;
+    private TextField datoTextField;
 
     public ContenedorDato(Stage stage, Partida partida, String dato, Button botonCargar){
         this.stage = stage;
@@ -24,7 +25,7 @@ public class ContenedorDato extends HBox {
         Label nombreDato = new Label();
         nombreDato.setText(dato + ": ");
 
-        TextField datoTextField = new TextField();
+        this.datoTextField = new TextField();
         datoTextField.setPromptText("Ingrese el " + dato);
 
         DatoTextFieldEventHandler datoTextFieldEventHandler = new DatoTextFieldEventHandler(botonCargar);
@@ -34,5 +35,9 @@ public class ContenedorDato extends HBox {
         this.setAlignment(Pos.CENTER_LEFT);
         this.setSpacing(5);
         this.setPadding(new Insets(10));
+    }
+
+    public TextField getTextField(){
+        return this.datoTextField;
     }
 }

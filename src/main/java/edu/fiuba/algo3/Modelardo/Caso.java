@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.Modelardo;
 
-import edu.fiuba.algo3.Modelardo.Decorator.Ladron;
+import edu.fiuba.algo3.Modelardo.Decorator.*;
 import edu.fiuba.algo3.Modelardo.Policia.Policia;
 
 import java.util.ArrayList;
@@ -70,5 +70,22 @@ public class Caso {
 
     public boolean cumplePaisesNecesarios() {
         return this.tesoro.cumplePaisesNecesarios();
+    }
+
+    public void cargarPelo(String pelo){
+        this.computadora.cargarPelo(pelo);
+    }
+
+    public void cargarHobby(String hobby){ this.computadora.cargarHobby(hobby); }
+
+    public void cargarVehiculo(String coche){ this.computadora.cargarVehiculo(coche); }
+
+
+    public void cargarSexo(String sexo){
+        this.computadora.cargarSexo(sexo);
+    }
+
+    public void cargarSenia(String senia){
+        this.computadora.cargarSenia(senia);
     }
 }

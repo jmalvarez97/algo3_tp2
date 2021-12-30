@@ -95,4 +95,25 @@ public class Partida{
     public int hora(){
         return this.policia.hora();
     }
+
+    public boolean cumplePaisesNecesarios() {
+        return this.caso.cumplePaisesNecesarios();
+    }
+
+    public void cargarPelo(String pelo){
+        this.caso.cargarPelo(pelo);
+    }
+
+    public void cargarHobby(String hobby){ this.caso.cargarHobby(hobby); }
+
+    public void cargarVehiculo(String coche){ this.caso.cargarVehiculo(coche); }
+
+
+    public void cargarSexo(String sexo){
+        this.caso.cargarSexo(sexo);
+    }
+
+    public void cargarSenia(String senia){
+        this.caso.cargarSenia(senia);
+    }
 }
