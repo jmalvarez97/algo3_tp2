@@ -19,7 +19,17 @@ public class CasosDeUsoEntrega2Test {
     // Van aca para que en el caso2 se mantenga la cantidad de visitas en Banco
     Ciudad montreal = new Ciudad("Montreal",37.984167,23.728056,null,null,null,null,null,null,null,null,null,null,null,null,null);
     Ciudad mexico = new Ciudad ("Mexico",33.35,44.416667,null,null,null,null,null,null,null,null,null,null,null,null,null);
-    Mapa unMapa = new Mapa(montreal,mexico, new ArrayList<Ciudad>(){{add(montreal); add(mexico);}});
+    Ciudad buenosaires = new Ciudad("buenosaires",37.984167,23.728056,null,null,null,null,null,null,"blanco",null,null,null,null,null,null);
+    Ciudad bamako = new Ciudad ("bamako",33.35,44.416667,"pesos",null,"civilizacion azteca",null,null,null,"blanco",null,null,null,null,null,null);
+    Ciudad jamaica = new Ciudad("jamaica",37.984167,23.728056,null,null,null,null,null,null,"blanco",null,null,null,null,null,null);
+    Ciudad paris = new Ciudad ("paris",33.35,44.416667,"pesos",null,"civilizacion azteca",null,null,null,"blanco",null,null,null,null,null,null);
+    Ciudad rio = new Ciudad("rio",37.984167,23.728056,null,null,null,null,null,null,"blanco",null,null,null,null,null,null);
+    Ciudad londres = new Ciudad ("londres",33.35,44.416667,"pesos",null,"civilizacion azteca",null,null,null,"blanco",null,null,null,null,null,null);
+    Ciudad moscu = new Ciudad("Montreal",37.984167,23.728056,null,null,null,null,null,null,"blanco",null,null,null,null,null,null);
+
+
+    Mapa unMapa = new Mapa(montreal,mexico, new ArrayList<Ciudad>(){{add(montreal); add(mexico);add(buenosaires);add(bamako);add(jamaica);add(paris);add(rio);add(londres);add(moscu);}});
+
 
     private Caso caso = new Caso(policia, tesoro, ladron, unMapa, computadora);
 
