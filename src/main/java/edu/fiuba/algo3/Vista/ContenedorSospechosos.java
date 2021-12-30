@@ -4,6 +4,7 @@ import edu.fiuba.algo3.Controlador.BotonVolverEventHandler;
 import edu.fiuba.algo3.Controlador.Partida;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
@@ -37,6 +38,14 @@ public class ContenedorSospechosos extends VBox {
         botonVolver.setOnAction(botonVolverEventHandler);
 
         this.getChildren().addAll(titulo,contenedorNombres,botonVolver);
+
+        if(cantidadSospechosos == 1){
+            Label ordenDeArresto = new Label();
+            ordenDeArresto.setText("Se ha emitido una Orden de Arresto para el Ladrón!");
+            ordenDeArresto.setWrapText(true);
+            this.getChildren().add(ordenDeArresto);
+        }
+
         Scene escenaListaSospechosos = new Scene(this,640,480);
         this.stage.setScene(escenaListaSospechosos);
         this.stage.show();

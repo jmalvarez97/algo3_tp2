@@ -58,10 +58,3 @@ public class ContenedorComputadora extends VBox {
     }
 }
 
-/*
-- Sexo
-- Hobby
-- Senia
-- Color Pelo
-- Coche
- */
