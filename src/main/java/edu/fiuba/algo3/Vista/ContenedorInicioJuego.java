@@ -30,12 +30,13 @@ public class ContenedorInicioJuego extends VBox {
         nombreJugadorTextField.setPromptText("Ingrese su nombre");
 
 
-        Label etiqueta = new Label();
+        VBox contenedorVertical = new VBox();
+        contenedorVertical.setAlignment(Pos.CENTER);
 
         //BOTON SUBMIT NOMBRE
         Button botonEnviarNombre = new Button();
         botonEnviarNombre.setText("OK");
-        BotonEnviarNombreEventHandler botonEnviarNombreEventHandler = new BotonEnviarNombreEventHandler(nombreJugadorTextField,etiqueta);
+        BotonEnviarNombreEventHandler botonEnviarNombreEventHandler = new BotonEnviarNombreEventHandler(nombreJugadorTextField,contenedorVertical,partida,stage);
         botonEnviarNombre.setOnAction(botonEnviarNombreEventHandler);
 
         NombreJugadorTextFieldEventHandler nombreJugadorTextFieldEventHandler = new NombreJugadorTextFieldEventHandler(botonEnviarNombre);
@@ -48,7 +49,7 @@ public class ContenedorInicioJuego extends VBox {
 
         contenedorHorizontal.setSpacing(15);
 
-        this.getChildren().addAll(instruccion,contenedorHorizontal,etiqueta);
+        this.getChildren().addAll(instruccion,contenedorHorizontal,contenedorVertical);
         this.setAlignment(Pos.CENTER);
         this.setSpacing(15);
         this.setPadding(new Insets(20));
