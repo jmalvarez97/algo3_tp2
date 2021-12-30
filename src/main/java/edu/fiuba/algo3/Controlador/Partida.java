@@ -108,12 +108,13 @@ public class Partida{
 
     public void cargarVehiculo(String coche){ this.caso.cargarVehiculo(coche); }
 
-
-    public void cargarSexo(String sexo){
-        this.caso.cargarSexo(sexo);
-    }
+    public void cargarSexo(String sexo){this.caso.cargarSexo(sexo);}
 
     public void cargarSenia(String senia){
         this.caso.cargarSenia(senia);
+    }
+
+    public ArrayList<Ladron> buscarSospechosos(){
+        return this.caso.buscarSospechosos();
     }
 }

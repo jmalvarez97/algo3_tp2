@@ -1,8 +1,12 @@
 package edu.fiuba.algo3.Controlador;
 
+import edu.fiuba.algo3.Modelardo.Decorator.Ladron;
 import edu.fiuba.algo3.Vista.ContenedorDato;
+import edu.fiuba.algo3.Vista.ContenedorSospechosos;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -53,5 +57,18 @@ public class BotonCargarDatosEventHandler implements EventHandler<ActionEvent> {
         if(!contenedorCoche.getTextField().getText().trim().equals("")){
             this.partida.cargarVehiculo(contenedorCoche.getTextField().getText());
         }
+
+        ArrayList<Ladron> listaSospechosos = this.partida.buscarSospechosos();
+        VBox contenedorNombres = new VBox();
+
+        for(int i = 0; i < listaSospechosos.size(); i++){
+            Label nombreLadron = new Label("- " + listaSospechosos.get(i).nombre());
+            contenedorNombres.getChildren().add(nombreLadron);
+        }
+
+        ContenedorSospechosos contenedorSospechosos = new ContenedorSospechosos(stage,partida,contenedorNombres,listaSospechosos.size());
+        contenedorSospechosos.setAlignment(Pos.TOP_LEFT);
+        contenedorSospechosos.setPadding(new Insets(20));
+        contenedorSospechosos.setSpacing(10);
     }
 }

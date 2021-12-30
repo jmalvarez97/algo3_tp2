@@ -88,4 +88,8 @@ public class Caso {
     public void cargarSenia(String senia){
         this.computadora.cargarSenia(senia);
     }
+
+    public ArrayList<Ladron> buscarSospechosos(){
+        return this.computadora.buscarSospechosos();
+    }
 }
