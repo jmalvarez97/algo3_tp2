@@ -220,15 +220,6 @@ public class Ciudad {
         return this.biblioteca;
     }
 
-    public String visitar(Ciudad proxima, String unEdificio, Policia policia) {
-        Edificio edificio = detectarEdificio(unEdificio);
-        Pista pistaValor = policia.pistaValorCorrespondiente();
-        String pista = edificio.darPista(pistaValor, proxima);
-        edificio.descontarHorasDePolicia(policia); // tambien se podria en darPista, cada pista dada lleva un tiempo
-        return pista;
-
-    }
-
     public String pistaColores() {return MENSAJE_AEROPUERTO+this.colorBandera;}
     public String pistaMoneda(){
         return (MENSAJE_BANCO + this.moneda);
@@ -240,6 +231,18 @@ public class Ciudad {
     public String pistaEtnias(){return MENSAJE_BIBLIOTECA+this.etnias;}
     public String pistaIndustria(){return MENSAJE_BANCO+this.industrias;}
     public String pistaIdiomas(){return MENSAJE_AEROPUERTO+this.idiomas;}
+
+
+    public String visitar(Ciudad proxima, String unEdificio, Policia policia) {
+        Edificio edificio = detectarEdificio(unEdificio);
+        Pista pistaValor = policia.pistaValorCorrespondiente();
+        String pista = edificio.darPista(pistaValor, proxima);
+        edificio.descontarHorasDePolicia(policia); // tambien se podria en darPista, cada pista dada lleva un tiempo
+        return pista;
+
+    }
+
+
 
 
     public String getNombre() { return (this.nombre); }

@@ -2,6 +2,8 @@ package edu.fiuba.algo3.Modelardo;
 
 import edu.fiuba.algo3.Modelardo.Policia.Policia;
 
+import java.util.ArrayList;
+
 public class Caso {
 
     private Policia policia;
@@ -48,4 +50,5 @@ public class Caso {
         return (this.tesoro).nombreCompleto();
     }
 
+    public ArrayList<Ciudad> opcionesParaViajar (){return (this.mapa).opcionesParaViajar();}
 }

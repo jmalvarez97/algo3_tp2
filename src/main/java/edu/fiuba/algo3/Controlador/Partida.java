@@ -56,4 +56,7 @@ public class Partida{
     }
 
     public Ciudad ciudadActual () {return (this.caso).ciudadActual();}
+
+    public ArrayList<Ciudad> opcionesParaViajar(){return (this.caso).opcionesParaViajar();}
+
 }
