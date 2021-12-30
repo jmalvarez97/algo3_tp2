@@ -43,8 +43,9 @@ public class IntegracionTest {
         horasRestantes -= horasASacar;
         assertEquals(partida.horasRestantes(), horasRestantes);
 
-        // Chequeamos si gano el usuario
-        assertFalse(partida.ganoUsuario());
+        // Chequeamos si gano el usuario: No entra, ya que no cumple los paises
+        if (partida.cumplePaisesNecesarios())
+            assertTrue(partida.ganoUsuario());
 
 
 
@@ -98,8 +99,9 @@ public class IntegracionTest {
         }
         assertEquals(partida.horasRestantes(), horasRestantes);
 
-        // Chequeamos si gano el usuario
-        assertFalse(partida.ganoUsuario());
+        // Chequeamos si gano el usuario . No entra, ya que no cumple los paises
+        if (partida.cumplePaisesNecesarios())
+            assertTrue(partida.ganoUsuario());
 
 
 
@@ -160,7 +162,8 @@ public class IntegracionTest {
         assertEquals(partida.horasRestantes(), horasRestantes);
 
         // Chequeamos si gano el usuario
-        assertTrue(partida.ganoUsuario());
+        if (partida.cumplePaisesNecesarios())
+            assertTrue(partida.ganoUsuario());
     }
 
 
