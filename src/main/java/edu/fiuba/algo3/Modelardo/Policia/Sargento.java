@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.Modelardo.Policia;
 
+import edu.fiuba.algo3.Modelardo.PistaDificil;
+
 public class Sargento extends StatePolicia {
 
 
@@ -10,5 +12,9 @@ public class Sargento extends StatePolicia {
 
 
     public void confirmarCaso(int casosResueltos){}
+
+    public PistaDificil pistaValorCorrespondiente(){
+        return new PistaDificil();
+    }
 
 }

@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.Modelardo.Policia;
 
+import edu.fiuba.algo3.Modelardo.Pista;
 import edu.fiuba.algo3.Modelardo.Tesoro;
 
 import java.util.ArrayList;
@@ -12,7 +13,6 @@ public abstract class StatePolicia{
 
 
     abstract void confirmarCaso(int casosResueltos);
-
 
     public int horasDeViaje(double distancia) {
         return (int) distancia / this.velocidad;
@@ -34,4 +34,6 @@ public abstract class StatePolicia{
         }
         return null;
     }
+
+    public abstract Pista pistaValorCorrespondiente();
 }

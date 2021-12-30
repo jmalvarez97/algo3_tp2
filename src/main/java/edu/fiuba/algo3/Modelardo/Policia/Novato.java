@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.Modelardo.Policia;
 
+import edu.fiuba.algo3.Modelardo.PistaFacil;
+
 public class Novato extends StatePolicia {
 
     public Novato(){
@@ -11,5 +13,9 @@ public class Novato extends StatePolicia {
         if(casosResueltos >= 5){
             this.policia.setState(new Detective());
         }
+    }
+
+    public PistaFacil pistaValorCorrespondiente() {
+        return new PistaFacil();
     }
 }

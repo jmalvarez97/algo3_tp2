@@ -6,6 +6,6 @@ public interface Edificio {
     //Ver la creacion de pistas (faciles, medias o dificiles)
     //Pista pista = new Pista();
 
-    String darPista(Ciudad ciudadProxima);
+    String darPista(Pista pistaValor, Ciudad ciudadProxima);
     void descontarHorasDePolicia(Policia policia);
 }

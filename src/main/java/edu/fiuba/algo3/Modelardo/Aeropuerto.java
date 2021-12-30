@@ -9,15 +9,13 @@ public class Aeropuerto implements Edificio{
 
 
     public Aeropuerto(){
-        // Para que no sea siempre la misma, se agarra con un random de algun archivo?
-        this.pista = new PistaFacil("Aeropuerto");
         this.contadorVisitas = 0;
     }
 
     @Override
-    public String darPista(Ciudad ciudad){
+    public String darPista(Pista pistaValor, Ciudad ciudad){
         this.contadorVisitas++;
-        return this.pista.darPista(ciudad.getColores().get(0));
+        return pistaValor.darPistaBandera(ciudad);
     }
 
     @Override

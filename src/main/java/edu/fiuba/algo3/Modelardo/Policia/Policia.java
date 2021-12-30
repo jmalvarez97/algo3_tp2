@@ -2,6 +2,7 @@ package edu.fiuba.algo3.Modelardo.Policia;
 
 import edu.fiuba.algo3.Modelardo.Computadora;
 import edu.fiuba.algo3.Modelardo.Ladron;
+import edu.fiuba.algo3.Modelardo.Pista;
 import edu.fiuba.algo3.Modelardo.Tesoro;
 
 import java.util.ArrayList;
@@ -54,6 +55,10 @@ public class Policia {
     public void setState(StatePolicia state){
         this.state = state;
         this.state.setPolicia(this);
+    }
+
+    public Pista pistaValorCorrespondiente() {
+        return (this.state).pistaValorCorrespondiente();
     }
 
 }

@@ -8,41 +8,19 @@ import java.util.Objects;
 import java.util.Random;
 
 public class PistaDificil implements Pista{
-    String cuerpo;
-
-    public PistaDificil(Edificio edificio, String pista){
-        this.cuerpo=pista;
-    }
-    public PistaDificil(String edificio) {
-        this.cuerpo = buscarPorArchivo(edificio);
+    @Override
+    public String darPistaEconomica(Ciudad proxima) {
+        return proxima.getMoneda();
     }
 
     @Override
-    public String darPista(String dato) {
-        return this.cuerpo + dato;
+    public String darPistaBandera(Ciudad proxima) {
+        return proxima.getColores();
     }
 
     @Override
-    public String buscarPorArchivo(String nombreEdificio) {
-        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/pistasFaciles.csv"))) {
-            String line;
-            Random random = new Random();
-            int numRandom;
-
-            // OLOR A ALGO I
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(",");
-                numRandom = random.nextInt(3);
-                if (Objects.equals(values[3], nombreEdificio)) {
-                    return values[numRandom];
-                }
-            }
-        } catch (FileNotFoundException ex) {
-            return "codesmell";
-        } catch (IOException io) {
-            return "esto obviamente se puede mejorar";
-        }
-
-        return"Seguro debe haber una mejor forma";
+    public String darPistaDato(Ciudad proxima) {
+        return proxima.getDatoRandom();
     }
+
 }

@@ -54,7 +54,7 @@ public class CasosDeUsoEntrega2Test {
         }
 
         policia.descontarHorasDeViaje(unMapa.viajar(mexico, tesoro));
-        double horasDeVuelo = 21 / 1300;
+        double horasDeVuelo = 21 * 111 / 1300;
 
         assertEquals(caso.ciudadActual(), mexico);
         assertEquals(policia.horasRestantes(),154-horasDeVuelo);
