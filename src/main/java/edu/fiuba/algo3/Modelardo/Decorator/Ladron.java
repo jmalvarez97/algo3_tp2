@@ -81,6 +81,15 @@ public class Ladron implements Pregunta {
         return Objects.equals(this.senia, cualidad);
     }
 
+    public boolean tieneOcupacion(String cualidad){
+        return Objects.equals(this.ocupacion, cualidad);
+    }
+
+    public boolean tieneOtros(String cualidad){
+        return Objects.equals(this.otros, cualidad);
+    }
+
+
     @Override
     public boolean comparar(Ladron otroLadron) {
         return true;

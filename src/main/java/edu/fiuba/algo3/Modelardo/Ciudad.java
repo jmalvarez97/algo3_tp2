@@ -119,88 +119,28 @@ public class Ciudad {
 
         //Tenemos que agregar colores de bandera
         this.colorBandera=(String) ciudad.get("colorBandera");
-        /*
-        JSONArray coloresBanderaObject = (JSONArray) ciudad.get("colorBandera");
-        for(int i = 0; i < coloresBanderaObject.size() ; i++){
-            colorBandera.add( (String) coloresBanderaObject.get(i) );
-
-
-        }
-
-         */
 
         //Tenemos que agregar idiomas
         this.idiomas = (String) ciudad.get("idiomas");
-        /*
-        JSONArray idiomasObject = (JSONArray) ciudad.get("idiomas");
-        for(int i = 0; i < idiomasObject.size() ; i++){
-            idiomas.add( (String) idiomasObject.get(i) );
 
-        }
-
-         */
 
 
         //Tenemos que agregar caracteristicas
         this.caracteristicas=(String) ciudad.get("caracteristicas");
-        /*
-        JSONArray caracteristicasObject = (JSONArray) ciudad.get("caracteristicas");
-        for(int i = 0; i < caracteristicasObject.size() ; i++){
-            caracteristicas.add( (String) caracteristicasObject.get(i) );
 
-
-        }
-
-         */
 
         //Tenemos que agregar industrias
         this.industrias=(String) ciudad.get("industrias");
-        /*
-        JSONArray industriasObject = (JSONArray) ciudad.get("industrias");
-        for(int i = 0; i < industriasObject.size() ; i++){
-            industrias.add( (String) industriasObject.get(i) );
-
-
-        }
-
-         */
 
         //Tenemos que agregar animales
         this.animales=(String) ciudad.get("animales");
-        /*
-        JSONArray animalesObject = (JSONArray) ciudad.get("animales");
-        for(int i = 0; i < animalesObject.size() ; i++){
-            animales.add( (String) animalesObject.get(i) );
 
-
-        }
-
-         */
 
         //Tenemos que agregar etnias
         this.etnias=(String) ciudad.get("etnias");
-        /*
-        JSONArray etniasObject = (JSONArray) ciudad.get("etnias");
-        for(int i = 0; i < etniasObject.size() ; i++){
-            etnias.add( (String) etniasObject.get(i) );
-
-
-        }
-
-         */
 
         //Tenemos que agregar "otros"
         this.otros=(String)  ciudad.get("otros");
-        /*
-        JSONArray otrosObject = (JSONArray) ciudad.get("otros");
-        for(int i = 0; i < otrosObject.size() ; i++){
-            otros.add( (String) otrosObject.get(i) );
-
-
-        }
-
-         */
-
 
 
 
