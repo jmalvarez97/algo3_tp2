@@ -36,7 +36,6 @@ public class CasosDeUsoEntrega1Test {
     public void testCasoUno(){
         /* Caso de uso 1:
         - Robaron el tesoro Nacional de Montreal.
-        - Sospechoso femenino.
         - Detective novato comienza en Montreal.
         - Vista un Banco:
             - se despliega una pista. */
@@ -49,13 +48,13 @@ public class CasosDeUsoEntrega1Test {
     @Test
     public void testCasoDos(){
         /* Caso de uso 2:
-        - Detective novato comienza en Montreal.
+        - Policia novato comienza en Montreal.
         - Vista un Banco (nuevamente):
             - Se despliega una pista
         - Vista una Biblioteca:
-            - Se despliega una pista. */
+            - Se despliega otra pista. */
 
-        caso.visitar("banco");
+        caso.visitar("Banco");
         String pista = caso.visitar("Banco");
         String pista2 = caso.visitar("Biblioteca");
 
@@ -82,7 +81,7 @@ public class CasosDeUsoEntrega1Test {
         Caso de uso 4
         Vista un Aeropuerto (3 veces):
         Se despliega una pista.
-        Vista un Puerto (55 veces):
+        Vista un Banco (5 veces):
         Se despliega una pista.
         */
 
