@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.Vista;
 
+import edu.fiuba.algo3.Controlador.BotonComputadoraEventHandler;
+import edu.fiuba.algo3.Controlador.BotonEdificiosEventHandler;
 import edu.fiuba.algo3.Controlador.BotonViajarEventHandler;
 import edu.fiuba.algo3.Controlador.Partida;
 import javafx.geometry.Pos;
@@ -27,9 +29,13 @@ public class ContenedorBotonesCiudad extends HBox {
 
         Button botonEdificios = new Button();
         botonEdificios.setText("Edificios");
+        BotonEdificiosEventHandler botonEdificiosEventHandler = new BotonEdificiosEventHandler(stage,escenaCiudad,partida);
+        botonEdificios.setOnAction(botonEdificiosEventHandler);
 
         Button botonComputadora = new Button();
         botonComputadora.setText("PC");
+        BotonComputadoraEventHandler botonComputadoraEventHandler = new BotonComputadoraEventHandler(stage,escenaCiudad,partida);
+        botonComputadora.setOnAction(botonComputadoraEventHandler);
 
         this.getChildren().addAll(botonViajar,botonEdificios,botonComputadora);
         this.setAlignment(Pos.BASELINE_CENTER);

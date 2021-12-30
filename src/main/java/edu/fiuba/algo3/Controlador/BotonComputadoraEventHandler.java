@@ -9,13 +9,13 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class BotonViajarEventHandler implements EventHandler<ActionEvent> {
+public class BotonComputadoraEventHandler implements EventHandler<ActionEvent> {
 
     private Stage stage;
     private Scene escenaCiudad;
     private Partida partida;
 
-    public BotonViajarEventHandler(Stage stage,Scene escenaCiudad,Partida partida){
+    public BotonComputadoraEventHandler(Stage stage,Scene escenaCiudad,Partida partida){
 
         this.stage = stage;
         this.escenaCiudad = escenaCiudad;
@@ -26,7 +26,7 @@ public class BotonViajarEventHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
 
-        Label label = new Label("Acá se muestran las posibles ciudades");
+        Label label = new Label("Estas en la PC");
 
         Button botonVolver = new Button();
         botonVolver.setText("Volver");
