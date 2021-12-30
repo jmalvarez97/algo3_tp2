@@ -30,6 +30,8 @@ public class IntegracionTest {
         System.out.println(distancia);
         // Le va a Llevar Distancia/VelocidadNovato hacer esto
         int horasASacar = (int) (distancia)/900;
+        if (horasASacar==0)
+            horasASacar+=1;
         System.out.println(horasASacar);
         // y si la distancia fue muy grande, tambien el detective procede a dormir
         // por lo tanto se le descuentan las horas
@@ -74,6 +76,8 @@ public class IntegracionTest {
         distancia = partida.viajarCorrecto();
         // Le va a Llevar Distancia/VelocidadNovato hacer esto
         horasASacar = (int) (distancia) / 900;
+        if (horasASacar==0)
+            horasASacar+=1;
         // y si la distancia fue muy grande, tambien el detective procede a dormir
         // por lo tanto se le descuentan las horas
         horasDia += horasASacar;
@@ -101,20 +105,13 @@ public class IntegracionTest {
 
 
 
-    @Test
-    public void testJuegoCompletoDondeGanaUnNovato2() {
-        Partida partida = new Partida();
-        int horasDia = 8;
-        int horasRestantes = 154;
-        int horasASacar;
-        double distancia;
 
 
 
 
 
 
-    }
+
 
 
 

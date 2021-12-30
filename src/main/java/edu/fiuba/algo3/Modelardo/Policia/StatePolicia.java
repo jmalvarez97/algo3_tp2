@@ -15,7 +15,10 @@ public abstract class StatePolicia{
     abstract void confirmarCaso(int casosResueltos);
 
     public int horasDeViaje(double distancia) {
-        return (int) distancia / this.velocidad;
+        int horas = (int) distancia / this.velocidad;
+        if (horas==0)
+            horas+=1;
+        return horas;
     }
 
     public void setPolicia(Policia policia){
