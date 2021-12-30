@@ -28,16 +28,14 @@ public class BotonEdificiosEventHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
 
+        VBox contenedorVertical = new VBox();
+        contenedorVertical.setSpacing(150);
+        contenedorVertical.setAlignment(Pos.CENTER);
+
+        Scene escenaElegirEdificios = new Scene(contenedorVertical,640,480);
+
         Label label = new Label("A qué edificio querés entrar?");
-
-        ContenedorEdificios contenedorEdificios = new ContenedorEdificios(stage,partida,escenaCiudad);
-
-        /*
-        HBox contenedorEdificios = new HBox();
-        contenedorEdificios.getChildren().addAll(botonBanco,botonAeropuerto,botonBiblioteca);
-        contenedorEdificios.setSpacing(20);
-        contenedorEdificios.setAlignment(Pos.CENTER);
-         */
+        ContenedorEdificios contenedorEdificios = new ContenedorEdificios(stage,partida,escenaElegirEdificios);
 
         //BOTON VOLVER
         Button botonVolver = new Button();
@@ -45,13 +43,9 @@ public class BotonEdificiosEventHandler implements EventHandler<ActionEvent> {
         BotonVolverEventHandler botonVolverEventHandler = new BotonVolverEventHandler(stage,escenaCiudad);
         botonVolver.setOnAction(botonVolverEventHandler);
 
-        VBox contenedor = new VBox();
-        contenedor.getChildren().addAll(label,contenedorEdificios,botonVolver);
-        contenedor.setSpacing(150);
-        contenedor.setAlignment(Pos.CENTER);
+        contenedorVertical.getChildren().addAll(label,contenedorEdificios,botonVolver);
 
-        Scene escenaNueva = new Scene(contenedor,640,480);
-        stage.setScene(escenaNueva);
+        stage.setScene(escenaElegirEdificios);
         stage.show();
     }
 }

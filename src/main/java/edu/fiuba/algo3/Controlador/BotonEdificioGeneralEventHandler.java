@@ -1,41 +1,39 @@
 package edu.fiuba.algo3.Controlador;
 
-import edu.fiuba.algo3.Vista.ContenedorEdificioPista;
+import edu.fiuba.algo3.Vista.ContenedorPistaEdificio;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.*;
 import javafx.stage.Stage;
 
-public class BotonEdificioEventHandler implements EventHandler<ActionEvent> {
+public class BotonEdificioGeneralEventHandler implements EventHandler<ActionEvent> {
 
     private Stage stage;
     private Partida partida;
     private Button boton;
-    private Scene escenaEdificios;
+    private Scene escenaElegirEdificio;
 
-    public BotonEdificioEventHandler(Stage stage,Partida partida,Button boton,Scene escenaEdificios){
+    public BotonEdificioGeneralEventHandler(Stage stage, Partida partida, Button boton, Scene escenaElegirEdificio){
         this.stage = stage;
         this.partida = partida;
         this.boton = boton;
-        this.escenaEdificios = escenaEdificios;
+        this.escenaElegirEdificio = escenaElegirEdificio;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
         String pista = partida.visitar(boton.getText());
 
-        ContenedorEdificioPista contenedorEdificioPista = new ContenedorEdificioPista(boton,pista);
+        ContenedorPistaEdificio contenedorEdificioPista = new ContenedorPistaEdificio(boton,pista);
 
         //BOTON VOLVER
         Button botonVolver = new Button();
         botonVolver.setText("Volver");
-        BotonVolverEventHandler botonVolverEventHandler = new BotonVolverEventHandler(stage,escenaEdificios);
+        BotonVolverEventHandler botonVolverEventHandler = new BotonVolverEventHandler(stage,escenaElegirEdificio);
         botonVolver.setOnAction(botonVolverEventHandler);
 
         VBox contenedorVertical = new VBox();
