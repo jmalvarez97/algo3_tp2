@@ -13,6 +13,10 @@ public class Biblioteca implements Edificio {
         this.contadorVisitas = 0;
     }
 
+    public Biblioteca(int visitas){
+        this.contadorVisitas=visitas;
+    }
+
     @Override
     public String darPista(Pista pistaValor, Ciudad ciudad){
         this.contadorVisitas++;
@@ -24,4 +28,5 @@ public class Biblioteca implements Edificio {
         int horasASacar = Math.min(contadorVisitas, 3);
         policia.descontarHoras(horasASacar);
     }
+
 }
