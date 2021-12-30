@@ -23,9 +23,9 @@ public class BotonCiudadEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        //partida.viajar(ciudad);
+        partida.viajar(ciudad);
 
         ContenedorCiudad contenedorCiudadNueva = new ContenedorCiudad(partida,stage);
-        contenedorCiudadNueva.setAlignment(Pos.CENTER);
+        contenedorCiudadNueva.setAlignment(Pos.TOP_CENTER);
     }
 }

@@ -61,4 +61,6 @@ public class Partida{
     public ArrayList<Ciudad> opcionesParaViajar(){return (this.caso).opcionesParaViajar();}
 
     public void viajar (Ciudad proxima){(this.caso).viajar(proxima);}
+
+    public String visitar(String nombreEdificio){return (this.caso).visitar(nombreEdificio);}
 }

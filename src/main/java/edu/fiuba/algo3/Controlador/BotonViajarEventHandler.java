@@ -60,5 +60,6 @@ public class BotonViajarEventHandler implements EventHandler<ActionEvent> {
 
         Scene escenaNueva = new Scene(contenedor,640,480);
         stage.setScene(escenaNueva);
+        stage.show();
     }
 }
