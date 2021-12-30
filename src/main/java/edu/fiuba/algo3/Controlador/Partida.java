@@ -27,18 +27,18 @@ public class Partida{
     public void nuevoCaso(){
 
         //Tomamos un ladron random de la lista de ladrones y le asignamos el robo
-        int randomIndex = (int) (Math.random() - 1);
+        int randomIndex = (int) (Math.random() * 10);
         Ladron ladronDelCaso = this.listaLadrones.get(randomIndex);
 
         //Tomamos un tesoro de valor acorde a la cantidad de arrestos del policia
         Tesoro tesoroDelCaso = (this.policia).devolverTesoroAcorde(this.listaTesoros);
 
         //Tomamos una ciudad random de la lista de ciudades para que sea la ciudad inicial
-        randomIndex = (int) (Math.random() - 1);
+        randomIndex = (int) ((Math.random()*10) - 1);
         Ciudad ciudadInicial  = this.listaCiudades.get(randomIndex);
 
         //Tomamos una ciudad random de la lista de ciudades para que sea la ciudad próxima
-        randomIndex = (int) (Math.random() - 1);
+        randomIndex = (int) ((Math.random()*10) - 1);
         Ciudad ciudadProxima  = this.listaCiudades.get(randomIndex);
 
         //Creamos un mapa

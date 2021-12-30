@@ -1,13 +1,17 @@
 package edu.fiuba.algo3.Controlador;
 
+import edu.fiuba.algo3.Modelardo.Ciudad;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class BotonViajarEventHandler implements EventHandler<ActionEvent> {
 
@@ -26,7 +30,21 @@ public class BotonViajarEventHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
 
-        Label label = new Label("Acá se muestran las posibles ciudades");
+        Label label = new Label("A dónde querés viajar?");
+        ArrayList<Ciudad> listaCiudades = partida.opcionesParaViajar();
+
+        HBox contenedorCiudades = new HBox();
+
+        for(int i = 1; i < listaCiudades.size(); i++){
+            Ciudad ciudad = listaCiudades.get(i);
+
+            Button botonCiudad = new Button();
+            botonCiudad.setText(ciudad.getNombre());
+            contenedorCiudades.getChildren().add(botonCiudad);
+        }
+
+        contenedorCiudades.setSpacing(10);
+        contenedorCiudades.setAlignment(Pos.CENTER);
 
         Button botonVolver = new Button();
         botonVolver.setText("Volver");
@@ -34,7 +52,7 @@ public class BotonViajarEventHandler implements EventHandler<ActionEvent> {
         botonVolver.setOnAction(botonVolverEventHandler);
 
         VBox contenedor = new VBox();
-        contenedor.getChildren().addAll(label,botonVolver);
+        contenedor.getChildren().addAll(label,contenedorCiudades,botonVolver);
         contenedor.setSpacing(150);
         contenedor.setAlignment(Pos.CENTER);
 

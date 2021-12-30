@@ -34,7 +34,7 @@ public class Mapa {
         // Si se viaja a la ciudad correcta, se actualiza proxima
         if(Objects.equals(destino.getNombre(), proxima.getNombre())) {
             //Tomamos una ciudad random de la lista de ciudades para que sea la ciudad próxima
-            int randomIndex = (int) (Math.random() - 1);
+            int randomIndex = (int) ((Math.random()*10) - 1);
             proxima  = this.listaCiudades.get(randomIndex);
             // Se acierta en uno de los paises de la estrategia del ladron --> se suma 1 (le doy la resp a tesoro)
             tesoro.sumarPaisCorrecto();
