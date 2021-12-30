@@ -29,4 +29,5 @@ public class Biblioteca implements Edificio {
         policia.descontarHoras(horasASacar);
     }
 
+
 }

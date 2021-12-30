@@ -35,12 +35,15 @@ public class Partida{
         Tesoro tesoroDelCaso = (this.policia).devolverTesoroAcorde(this.listaTesoros);
 
         //Tomamos una ciudad random de la lista de ciudades para que sea la ciudad inicial
-        randomIndex = (int) ((Math.random()*10) - 1);
-        Ciudad ciudadInicial  = this.listaCiudades.get(randomIndex);
+        int randomIndex1 = (int) ((Math.random()*10) - 1);
+        Ciudad ciudadInicial  = this.listaCiudades.get(randomIndex1);
 
         //Tomamos una ciudad random de la lista de ciudades para que sea la ciudad próxima
-        randomIndex = (int) ((Math.random()*10) - 1);
-        Ciudad ciudadProxima  = this.listaCiudades.get(randomIndex);
+        int randomIndex2=randomIndex1;
+        while (randomIndex2==randomIndex1){
+            randomIndex2 = (int) (Math.random()*10 - 1);
+        }
+        Ciudad ciudadProxima  = this.listaCiudades.get(randomIndex2);
 
         //Creamos un mapa
         Mapa unMapa = new Mapa(ciudadInicial, ciudadProxima, listaCiudades);

@@ -29,5 +29,6 @@ public class Banco implements Edificio {
         policia.descontarHoras(horasASacar);
     }
 
+
 }
 
