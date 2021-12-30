@@ -94,6 +94,7 @@ public class Mapa {
         return this.actual;
     }
 
+    public  Ciudad ciudadProxima() {return this.proxima;}
 
     public double viajarCorrecto(Tesoro tesoro) {
         return viajar(proxima, tesoro);

@@ -27,12 +27,12 @@ public class IntegracionTest {
 
         // Policia viaja correcto a proxima
         double distancia = partida.viajarCorrecto();
-        System.out.println(distancia);
-        // Le va a Llevar Distancia/VelocidadNovato hacer esto
+
+        // Le va a Llevar Distancia/VelocidadNovato hacer esto. Distancias muy cortas llevan 1 hora
         int horasASacar = (int) (distancia)/900;
         if (horasASacar==0)
             horasASacar+=1;
-        System.out.println(horasASacar);
+
         // y si la distancia fue muy grande, tambien el detective procede a dormir
         // por lo tanto se le descuentan las horas
         horasDia+=horasASacar;
@@ -74,10 +74,11 @@ public class IntegracionTest {
 
         // Policia viaja correcto a proxima
         distancia = partida.viajarCorrecto();
-        // Le va a Llevar Distancia/VelocidadNovato hacer esto
+        // Le va a Llevar Distancia/VelocidadNovato hacer esto. Distancias muy cortas llevan 1 hora
         horasASacar = (int) (distancia) / 900;
         if (horasASacar==0)
             horasASacar+=1;
+
         // y si la distancia fue muy grande, tambien el detective procede a dormir
         // por lo tanto se le descuentan las horas
         horasDia += horasASacar;
