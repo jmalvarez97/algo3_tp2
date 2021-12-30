@@ -60,5 +60,5 @@ public class Partida{
 
     public ArrayList<Ciudad> opcionesParaViajar(){return (this.caso).opcionesParaViajar();}
 
-    public void viajar (Ciudad proxima){return (this.caso).viajar(proxima);}
+    public void viajar (Ciudad proxima){(this.caso).viajar(proxima);}
 }

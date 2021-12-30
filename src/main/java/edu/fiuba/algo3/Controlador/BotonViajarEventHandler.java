@@ -35,11 +35,13 @@ public class BotonViajarEventHandler implements EventHandler<ActionEvent> {
 
         HBox contenedorCiudades = new HBox();
 
-        for(int i = 1; i < listaCiudades.size(); i++){
+        for(int i = 0; i < listaCiudades.size(); i++){
             Ciudad ciudad = listaCiudades.get(i);
 
             Button botonCiudad = new Button();
             botonCiudad.setText(ciudad.getNombre());
+            BotonCiudadEventHandler botonCiudadEventHandler = new BotonCiudadEventHandler(ciudad,partida,stage);
+            botonCiudad.setOnAction(botonCiudadEventHandler);
             contenedorCiudades.getChildren().add(botonCiudad);
         }
 

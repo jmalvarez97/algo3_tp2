@@ -27,6 +27,7 @@ public class ContenedorCiudad extends VBox {
         this.setPadding(new Insets(20));
         this.setSpacing(150);
 
-        stage.setScene(escenaNueva);
+        this.stage.setScene(escenaNueva);
+        this.stage.show();
     }
 }
