@@ -80,12 +80,18 @@ public class Partida{
     }
 
     public boolean ganoUsuario() {
-        if( this.caso.chequearOrdenDeArresto() && this.caso.cumplePaisesNecesarios()){
+        return this.caso.chequearOrdenDeArresto();
+    }
+
+    public boolean cumplePaisesNecesarios(){
+        if (this.caso.cumplePaisesNecesarios()) {
             this.policia.confirmarCaso();
             return true;
         }
         return false;
+
     }
+
 
     public boolean herirConCuchillo(){
         int random = (int) Math.random();
@@ -100,9 +106,6 @@ public class Partida{
         return this.policia.hora();
     }
 
-    public boolean cumplePaisesNecesarios() {
-        return this.caso.cumplePaisesNecesarios();
-    }
 
     public void cargarPelo(String pelo){
         this.caso.cargarPelo(pelo);
